@@ -1,0 +1,24 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://example.invalid/json-consistency-repair/compiled-constraints-v1.schema.json",
+  "title":"json-consistency-repair compiled constraints v1",
+  "type":"array",
+  "items":{
+    "type":"object",
+    "required":["kind","array_path","rule_id"],
+    "properties":{
+      "kind":{"enum":["required","type","enum","const","linear"]},
+      "array_path":{"type":"string"},
+      "rule_id":{"type":"string"},
+      "field":{"type":"string"},
+      "default":{},
+      "type":{"enum":["string","integer","number","boolean","object","array","null"]},
+      "values":{"type":"array"},
+      "value":{},
+      "coefficients":{"type":"object","additionalProperties":{"type":"string"}},
+      "constant":{"type":"string"},
+      "name":{"type":"string"}
+    },
+    "additionalProperties":true
+  }
+}

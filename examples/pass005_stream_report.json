@@ -1,0 +1,413 @@
+{
+  "committed_edits": 3,
+  "cycles": [
+    {
+      "bounded_state": {
+        "max_functional_groups_per_pair": 256,
+        "max_relation_fields": 12,
+        "max_tracked_fields": 64,
+        "min_functional_groups": 2,
+        "overflowed_functional_pairs": 0,
+        "relation_fields": 4,
+        "tracked_fields": 4
+      },
+      "committed_edits": 2,
+      "conflicts": 0,
+      "cycle": 1,
+      "input_digest": "16e33b7cd9d53f5a62943cdf11de4073caab664f99f5d3360edd7904ca092910",
+      "inverse_replay": {
+        "inverse_edits": 2,
+        "restores_cycle_input": true
+      },
+      "issue_samples": [
+        {
+          "analyzer": "stream_enum",
+          "code": "representation_variant",
+          "path": "/code",
+          "record": 8,
+          "repairable": true
+        },
+        {
+          "analyzer": "stream_enum",
+          "code": "representation_variant",
+          "path": "/code",
+          "record": 9,
+          "repairable": true
+        }
+      ],
+      "issues_observed": 2,
+      "new_relations": [
+        "258f528bb5c91168c7d4",
+        "39c85cd04274bc74b1b7",
+        "87bcf3e07c49e23b25da",
+        "df5af5265ecbb2a22e28",
+        "f2e998888f371f09072a"
+      ],
+      "output_digest": "e2cd69992f44dd4fcb1de6a44bff40a4ab9a7fed94f45af9a585bde6dbc0c9b9",
+      "records": 20,
+      "relations": 5,
+      "stable_streak": 0
+    },
+    {
+      "bounded_state": {
+        "max_functional_groups_per_pair": 256,
+        "max_relation_fields": 12,
+        "max_tracked_fields": 64,
+        "min_functional_groups": 2,
+        "overflowed_functional_pairs": 0,
+        "relation_fields": 4,
+        "tracked_fields": 4
+      },
+      "committed_edits": 1,
+      "conflicts": 0,
+      "cycle": 2,
+      "input_digest": "e2cd69992f44dd4fcb1de6a44bff40a4ab9a7fed94f45af9a585bde6dbc0c9b9",
+      "inverse_replay": {
+        "inverse_edits": 1,
+        "restores_cycle_input": true
+      },
+      "issue_samples": [
+        {
+          "analyzer": "stream_functional",
+          "code": "functional_relation_violation",
+          "path": "/country",
+          "record": 9,
+          "repairable": true
+        }
+      ],
+      "issues_observed": 1,
+      "new_relations": [
+        "bc3440aae615deeec830",
+        "d7951189b70d52f11936"
+      ],
+      "output_digest": "741ed6f6a8ed60a09683824dbc468643a5b3332ff51b39325bda592adfc72470",
+      "records": 20,
+      "relations": 6,
+      "stable_streak": 0
+    },
+    {
+      "bounded_state": {
+        "max_functional_groups_per_pair": 256,
+        "max_relation_fields": 12,
+        "max_tracked_fields": 64,
+        "min_functional_groups": 2,
+        "overflowed_functional_pairs": 0,
+        "relation_fields": 4,
+        "tracked_fields": 4
+      },
+      "committed_edits": 0,
+      "conflicts": 0,
+      "cycle": 3,
+      "input_digest": "741ed6f6a8ed60a09683824dbc468643a5b3332ff51b39325bda592adfc72470",
+      "inverse_replay": {
+        "inverse_edits": 0,
+        "restores_cycle_input": true
+      },
+      "issue_samples": [],
+      "issues_observed": 0,
+      "new_relations": [],
+      "output_digest": "741ed6f6a8ed60a09683824dbc468643a5b3332ff51b39325bda592adfc72470",
+      "records": 20,
+      "relations": 6,
+      "stable_streak": 1
+    },
+    {
+      "bounded_state": {
+        "max_functional_groups_per_pair": 256,
+        "max_relation_fields": 12,
+        "max_tracked_fields": 64,
+        "min_functional_groups": 2,
+        "overflowed_functional_pairs": 0,
+        "relation_fields": 4,
+        "tracked_fields": 4
+      },
+      "committed_edits": 0,
+      "conflicts": 0,
+      "cycle": 4,
+      "input_digest": "741ed6f6a8ed60a09683824dbc468643a5b3332ff51b39325bda592adfc72470",
+      "inverse_replay": {
+        "inverse_edits": 0,
+        "restores_cycle_input": true
+      },
+      "issue_samples": [],
+      "issues_observed": 0,
+      "new_relations": [],
+      "output_digest": "741ed6f6a8ed60a09683824dbc468643a5b3332ff51b39325bda592adfc72470",
+      "records": 20,
+      "relations": 6,
+      "stable_streak": 2
+    }
+  ],
+  "engine": "json-consistency-repair",
+  "format": "jsonl",
+  "input": "examples/pass005_stream_input.jsonl",
+  "input_digest": "16e33b7cd9d53f5a62943cdf11de4073caab664f99f5d3360edd7904ca092910",
+  "knowledge_ledger": {
+    "count": 7,
+    "relations": {
+      "258f528bb5c91168c7d4": {
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 4,
+        "relation": {
+          "confidence": 1.0,
+          "field": "/country",
+          "inputs": [],
+          "kind": "required_leaf_stream",
+          "output": "/country",
+          "relation_id": "258f528bb5c91168c7d4",
+          "support": 20
+        },
+        "seen_cycles": 4,
+        "strength_history": [
+          {
+            "confidence": 1.0,
+            "cycle": 1,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 2,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 3,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 4,
+            "support": 20
+          }
+        ],
+        "survives_current": true
+      },
+      "39c85cd04274bc74b1b7": {
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 4,
+        "relation": {
+          "confidence": 1.0,
+          "field": "/x",
+          "inputs": [],
+          "kind": "required_leaf_stream",
+          "output": "/x",
+          "relation_id": "39c85cd04274bc74b1b7",
+          "support": 20
+        },
+        "seen_cycles": 4,
+        "strength_history": [
+          {
+            "confidence": 1.0,
+            "cycle": 1,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 2,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 3,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 4,
+            "support": 20
+          }
+        ],
+        "survives_current": true
+      },
+      "87bcf3e07c49e23b25da": {
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 4,
+        "relation": {
+          "confidence": 1.0,
+          "field": "/code",
+          "inputs": [],
+          "kind": "required_leaf_stream",
+          "output": "/code",
+          "relation_id": "87bcf3e07c49e23b25da",
+          "support": 20
+        },
+        "seen_cycles": 4,
+        "strength_history": [
+          {
+            "confidence": 1.0,
+            "cycle": 1,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 2,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 3,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 4,
+            "support": 20
+          }
+        ],
+        "survives_current": true
+      },
+      "bc3440aae615deeec830": {
+        "first_seen_cycle": 2,
+        "last_seen_cycle": 4,
+        "relation": {
+          "confidence": 1.0,
+          "determinant": "/country",
+          "groups": 2,
+          "inputs": [
+            "/country"
+          ],
+          "kind": "functional_stream",
+          "output": "/code",
+          "relation_id": "bc3440aae615deeec830",
+          "support": 20
+        },
+        "seen_cycles": 3,
+        "strength_history": [
+          {
+            "confidence": 0.95,
+            "cycle": 2,
+            "support": 19
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 3,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 4,
+            "support": 20
+          }
+        ],
+        "survives_current": true
+      },
+      "d7951189b70d52f11936": {
+        "first_seen_cycle": 2,
+        "last_seen_cycle": 4,
+        "relation": {
+          "confidence": 1.0,
+          "determinant": "/code",
+          "groups": 2,
+          "inputs": [
+            "/code"
+          ],
+          "kind": "functional_stream",
+          "output": "/country",
+          "relation_id": "d7951189b70d52f11936",
+          "support": 20
+        },
+        "seen_cycles": 3,
+        "strength_history": [
+          {
+            "confidence": 0.95,
+            "cycle": 2,
+            "support": 19
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 3,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 4,
+            "support": 20
+          }
+        ],
+        "survives_current": true
+      },
+      "df5af5265ecbb2a22e28": {
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 4,
+        "relation": {
+          "confidence": 1.0,
+          "field": "/z",
+          "inputs": [],
+          "kind": "required_leaf_stream",
+          "output": "/z",
+          "relation_id": "df5af5265ecbb2a22e28",
+          "support": 20
+        },
+        "seen_cycles": 4,
+        "strength_history": [
+          {
+            "confidence": 1.0,
+            "cycle": 1,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 2,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 3,
+            "support": 20
+          },
+          {
+            "confidence": 1.0,
+            "cycle": 4,
+            "support": 20
+          }
+        ],
+        "survives_current": true
+      },
+      "f2e998888f371f09072a": {
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 1,
+        "relation": {
+          "canonicalizations": {
+            "a": "A"
+          },
+          "confidence": 1.0,
+          "field": "/code",
+          "inputs": [],
+          "kind": "enum_representation_stream",
+          "output": "/code",
+          "relation_id": "f2e998888f371f09072a",
+          "support": 20
+        },
+        "seen_cycles": 1,
+        "strength_history": [
+          {
+            "confidence": 1.0,
+            "cycle": 1,
+            "support": 20
+          }
+        ],
+        "survives_current": false
+      }
+    }
+  },
+  "memory_contract": {
+    "issue_samples_per_cycle": 50,
+    "max_functional_groups_per_pair": 256,
+    "max_relation_fields": 12,
+    "max_tracked_fields": 64,
+    "min_functional_groups": 2,
+    "patch_journal": "disk-backed JSONL",
+    "peak_tracked_fields": 4,
+    "record_count_independent": true
+  },
+  "mode": "streaming",
+  "output": "examples/pass005_stream_repaired.jsonl",
+  "output_digest": "741ed6f6a8ed60a09683824dbc468643a5b3332ff51b39325bda592adfc72470",
+  "records": 20,
+  "remaining_issues": 0,
+  "replay": {
+    "inverse_restores_complete_input": true
+  },
+  "strong_stable": true,
+  "version": "0.5.0"
+}

@@ -1,0 +1,1 @@
+{"all_checks_pass":true,"contract":"json-consistency-repair.pass025-benchmark.v1","counts":{"boundary_firewall":100,"bounds_of_bounds_block":100,"dependent_default":100,"dsl_boundary":100,"inclusive_bounds":100,"multipleof_tie_abstention":100},"decisions":600,"expected_decisions":600,"false_mutations":0,"version":"0.25.0"}

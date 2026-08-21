@@ -1,0 +1,24 @@
+{
+  "rules": [
+    {
+      "kind": "graph",
+      "rule_id": "workflow_dag",
+      "nodes_path": "/nodes",
+      "edges_path": "/edges",
+      "node_id": "id",
+      "source_field": "source",
+      "target_field": "target",
+      "require_acyclic": true,
+      "order_path": "/order"
+    },
+    {
+      "kind": "state_machine",
+      "rule_id": "order_states",
+      "sequence_path": "/events",
+      "state_field": "state",
+      "transitions": [["NEW", "PAID"], ["PAID", "SHIPPED"], ["SHIPPED", "DELIVERED"]],
+      "initial": "NEW",
+      "terminal": ["DELIVERED"]
+    }
+  ]
+}

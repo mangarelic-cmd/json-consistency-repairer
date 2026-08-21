@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/json-consistency-repair/controllability-firewall-v1.schema.json",
+  "title": "PASS036 controllability candidate firewall certificate",
+  "type": "object",
+  "required": ["contract", "enabled", "status", "candidate_count", "allowed_candidate_count", "blocked_candidate_count", "checks", "certificate_sha256"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.controllability-firewall.v1"},
+    "enabled": {"type": "boolean"},
+    "status": {"enum": ["UNCONSTRAINED_LEGACY", "CANDIDATE_FRONTIER_REACHABLE", "IDENTIFIABLE_BUT_UNREACHABLE"]},
+    "rules": {"type": "array"},
+    "require_explicit_mutation_permission": {"type": "boolean"},
+    "candidate_count": {"type": "integer", "minimum": 0},
+    "allowed_candidate_count": {"type": "integer", "minimum": 0},
+    "blocked_candidate_count": {"type": "integer", "minimum": 0},
+    "checks": {"type": "array"},
+    "certificate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

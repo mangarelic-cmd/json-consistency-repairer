@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://json-consistency-repair.local/schemas/fourth-series-closure-v1.schema.json",
+  "title": "JSON Consistency Repair fourth-series closure v1",
+  "type": "object",
+  "required": ["contract", "status", "ok", "series", "checks", "rectification_packet_sha256", "remaining_substantive_passes"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.fourth-series-closure.v1"},
+    "status": {"enum": ["CLOSED", "OPEN"]},
+    "ok": {"type": "boolean"},
+    "series": {"const": "PASS025-PASS032"},
+    "checks": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "rectification_packet_sha256": {"type": ["string", "null"]},
+    "proof_graph_sha256": {"type": ["string", "null"]},
+    "provenance_root": {"type": ["string", "null"]},
+    "remaining_substantive_passes": {"type": "integer", "minimum": 0}
+  },
+  "additionalProperties": true
+}

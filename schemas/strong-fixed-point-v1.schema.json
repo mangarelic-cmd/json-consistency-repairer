@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "json-consistency-repair.strong-fixed-point.v1",
+  "type": "object",
+  "required": [
+    "contract",
+    "attained",
+    "required_quiet_cycles",
+    "quiet_streak",
+    "oscillation_detected",
+    "promotion_gate"
+  ],
+  "properties": {
+    "contract": {
+      "const": "json-consistency-repair.strong-fixed-point.v1"
+    },
+    "attained": {
+      "type": "boolean"
+    },
+    "required_quiet_cycles": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "quiet_streak": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "oscillation_detected": {
+      "type": "boolean"
+    },
+    "promotion_gate": {
+      "const": "COLD_REPLAY_REQUIRED"
+    }
+  }
+}

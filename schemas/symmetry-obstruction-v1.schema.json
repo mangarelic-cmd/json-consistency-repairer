@@ -1,0 +1,21 @@
+{
+  "$id":"https://json-consistency-repair.local/symmetry-obstruction-v1.schema.json",
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Symmetry obstruction certificate v1",
+  "type":"object",
+  "additionalProperties":true,
+  "required":["contract","status","blocked","route_count","routes","structural_orbit_detected","semantic_quotient_equivalent","quotient","minimal_symmetry_breakers","policy","certificate_sha256"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.symmetry-obstruction.v1"},
+    "status":{"enum":["NO_SYMMETRY_OBSTRUCTION","SYMMETRY_BLOCKED_REPAIR","QUOTIENT_CANONICALLY_EQUIVALENT"]},
+    "blocked":{"type":"boolean"},
+    "route_count":{"type":"integer","minimum":0},
+    "routes":{"type":"array"},
+    "structural_orbit_detected":{"type":"boolean"},
+    "semantic_quotient_equivalent":{"type":"boolean"},
+    "quotient":{"$ref":"semantic-quotient-v1.schema.json"},
+    "minimal_symmetry_breakers":{"type":"array"},
+    "policy":{"type":"object"},
+    "certificate_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+  }
+}

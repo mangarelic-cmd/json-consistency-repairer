@@ -1,0 +1,111 @@
+{
+  "$id": "https://json-consistency-repair.local/witness-materialization-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "certificate_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "contract": {
+      "const": "json-consistency-repair.witness-materialization.v1"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "materialized_relation_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "reinjectable_candidate_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "semantic_guards": {
+      "type": "object"
+    },
+    "summary": {
+      "type": "object"
+    },
+    "terminal_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "terminals": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "candidate_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "materialization_proof_sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "observations": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "reinjectable": {
+            "type": "boolean"
+          },
+          "search_contract": {
+            "$ref": "material-search-contract-v1.schema.json"
+          },
+          "selected_value_digest": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "MATERIALIZED_EXACT",
+              "SOURCE_GATE",
+              "MATERIAL_GATE",
+              "ABSENT_CERTIFIED_WITHIN_SEARCH_CONTRACT",
+              "MULTIPLE_MATERIALIZATIONS_AMBIGUOUS",
+              "NO_MATERIALIZABLE_WITNESS"
+            ]
+          },
+          "target_path": {
+            "type": "string"
+          },
+          "terminal_id": {
+            "type": "string"
+          },
+          "witness_kind": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "terminal_id",
+          "target_path",
+          "witness_kind",
+          "status",
+          "search_contract",
+          "reinjectable"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "contract",
+    "enabled",
+    "terminal_count",
+    "terminals",
+    "summary",
+    "certificate_sha256"
+  ],
+  "title": "JSON Consistency Repair witness materialization v1",
+  "type": "object"
+}

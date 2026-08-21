@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "json-consistency-repair.typed-constraint-ir.v2",
+  "type": "object",
+  "required": ["ir_contract", "truth_summary", "identifiability_summary"],
+  "properties": {
+    "ir_contract": {"const": "json-consistency-repair.typed-constraint-ir.v2"},
+    "mode": {"enum": ["bundle", "streaming"]},
+    "materialization_scope": {"enum": ["FULL", "BOUNDED_STREAM"]},
+    "root_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "terminal_registry": {"type": "array"},
+    "identifiability_registry": {"type": "array"},
+    "cross_document_identifiability_registry": {"type": "array"},
+    "identifiability_summary": {
+      "type": "object",
+      "required": ["UNIQUE", "MULTIPLE", "NONE", "INSUFFICIENT"],
+      "properties": {
+        "UNIQUE": {"type":"integer","minimum":0},
+        "MULTIPLE": {"type":"integer","minimum":0},
+        "NONE": {"type":"integer","minimum":0},
+        "INSUFFICIENT": {"type":"integer","minimum":0}
+      }
+    },
+    "truth_summary": {
+      "type": "object",
+      "required": ["TRUE", "FALSE", "UNKNOWN"],
+      "properties": {
+        "TRUE": {"type":"integer","minimum":0},
+        "FALSE": {"type":"integer","minimum":0},
+        "UNKNOWN": {"type":"integer","minimum":0}
+      }
+    },
+    "unresolved_terminal_ids": {"type":"array","items":{"type":"string"}}
+  }
+}

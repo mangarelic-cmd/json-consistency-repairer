@@ -1,0 +1,23 @@
+{
+  "rules": [
+    {
+      "kind": "weighted_mean",
+      "array_path": "/rows",
+      "items_field": "items",
+      "value_field": "value",
+      "weight_field": "weight",
+      "target": "weighted_mean"
+    },
+    {
+      "kind": "unit_normalize",
+      "array_path": "/measurements",
+      "value_field": "value",
+      "unit_field": "unit",
+      "canonical_unit": "m",
+      "conversions": {
+        "cm": "0.01",
+        "mm": "0.001"
+      }
+    }
+  ]
+}

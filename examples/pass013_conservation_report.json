@@ -1,0 +1,2060 @@
+{
+  "engine": "json-consistency-repair",
+  "version": "0.13.0",
+  "report_contract": {
+    "name": "json-consistency-repair.report.v1",
+    "schema_version": "1.0",
+    "status": "PASS",
+    "status_exit_code": 0
+  },
+  "provenance": {
+    "package": "json-consistency-repair",
+    "version": "0.13.0",
+    "package_code_sha256": "2940fbd122d872a5031914e44b1e61277eba94ea48c98529f2b3548ae3ba755c",
+    "git_commit": null,
+    "zenodo_doi": null,
+    "artifact_binding": "see RELEASE_PROVENANCE.json distributed with a tagged release"
+  },
+  "input_digest": "f9d6fb9485229e418ce887e486d6776bb326436d4e7aceadad67b1bfac7ef787",
+  "security": {
+    "limits": {
+      "max_depth": 96,
+      "max_nodes": 1000000,
+      "max_string_bytes": 8388608,
+      "max_key_bytes": 16384,
+      "max_number_chars": 4096,
+      "max_object_keys": 100000,
+      "max_array_items": 1000000,
+      "max_document_bytes": 67108864,
+      "max_bundle_documents": 2048,
+      "max_bundle_bytes": 536870912,
+      "max_record_bytes": 8388608,
+      "max_record_nodes": 250000
+    },
+    "input_validation": {
+      "nodes": 32,
+      "peak_depth": 3,
+      "peak_string_bytes": 8
+    },
+    "atomic_publication": true
+  },
+  "output_digest": "7d98886de67f50b456682851bf0bbd8aef727f9d86f5a1a4471d23fafbf55764",
+  "cycles": [
+    {
+      "cycle": 1,
+      "accepted": [
+        {
+          "candidate": {
+            "candidate_id": "f9cb2c8712ac9c51",
+            "analyzer": "conservation",
+            "operation": "replace",
+            "path": "/rows/5/closing",
+            "old_value": 999,
+            "new_value": 155,
+            "reason": "Restore authoritative exact conservation law.",
+            "confidence": 1.0,
+            "cost": 1,
+            "evidence": [
+              "CONSERVATION:conservation_8d8f20ab2bd1ea996f91"
+            ],
+            "metadata": {
+              "conservation_rule_id": "conservation_8d8f20ab2bd1ea996f91",
+              "relation_id": "34d056a4ed0bf9c0e9f9",
+              "relation_kind": "balance_authoritative",
+              "conservation_source": "authoritative",
+              "residue": "-844",
+              "direction_certified": true,
+              "direction_source": "authoritative_rule",
+              "add_if_missing": false
+            }
+          },
+          "score_before": 3,
+          "score_after": 0,
+          "families": [
+            "conservation"
+          ],
+          "acceptance": "minimal_transfer_exact",
+          "solver_status": "UNIQUE_EXACT_MINIMUM"
+        }
+      ],
+      "rejected": [],
+      "minimal_transfer": {
+        "solver_contract": "json-consistency-repair.minimal-transfer.v1",
+        "status": "UNIQUE_EXACT_MINIMUM",
+        "baseline_objective": [
+          0,
+          3,
+          1,
+          1
+        ],
+        "objective_order": [
+          "hard_errors",
+          "severity_score",
+          "repairable_terminals",
+          "surviving_preexisting_terminals"
+        ],
+        "metric_order": [
+          "cost",
+          "changed_paths",
+          "canonical_new_value_bytes",
+          "path_depth_sum"
+        ],
+        "exact_metric": true,
+        "max_patch_size": 4,
+        "max_exact_options_per_cluster": 8,
+        "partition_rule": "parent_json_container",
+        "admissible_option_count": 1,
+        "rejected_options": [],
+        "clusters": [
+          {
+            "scope": "/rows/5",
+            "status": "UNIQUE_EXACT_MINIMUM",
+            "option_count": 1,
+            "evaluated_improving_subsets": 1,
+            "best_objective": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "best_metric": {
+              "cost": {
+                "numerator": 1,
+                "denominator": 1
+              },
+              "changed_paths": 1,
+              "canonical_new_value_bytes": 3,
+              "path_depth_sum": 3
+            },
+            "patches": [
+              {
+                "path": "/rows/5/closing",
+                "candidate_id": "f9cb2c8712ac9c51",
+                "candidate_ids": [
+                  "f9cb2c8712ac9c51"
+                ],
+                "families": [
+                  "conservation"
+                ]
+              }
+            ]
+          }
+        ],
+        "union_objective": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "union_metric": {
+          "cost": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "changed_paths": 1,
+          "canonical_new_value_bytes": 3,
+          "path_depth_sum": 3
+        },
+        "selected_patch_count": 1,
+        "selected_candidate_ids": [
+          "f9cb2c8712ac9c51"
+        ]
+      },
+      "issue_count": 0,
+      "score": 0,
+      "digest": "7d98886de67f50b456682851bf0bbd8aef727f9d86f5a1a4471d23fafbf55764",
+      "structural_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "stable_streak": 0,
+      "relation_count": 15,
+      "new_relations": [
+        "0e99920a6ff0f8636be4",
+        "15ddc20af3ddb677edc6",
+        "2e565e9c703f1d064fd6",
+        "34d056a4ed0bf9c0e9f9",
+        "3af575b19d68a7fb078e",
+        "5ab51576282b49f63799",
+        "632c6d10e29144adec16",
+        "74b0a1205ef6aabe9a99",
+        "86ed2d7695fb4ac8de4b",
+        "a837fdb374d323a71885",
+        "c23af77e1863aa7481ab",
+        "c56b9363b180ece8c3b4",
+        "cde68f282b1dd8860cc8",
+        "ead8786e9c3fa6b070be",
+        "f7267060ba1cd839db35"
+      ]
+    },
+    {
+      "cycle": 2,
+      "accepted": [],
+      "rejected": [],
+      "minimal_transfer": {
+        "solver_contract": "json-consistency-repair.minimal-transfer.v1",
+        "status": "NO_ADMISSIBLE_CANDIDATES",
+        "baseline_objective": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "metric_order": [
+          "cost",
+          "changed_paths",
+          "canonical_new_value_bytes",
+          "path_depth_sum"
+        ],
+        "rejected_options": [],
+        "clusters": []
+      },
+      "issue_count": 0,
+      "score": 0,
+      "digest": "7d98886de67f50b456682851bf0bbd8aef727f9d86f5a1a4471d23fafbf55764",
+      "structural_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "stable_streak": 1,
+      "relation_count": 15,
+      "new_relations": []
+    },
+    {
+      "cycle": 3,
+      "accepted": [],
+      "rejected": [],
+      "minimal_transfer": {
+        "solver_contract": "json-consistency-repair.minimal-transfer.v1",
+        "status": "NO_ADMISSIBLE_CANDIDATES",
+        "baseline_objective": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "metric_order": [
+          "cost",
+          "changed_paths",
+          "canonical_new_value_bytes",
+          "path_depth_sum"
+        ],
+        "rejected_options": [],
+        "clusters": []
+      },
+      "issue_count": 0,
+      "score": 0,
+      "digest": "7d98886de67f50b456682851bf0bbd8aef727f9d86f5a1a4471d23fafbf55764",
+      "structural_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "stable_streak": 2,
+      "relation_count": 15,
+      "new_relations": []
+    }
+  ],
+  "committed_edits": [
+    {
+      "candidate_id": "f9cb2c8712ac9c51",
+      "analyzer": "conservation",
+      "operation": "replace",
+      "path": "/rows/5/closing",
+      "old_value": 999,
+      "new_value": 155,
+      "reason": "Restore authoritative exact conservation law.",
+      "confidence": 1.0,
+      "cost": 1,
+      "evidence": [
+        "CONSERVATION:conservation_8d8f20ab2bd1ea996f91"
+      ],
+      "metadata": {
+        "conservation_rule_id": "conservation_8d8f20ab2bd1ea996f91",
+        "relation_id": "34d056a4ed0bf9c0e9f9",
+        "relation_kind": "balance_authoritative",
+        "conservation_source": "authoritative",
+        "residue": "-844",
+        "direction_certified": true,
+        "direction_source": "authoritative_rule",
+        "add_if_missing": false
+      }
+    }
+  ],
+  "remaining_issues": [],
+  "relations": [
+    {
+      "kind": "dominant_shape",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "__shape__",
+      "confidence": 1.0,
+      "support": 6,
+      "keys": [
+        "closing",
+        "opening",
+        "received",
+        "sold"
+      ],
+      "relation_id": "cde68f282b1dd8860cc8"
+    },
+    {
+      "kind": "required_key",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "closing",
+      "confidence": 1.0,
+      "support": 6,
+      "schema_key": "closing",
+      "relation_id": "15ddc20af3ddb677edc6"
+    },
+    {
+      "kind": "required_key",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "opening",
+      "confidence": 1.0,
+      "support": 6,
+      "schema_key": "opening",
+      "relation_id": "c23af77e1863aa7481ab"
+    },
+    {
+      "kind": "required_key",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "received",
+      "confidence": 1.0,
+      "support": 6,
+      "schema_key": "received",
+      "relation_id": "0e99920a6ff0f8636be4"
+    },
+    {
+      "kind": "required_key",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "sold",
+      "confidence": 1.0,
+      "support": 6,
+      "schema_key": "sold",
+      "relation_id": "74b0a1205ef6aabe9a99"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "opening",
+      "confidence": 1.0,
+      "support": 6,
+      "dominant_type": "int",
+      "relation_id": "3af575b19d68a7fb078e"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "received",
+      "confidence": 1.0,
+      "support": 6,
+      "dominant_type": "int",
+      "relation_id": "2e565e9c703f1d064fd6"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "sold",
+      "confidence": 1.0,
+      "support": 6,
+      "dominant_type": "int",
+      "relation_id": "a837fdb374d323a71885"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "closing",
+      "confidence": 1.0,
+      "support": 6,
+      "dominant_type": "int",
+      "relation_id": "86ed2d7695fb4ac8de4b"
+    },
+    {
+      "kind": "functional",
+      "array_path": "/rows",
+      "inputs": [
+        "received"
+      ],
+      "output": "sold",
+      "confidence": 1.0,
+      "support": 6,
+      "determinant": "received",
+      "groups": 1,
+      "relation_id": "632c6d10e29144adec16"
+    },
+    {
+      "kind": "functional",
+      "array_path": "/rows",
+      "inputs": [
+        "sold"
+      ],
+      "output": "received",
+      "confidence": 1.0,
+      "support": 6,
+      "determinant": "sold",
+      "groups": 1,
+      "relation_id": "f7267060ba1cd839db35"
+    },
+    {
+      "kind": "balance_authoritative",
+      "array_path": "/rows",
+      "inputs": [
+        "opening",
+        "received",
+        "sold",
+        "closing"
+      ],
+      "output": "closing",
+      "confidence": 1.0,
+      "support": 6,
+      "conservation_rule_id": "conservation_8d8f20ab2bd1ea996f91",
+      "conservation_source": "authoritative",
+      "bridge_kind": "conservation",
+      "rule": {
+        "kind": "balance",
+        "array_path": "/rows",
+        "terms": [
+          {
+            "field": "opening",
+            "coefficient": 1
+          },
+          {
+            "field": "received",
+            "coefficient": 1
+          },
+          {
+            "field": "sold",
+            "coefficient": -1
+          },
+          {
+            "field": "closing",
+            "coefficient": -1
+          }
+        ],
+        "target": "closing",
+        "rule_id": "conservation_8d8f20ab2bd1ea996f91"
+      },
+      "direction_certified": true,
+      "direction_source": "authoritative_rule",
+      "relation_id": "34d056a4ed0bf9c0e9f9"
+    },
+    {
+      "kind": "scalar_conservation_balance",
+      "array_path": "/rows",
+      "inputs": [
+        "closing",
+        "sold",
+        "opening",
+        "received"
+      ],
+      "output": null,
+      "confidence": 1.0,
+      "support": 6,
+      "formula": "closing+sold=opening+received",
+      "bridge_kind": "same_level_balance",
+      "direction_certified": false,
+      "direction_source": "symmetric_conservation",
+      "relation_id": "5ab51576282b49f63799"
+    },
+    {
+      "kind": "sequence_step",
+      "array_path": "/rows",
+      "inputs": [
+        "closing"
+      ],
+      "output": "closing",
+      "confidence": 1.0,
+      "support": 5,
+      "step": 10,
+      "relation_id": "c56b9363b180ece8c3b4"
+    },
+    {
+      "kind": "sequence_step",
+      "array_path": "/rows",
+      "inputs": [
+        "opening"
+      ],
+      "output": "opening",
+      "confidence": 1.0,
+      "support": 5,
+      "step": 10,
+      "relation_id": "ead8786e9c3fa6b070be"
+    }
+  ],
+  "constraint_graph": {
+    "nodes": [
+      {
+        "id": "/rows#__logic__",
+        "array_path": "/rows",
+        "field": "__logic__"
+      },
+      {
+        "id": "/rows#__shape__",
+        "array_path": "/rows",
+        "field": "__shape__"
+      },
+      {
+        "id": "/rows#closing",
+        "array_path": "/rows",
+        "field": "closing"
+      },
+      {
+        "id": "/rows#opening",
+        "array_path": "/rows",
+        "field": "opening"
+      },
+      {
+        "id": "/rows#received",
+        "array_path": "/rows",
+        "field": "received"
+      },
+      {
+        "id": "/rows#sold",
+        "array_path": "/rows",
+        "field": "sold"
+      }
+    ],
+    "edges": [
+      {
+        "relation_id": "0e99920a6ff0f8636be4",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "/rows#received",
+        "confidence": 1.0,
+        "support": 6
+      },
+      {
+        "relation_id": "15ddc20af3ddb677edc6",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "/rows#closing",
+        "confidence": 1.0,
+        "support": 6
+      },
+      {
+        "relation_id": "2e565e9c703f1d064fd6",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/rows#received",
+        "confidence": 1.0,
+        "support": 6
+      },
+      {
+        "relation_id": "34d056a4ed0bf9c0e9f9",
+        "kind": "balance_authoritative",
+        "inputs": [
+          "/rows#opening",
+          "/rows#received",
+          "/rows#sold",
+          "/rows#closing"
+        ],
+        "output": "/rows#closing",
+        "confidence": 1.0,
+        "support": 6
+      },
+      {
+        "relation_id": "3af575b19d68a7fb078e",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/rows#opening",
+        "confidence": 1.0,
+        "support": 6
+      },
+      {
+        "relation_id": "5ab51576282b49f63799",
+        "kind": "scalar_conservation_balance",
+        "inputs": [
+          "/rows#closing",
+          "/rows#sold",
+          "/rows#opening",
+          "/rows#received"
+        ],
+        "output": "/rows#__logic__",
+        "confidence": 1.0,
+        "support": 6
+      },
+      {
+        "relation_id": "632c6d10e29144adec16",
+        "kind": "functional",
+        "inputs": [
+          "/rows#received"
+        ],
+        "output": "/rows#sold",
+        "confidence": 1.0,
+        "support": 6
+      },
+      {
+        "relation_id": "74b0a1205ef6aabe9a99",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "/rows#sold",
+        "confidence": 1.0,
+        "support": 6
+      },
+      {
+        "relation_id": "86ed2d7695fb4ac8de4b",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/rows#closing",
+        "confidence": 1.0,
+        "support": 6
+      },
+      {
+        "relation_id": "a837fdb374d323a71885",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/rows#sold",
+        "confidence": 1.0,
+        "support": 6
+      },
+      {
+        "relation_id": "c23af77e1863aa7481ab",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "/rows#opening",
+        "confidence": 1.0,
+        "support": 6
+      },
+      {
+        "relation_id": "c56b9363b180ece8c3b4",
+        "kind": "sequence_step",
+        "inputs": [
+          "/rows#closing"
+        ],
+        "output": "/rows#closing",
+        "confidence": 1.0,
+        "support": 5
+      },
+      {
+        "relation_id": "cde68f282b1dd8860cc8",
+        "kind": "dominant_shape",
+        "inputs": [],
+        "output": "/rows#__shape__",
+        "confidence": 1.0,
+        "support": 6
+      },
+      {
+        "relation_id": "ead8786e9c3fa6b070be",
+        "kind": "sequence_step",
+        "inputs": [
+          "/rows#opening"
+        ],
+        "output": "/rows#opening",
+        "confidence": 1.0,
+        "support": 5
+      },
+      {
+        "relation_id": "f7267060ba1cd839db35",
+        "kind": "functional",
+        "inputs": [
+          "/rows#sold"
+        ],
+        "output": "/rows#received",
+        "confidence": 1.0,
+        "support": 6
+      }
+    ]
+  },
+  "typed_constraint_ir": {
+    "ir_contract": "json-consistency-repair.typed-constraint-ir.v2",
+    "root_digest": "7d98886de67f50b456682851bf0bbd8aef727f9d86f5a1a4471d23fafbf55764",
+    "object_node_count": 32,
+    "constraint_count": 15,
+    "terminal_count": 0,
+    "candidate_count": 0,
+    "object_nodes": [
+      {
+        "node_id": "node_ea666995ef5d07e5ecbc84ff",
+        "path": "",
+        "json_type": "object",
+        "value_digest": "7d98886de67f50b456682851bf0bbd8aef727f9d86f5a1a4471d23fafbf55764",
+        "size": 1,
+        "keys": [
+          "rows"
+        ]
+      },
+      {
+        "node_id": "node_241d260023346594528ebace",
+        "path": "/rows",
+        "json_type": "array",
+        "value_digest": "b39f5dfa738f5e5c38a1dd37410654c2d65622dc7fa335621ec3a8643d01aaa3",
+        "size": 6
+      },
+      {
+        "node_id": "node_d1eac135f6a86a9ef7f0fd7c",
+        "path": "/rows/0",
+        "json_type": "object",
+        "value_digest": "1c96403ee11c03aac681d748e6c7bd2ff1eb192656ed69784c9ca1dd34d846b8",
+        "size": 4,
+        "keys": [
+          "closing",
+          "opening",
+          "received",
+          "sold"
+        ]
+      },
+      {
+        "node_id": "node_cb3d0806771b97c0525e9aa5",
+        "path": "/rows/0/closing",
+        "json_type": "integer",
+        "value_digest": "1253e9373e781b7500266caa55150e08e210bc8cd8cc70d89985e3600155e860"
+      },
+      {
+        "node_id": "node_b778351f68c353f41a73e58c",
+        "path": "/rows/0/opening",
+        "json_type": "integer",
+        "value_digest": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306"
+      },
+      {
+        "node_id": "node_ebd5e414b757b0282ff24d50",
+        "path": "/rows/0/received",
+        "json_type": "integer",
+        "value_digest": "f5ca38f748a1d6eaf726b8a42fb575c3c71f1864a8143301782de13da2d9202b"
+      },
+      {
+        "node_id": "node_80796296b3659c61d0c67801",
+        "path": "/rows/0/sold",
+        "json_type": "integer",
+        "value_digest": "e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb"
+      },
+      {
+        "node_id": "node_64fc1d9517e8b3f509e8169b",
+        "path": "/rows/1",
+        "json_type": "object",
+        "value_digest": "af4f8d8a0ac33c4960bb05e4de09f3a7b111db84a0c7d47d92d8848593a72b77",
+        "size": 4,
+        "keys": [
+          "closing",
+          "opening",
+          "received",
+          "sold"
+        ]
+      },
+      {
+        "node_id": "node_e858bb44ca0b46adaf7fcf0d",
+        "path": "/rows/1/closing",
+        "json_type": "integer",
+        "value_digest": "28dae7c8bde2f3ca608f86d0e16a214dee74c74bee011cdfdd46bc04b655bc14"
+      },
+      {
+        "node_id": "node_ec66defdd0fa4fb47323c2d5",
+        "path": "/rows/1/opening",
+        "json_type": "integer",
+        "value_digest": "9bdb2af6799204a299c603994b8e400e4b1fd625efdb74066cc869fee42c9df3"
+      },
+      {
+        "node_id": "node_ac85ac5e4a5fb371d9b15aa8",
+        "path": "/rows/1/received",
+        "json_type": "integer",
+        "value_digest": "f5ca38f748a1d6eaf726b8a42fb575c3c71f1864a8143301782de13da2d9202b"
+      },
+      {
+        "node_id": "node_d26635ddd2c8e3096b8f2231",
+        "path": "/rows/1/sold",
+        "json_type": "integer",
+        "value_digest": "e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb"
+      },
+      {
+        "node_id": "node_2d12d187011f6e815ce7c977",
+        "path": "/rows/2",
+        "json_type": "object",
+        "value_digest": "fc103ec9ec730f803a06e6553b03d70a2e0348671c958eb81dc1a16d7f4bfffc",
+        "size": 4,
+        "keys": [
+          "closing",
+          "opening",
+          "received",
+          "sold"
+        ]
+      },
+      {
+        "node_id": "node_8d167ebf7e0eb22867d7ab71",
+        "path": "/rows/2/closing",
+        "json_type": "integer",
+        "value_digest": "0f8ef3377b30fc47f96b48247f463a726a802f62f3faa03d56403751d2f66c67"
+      },
+      {
+        "node_id": "node_08f84bdbaf9f27421bec51e1",
+        "path": "/rows/2/opening",
+        "json_type": "integer",
+        "value_digest": "2abaca4911e68fa9bfbf3482ee797fd5b9045b841fdff7253557c5fe15de6477"
+      },
+      {
+        "node_id": "node_32361e7f718c7ad9be0cca11",
+        "path": "/rows/2/received",
+        "json_type": "integer",
+        "value_digest": "f5ca38f748a1d6eaf726b8a42fb575c3c71f1864a8143301782de13da2d9202b"
+      },
+      {
+        "node_id": "node_87173bf286fef1d15d294b98",
+        "path": "/rows/2/sold",
+        "json_type": "integer",
+        "value_digest": "e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb"
+      },
+      {
+        "node_id": "node_37ef9928b9640dad3b79be02",
+        "path": "/rows/3",
+        "json_type": "object",
+        "value_digest": "b87bf69605a238d7871b130101960818eab31f3ded8f7f40b788aa8aebbe3efe",
+        "size": 4,
+        "keys": [
+          "closing",
+          "opening",
+          "received",
+          "sold"
+        ]
+      },
+      {
+        "node_id": "node_391133adfef61e257295ddba",
+        "path": "/rows/3/closing",
+        "json_type": "integer",
+        "value_digest": "13671077b66a29874a2578b5240319092ef2a1043228e433e9b006b5e53e7513"
+      },
+      {
+        "node_id": "node_639b01c97502149e3ba6e874",
+        "path": "/rows/3/opening",
+        "json_type": "integer",
+        "value_digest": "38d66d9692ac590000a91b03a88da1c88d51fab2b78f63171f553ecc551a0c6f"
+      },
+      {
+        "node_id": "node_a29f5a48592386aa8ec74d2f",
+        "path": "/rows/3/received",
+        "json_type": "integer",
+        "value_digest": "f5ca38f748a1d6eaf726b8a42fb575c3c71f1864a8143301782de13da2d9202b"
+      },
+      {
+        "node_id": "node_4d2c6551773c1ae09c3cc71b",
+        "path": "/rows/3/sold",
+        "json_type": "integer",
+        "value_digest": "e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb"
+      },
+      {
+        "node_id": "node_75711fd898548f748775b810",
+        "path": "/rows/4",
+        "json_type": "object",
+        "value_digest": "cd7e2fb769dfbc89862ccdd6271f7a2b6b0843bc17f6f3fb2ac2a10cc9cf0420",
+        "size": 4,
+        "keys": [
+          "closing",
+          "opening",
+          "received",
+          "sold"
+        ]
+      },
+      {
+        "node_id": "node_22c508ea444751ff13a8e5e0",
+        "path": "/rows/4/closing",
+        "json_type": "integer",
+        "value_digest": "be47addbcb8f60566a3d7fd5a36f8195798e2848b368195d9a5d20e007c59a0c"
+      },
+      {
+        "node_id": "node_fbaee52bfb3589722f816237",
+        "path": "/rows/4/opening",
+        "json_type": "integer",
+        "value_digest": "dbae772db29058a88f9bd830e957c695347c41b6162a7eb9a9ea13def34be56b"
+      },
+      {
+        "node_id": "node_0fa1a24a5e801159d5816d9c",
+        "path": "/rows/4/received",
+        "json_type": "integer",
+        "value_digest": "f5ca38f748a1d6eaf726b8a42fb575c3c71f1864a8143301782de13da2d9202b"
+      },
+      {
+        "node_id": "node_2b25fb89c6a4c5b47b96ba06",
+        "path": "/rows/4/sold",
+        "json_type": "integer",
+        "value_digest": "e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb"
+      },
+      {
+        "node_id": "node_08767bbe0a45ecbe92835d6c",
+        "path": "/rows/5",
+        "json_type": "object",
+        "value_digest": "45310fa88d994904431411a3fa07b2be5a59bd243560f99406e737a9d4776ca7",
+        "size": 4,
+        "keys": [
+          "closing",
+          "opening",
+          "received",
+          "sold"
+        ]
+      },
+      {
+        "node_id": "node_f7a5a3c508ae6be54ddc0ecd",
+        "path": "/rows/5/closing",
+        "json_type": "integer",
+        "value_digest": "210e3b160c355818509425b9d9e9fd3ea2e287f2c43a13e5be8817140db0b9e6"
+      },
+      {
+        "node_id": "node_b70619a0c4d8b9796dd9d37b",
+        "path": "/rows/5/opening",
+        "json_type": "integer",
+        "value_digest": "9ae2bdd7beedc2e766c6b76585530e16925115707dc7a06ab5ee4aa2776b2c7b"
+      },
+      {
+        "node_id": "node_d54622fcb2bf2f6bf7f3db1a",
+        "path": "/rows/5/received",
+        "json_type": "integer",
+        "value_digest": "f5ca38f748a1d6eaf726b8a42fb575c3c71f1864a8143301782de13da2d9202b"
+      },
+      {
+        "node_id": "node_ffa67cb447837213ecd8b8a1",
+        "path": "/rows/5/sold",
+        "json_type": "integer",
+        "value_digest": "e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb"
+      }
+    ],
+    "constraints": [
+      {
+        "constraint_id": "0e99920a6ff0f8636be4",
+        "kind": "required_key",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "received",
+        "confidence": 1.0,
+        "support": 6,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "received",
+          "confidence": 1.0,
+          "support": 6,
+          "schema_key": "received",
+          "relation_id": "0e99920a6ff0f8636be4"
+        }
+      },
+      {
+        "constraint_id": "15ddc20af3ddb677edc6",
+        "kind": "required_key",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "closing",
+        "confidence": 1.0,
+        "support": 6,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "closing",
+          "confidence": 1.0,
+          "support": 6,
+          "schema_key": "closing",
+          "relation_id": "15ddc20af3ddb677edc6"
+        }
+      },
+      {
+        "constraint_id": "2e565e9c703f1d064fd6",
+        "kind": "type_consensus",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "received",
+        "confidence": 1.0,
+        "support": 6,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "received",
+          "confidence": 1.0,
+          "support": 6,
+          "dominant_type": "int",
+          "relation_id": "2e565e9c703f1d064fd6"
+        }
+      },
+      {
+        "constraint_id": "34d056a4ed0bf9c0e9f9",
+        "kind": "balance_authoritative",
+        "scope": "/rows",
+        "inputs": [
+          "opening",
+          "received",
+          "sold",
+          "closing"
+        ],
+        "output": "closing",
+        "confidence": 1.0,
+        "support": 6,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "balance_authoritative",
+          "array_path": "/rows",
+          "inputs": [
+            "opening",
+            "received",
+            "sold",
+            "closing"
+          ],
+          "output": "closing",
+          "confidence": 1.0,
+          "support": 6,
+          "conservation_rule_id": "conservation_8d8f20ab2bd1ea996f91",
+          "conservation_source": "authoritative",
+          "bridge_kind": "conservation",
+          "rule": {
+            "kind": "balance",
+            "array_path": "/rows",
+            "terms": [
+              {
+                "field": "opening",
+                "coefficient": 1
+              },
+              {
+                "field": "received",
+                "coefficient": 1
+              },
+              {
+                "field": "sold",
+                "coefficient": -1
+              },
+              {
+                "field": "closing",
+                "coefficient": -1
+              }
+            ],
+            "target": "closing",
+            "rule_id": "conservation_8d8f20ab2bd1ea996f91"
+          },
+          "direction_certified": true,
+          "direction_source": "authoritative_rule",
+          "relation_id": "34d056a4ed0bf9c0e9f9"
+        }
+      },
+      {
+        "constraint_id": "3af575b19d68a7fb078e",
+        "kind": "type_consensus",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "opening",
+        "confidence": 1.0,
+        "support": 6,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "opening",
+          "confidence": 1.0,
+          "support": 6,
+          "dominant_type": "int",
+          "relation_id": "3af575b19d68a7fb078e"
+        }
+      },
+      {
+        "constraint_id": "5ab51576282b49f63799",
+        "kind": "scalar_conservation_balance",
+        "scope": "/rows",
+        "inputs": [
+          "closing",
+          "sold",
+          "opening",
+          "received"
+        ],
+        "output": null,
+        "confidence": 1.0,
+        "support": 6,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "scalar_conservation_balance",
+          "array_path": "/rows",
+          "inputs": [
+            "closing",
+            "sold",
+            "opening",
+            "received"
+          ],
+          "output": null,
+          "confidence": 1.0,
+          "support": 6,
+          "formula": "closing+sold=opening+received",
+          "bridge_kind": "same_level_balance",
+          "direction_certified": false,
+          "direction_source": "symmetric_conservation",
+          "relation_id": "5ab51576282b49f63799"
+        }
+      },
+      {
+        "constraint_id": "632c6d10e29144adec16",
+        "kind": "functional",
+        "scope": "/rows",
+        "inputs": [
+          "received"
+        ],
+        "output": "sold",
+        "confidence": 1.0,
+        "support": 6,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "functional",
+          "array_path": "/rows",
+          "inputs": [
+            "received"
+          ],
+          "output": "sold",
+          "confidence": 1.0,
+          "support": 6,
+          "determinant": "received",
+          "groups": 1,
+          "relation_id": "632c6d10e29144adec16"
+        }
+      },
+      {
+        "constraint_id": "74b0a1205ef6aabe9a99",
+        "kind": "required_key",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "sold",
+        "confidence": 1.0,
+        "support": 6,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "sold",
+          "confidence": 1.0,
+          "support": 6,
+          "schema_key": "sold",
+          "relation_id": "74b0a1205ef6aabe9a99"
+        }
+      },
+      {
+        "constraint_id": "86ed2d7695fb4ac8de4b",
+        "kind": "type_consensus",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "closing",
+        "confidence": 1.0,
+        "support": 6,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "closing",
+          "confidence": 1.0,
+          "support": 6,
+          "dominant_type": "int",
+          "relation_id": "86ed2d7695fb4ac8de4b"
+        }
+      },
+      {
+        "constraint_id": "a837fdb374d323a71885",
+        "kind": "type_consensus",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "sold",
+        "confidence": 1.0,
+        "support": 6,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "sold",
+          "confidence": 1.0,
+          "support": 6,
+          "dominant_type": "int",
+          "relation_id": "a837fdb374d323a71885"
+        }
+      },
+      {
+        "constraint_id": "c23af77e1863aa7481ab",
+        "kind": "required_key",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "opening",
+        "confidence": 1.0,
+        "support": 6,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "opening",
+          "confidence": 1.0,
+          "support": 6,
+          "schema_key": "opening",
+          "relation_id": "c23af77e1863aa7481ab"
+        }
+      },
+      {
+        "constraint_id": "c56b9363b180ece8c3b4",
+        "kind": "sequence_step",
+        "scope": "/rows",
+        "inputs": [
+          "closing"
+        ],
+        "output": "closing",
+        "confidence": 1.0,
+        "support": 5,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "sequence_step",
+          "array_path": "/rows",
+          "inputs": [
+            "closing"
+          ],
+          "output": "closing",
+          "confidence": 1.0,
+          "support": 5,
+          "step": 10,
+          "relation_id": "c56b9363b180ece8c3b4"
+        }
+      },
+      {
+        "constraint_id": "cde68f282b1dd8860cc8",
+        "kind": "dominant_shape",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "__shape__",
+        "confidence": 1.0,
+        "support": 6,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "dominant_shape",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "__shape__",
+          "confidence": 1.0,
+          "support": 6,
+          "keys": [
+            "closing",
+            "opening",
+            "received",
+            "sold"
+          ],
+          "relation_id": "cde68f282b1dd8860cc8"
+        }
+      },
+      {
+        "constraint_id": "ead8786e9c3fa6b070be",
+        "kind": "sequence_step",
+        "scope": "/rows",
+        "inputs": [
+          "opening"
+        ],
+        "output": "opening",
+        "confidence": 1.0,
+        "support": 5,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "sequence_step",
+          "array_path": "/rows",
+          "inputs": [
+            "opening"
+          ],
+          "output": "opening",
+          "confidence": 1.0,
+          "support": 5,
+          "step": 10,
+          "relation_id": "ead8786e9c3fa6b070be"
+        }
+      },
+      {
+        "constraint_id": "f7267060ba1cd839db35",
+        "kind": "functional",
+        "scope": "/rows",
+        "inputs": [
+          "sold"
+        ],
+        "output": "received",
+        "confidence": 1.0,
+        "support": 6,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "functional",
+          "array_path": "/rows",
+          "inputs": [
+            "sold"
+          ],
+          "output": "received",
+          "confidence": 1.0,
+          "support": 6,
+          "determinant": "sold",
+          "groups": 1,
+          "relation_id": "f7267060ba1cd839db35"
+        }
+      }
+    ],
+    "terminal_registry": [],
+    "candidates": [],
+    "identifiability_registry": [],
+    "identifiability_summary": {
+      "UNIQUE": 0,
+      "MULTIPLE": 0,
+      "NONE": 0,
+      "INSUFFICIENT": 0
+    },
+    "unresolved_terminal_ids": [],
+    "truth_summary": {
+      "TRUE": 30,
+      "FALSE": 0,
+      "UNKNOWN": 0
+    }
+  },
+  "terminal_registry": [],
+  "truth_summary": {
+    "TRUE": 30,
+    "FALSE": 0,
+    "UNKNOWN": 0
+  },
+  "identifiability_registry": [],
+  "identifiability_summary": {
+    "UNIQUE": 0,
+    "MULTIPLE": 0,
+    "NONE": 0,
+    "INSUFFICIENT": 0
+  },
+  "knowledge_ledger": {
+    "relations": {
+      "cde68f282b1dd8860cc8": {
+        "relation": {
+          "kind": "dominant_shape",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "__shape__",
+          "confidence": 1.0,
+          "support": 6,
+          "keys": [
+            "closing",
+            "opening",
+            "received",
+            "sold"
+          ],
+          "relation_id": "cde68f282b1dd8860cc8"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "15ddc20af3ddb677edc6": {
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "closing",
+          "confidence": 1.0,
+          "support": 6,
+          "schema_key": "closing",
+          "relation_id": "15ddc20af3ddb677edc6"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "c23af77e1863aa7481ab": {
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "opening",
+          "confidence": 1.0,
+          "support": 6,
+          "schema_key": "opening",
+          "relation_id": "c23af77e1863aa7481ab"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "0e99920a6ff0f8636be4": {
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "received",
+          "confidence": 1.0,
+          "support": 6,
+          "schema_key": "received",
+          "relation_id": "0e99920a6ff0f8636be4"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "74b0a1205ef6aabe9a99": {
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "sold",
+          "confidence": 1.0,
+          "support": 6,
+          "schema_key": "sold",
+          "relation_id": "74b0a1205ef6aabe9a99"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "3af575b19d68a7fb078e": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "opening",
+          "confidence": 1.0,
+          "support": 6,
+          "dominant_type": "int",
+          "relation_id": "3af575b19d68a7fb078e"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "2e565e9c703f1d064fd6": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "received",
+          "confidence": 1.0,
+          "support": 6,
+          "dominant_type": "int",
+          "relation_id": "2e565e9c703f1d064fd6"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "a837fdb374d323a71885": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "sold",
+          "confidence": 1.0,
+          "support": 6,
+          "dominant_type": "int",
+          "relation_id": "a837fdb374d323a71885"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "86ed2d7695fb4ac8de4b": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "closing",
+          "confidence": 1.0,
+          "support": 6,
+          "dominant_type": "int",
+          "relation_id": "86ed2d7695fb4ac8de4b"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "632c6d10e29144adec16": {
+        "relation": {
+          "kind": "functional",
+          "array_path": "/rows",
+          "inputs": [
+            "received"
+          ],
+          "output": "sold",
+          "confidence": 1.0,
+          "support": 6,
+          "determinant": "received",
+          "groups": 1,
+          "relation_id": "632c6d10e29144adec16"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "f7267060ba1cd839db35": {
+        "relation": {
+          "kind": "functional",
+          "array_path": "/rows",
+          "inputs": [
+            "sold"
+          ],
+          "output": "received",
+          "confidence": 1.0,
+          "support": 6,
+          "determinant": "sold",
+          "groups": 1,
+          "relation_id": "f7267060ba1cd839db35"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "34d056a4ed0bf9c0e9f9": {
+        "relation": {
+          "kind": "balance_authoritative",
+          "array_path": "/rows",
+          "inputs": [
+            "opening",
+            "received",
+            "sold",
+            "closing"
+          ],
+          "output": "closing",
+          "confidence": 1.0,
+          "support": 6,
+          "conservation_rule_id": "conservation_8d8f20ab2bd1ea996f91",
+          "conservation_source": "authoritative",
+          "bridge_kind": "conservation",
+          "rule": {
+            "kind": "balance",
+            "array_path": "/rows",
+            "terms": [
+              {
+                "field": "opening",
+                "coefficient": 1
+              },
+              {
+                "field": "received",
+                "coefficient": 1
+              },
+              {
+                "field": "sold",
+                "coefficient": -1
+              },
+              {
+                "field": "closing",
+                "coefficient": -1
+              }
+            ],
+            "target": "closing",
+            "rule_id": "conservation_8d8f20ab2bd1ea996f91"
+          },
+          "direction_certified": true,
+          "direction_source": "authoritative_rule",
+          "relation_id": "34d056a4ed0bf9c0e9f9"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "5ab51576282b49f63799": {
+        "relation": {
+          "kind": "scalar_conservation_balance",
+          "array_path": "/rows",
+          "inputs": [
+            "closing",
+            "sold",
+            "opening",
+            "received"
+          ],
+          "output": null,
+          "confidence": 1.0,
+          "support": 6,
+          "formula": "closing+sold=opening+received",
+          "bridge_kind": "same_level_balance",
+          "direction_certified": false,
+          "direction_source": "symmetric_conservation",
+          "relation_id": "5ab51576282b49f63799"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "c56b9363b180ece8c3b4": {
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/rows",
+          "inputs": [
+            "closing"
+          ],
+          "output": "closing",
+          "confidence": 1.0,
+          "support": 5,
+          "step": 10,
+          "relation_id": "c56b9363b180ece8c3b4"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "ead8786e9c3fa6b070be": {
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/rows",
+          "inputs": [
+            "opening"
+          ],
+          "output": "opening",
+          "confidence": 1.0,
+          "support": 5,
+          "step": 10,
+          "relation_id": "ead8786e9c3fa6b070be"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      }
+    },
+    "newly_certified": [
+      {
+        "cycle": 1,
+        "relation_id": "cde68f282b1dd8860cc8",
+        "relation": {
+          "kind": "dominant_shape",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "__shape__",
+          "confidence": 1.0,
+          "support": 6,
+          "keys": [
+            "closing",
+            "opening",
+            "received",
+            "sold"
+          ],
+          "relation_id": "cde68f282b1dd8860cc8"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "15ddc20af3ddb677edc6",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "closing",
+          "confidence": 1.0,
+          "support": 6,
+          "schema_key": "closing",
+          "relation_id": "15ddc20af3ddb677edc6"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "c23af77e1863aa7481ab",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "opening",
+          "confidence": 1.0,
+          "support": 6,
+          "schema_key": "opening",
+          "relation_id": "c23af77e1863aa7481ab"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "0e99920a6ff0f8636be4",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "received",
+          "confidence": 1.0,
+          "support": 6,
+          "schema_key": "received",
+          "relation_id": "0e99920a6ff0f8636be4"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "74b0a1205ef6aabe9a99",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "sold",
+          "confidence": 1.0,
+          "support": 6,
+          "schema_key": "sold",
+          "relation_id": "74b0a1205ef6aabe9a99"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "3af575b19d68a7fb078e",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "opening",
+          "confidence": 1.0,
+          "support": 6,
+          "dominant_type": "int",
+          "relation_id": "3af575b19d68a7fb078e"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "2e565e9c703f1d064fd6",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "received",
+          "confidence": 1.0,
+          "support": 6,
+          "dominant_type": "int",
+          "relation_id": "2e565e9c703f1d064fd6"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "a837fdb374d323a71885",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "sold",
+          "confidence": 1.0,
+          "support": 6,
+          "dominant_type": "int",
+          "relation_id": "a837fdb374d323a71885"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "86ed2d7695fb4ac8de4b",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "closing",
+          "confidence": 1.0,
+          "support": 6,
+          "dominant_type": "int",
+          "relation_id": "86ed2d7695fb4ac8de4b"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "632c6d10e29144adec16",
+        "relation": {
+          "kind": "functional",
+          "array_path": "/rows",
+          "inputs": [
+            "received"
+          ],
+          "output": "sold",
+          "confidence": 1.0,
+          "support": 6,
+          "determinant": "received",
+          "groups": 1,
+          "relation_id": "632c6d10e29144adec16"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "f7267060ba1cd839db35",
+        "relation": {
+          "kind": "functional",
+          "array_path": "/rows",
+          "inputs": [
+            "sold"
+          ],
+          "output": "received",
+          "confidence": 1.0,
+          "support": 6,
+          "determinant": "sold",
+          "groups": 1,
+          "relation_id": "f7267060ba1cd839db35"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "34d056a4ed0bf9c0e9f9",
+        "relation": {
+          "kind": "balance_authoritative",
+          "array_path": "/rows",
+          "inputs": [
+            "opening",
+            "received",
+            "sold",
+            "closing"
+          ],
+          "output": "closing",
+          "confidence": 1.0,
+          "support": 6,
+          "conservation_rule_id": "conservation_8d8f20ab2bd1ea996f91",
+          "conservation_source": "authoritative",
+          "bridge_kind": "conservation",
+          "rule": {
+            "kind": "balance",
+            "array_path": "/rows",
+            "terms": [
+              {
+                "field": "opening",
+                "coefficient": 1
+              },
+              {
+                "field": "received",
+                "coefficient": 1
+              },
+              {
+                "field": "sold",
+                "coefficient": -1
+              },
+              {
+                "field": "closing",
+                "coefficient": -1
+              }
+            ],
+            "target": "closing",
+            "rule_id": "conservation_8d8f20ab2bd1ea996f91"
+          },
+          "direction_certified": true,
+          "direction_source": "authoritative_rule",
+          "relation_id": "34d056a4ed0bf9c0e9f9"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "5ab51576282b49f63799",
+        "relation": {
+          "kind": "scalar_conservation_balance",
+          "array_path": "/rows",
+          "inputs": [
+            "closing",
+            "sold",
+            "opening",
+            "received"
+          ],
+          "output": null,
+          "confidence": 1.0,
+          "support": 6,
+          "formula": "closing+sold=opening+received",
+          "bridge_kind": "same_level_balance",
+          "direction_certified": false,
+          "direction_source": "symmetric_conservation",
+          "relation_id": "5ab51576282b49f63799"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "c56b9363b180ece8c3b4",
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/rows",
+          "inputs": [
+            "closing"
+          ],
+          "output": "closing",
+          "confidence": 1.0,
+          "support": 5,
+          "step": 10,
+          "relation_id": "c56b9363b180ece8c3b4"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "ead8786e9c3fa6b070be",
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/rows",
+          "inputs": [
+            "opening"
+          ],
+          "output": "opening",
+          "confidence": 1.0,
+          "support": 5,
+          "step": 10,
+          "relation_id": "ead8786e9c3fa6b070be"
+        }
+      }
+    ]
+  },
+  "minimal_transfer_solver": {
+    "contract": "json-consistency-repair.minimal-transfer.v1",
+    "cycles": [
+      {
+        "solver_contract": "json-consistency-repair.minimal-transfer.v1",
+        "status": "UNIQUE_EXACT_MINIMUM",
+        "baseline_objective": [
+          0,
+          3,
+          1,
+          1
+        ],
+        "objective_order": [
+          "hard_errors",
+          "severity_score",
+          "repairable_terminals",
+          "surviving_preexisting_terminals"
+        ],
+        "metric_order": [
+          "cost",
+          "changed_paths",
+          "canonical_new_value_bytes",
+          "path_depth_sum"
+        ],
+        "exact_metric": true,
+        "max_patch_size": 4,
+        "max_exact_options_per_cluster": 8,
+        "partition_rule": "parent_json_container",
+        "admissible_option_count": 1,
+        "rejected_options": [],
+        "clusters": [
+          {
+            "scope": "/rows/5",
+            "status": "UNIQUE_EXACT_MINIMUM",
+            "option_count": 1,
+            "evaluated_improving_subsets": 1,
+            "best_objective": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "best_metric": {
+              "cost": {
+                "numerator": 1,
+                "denominator": 1
+              },
+              "changed_paths": 1,
+              "canonical_new_value_bytes": 3,
+              "path_depth_sum": 3
+            },
+            "patches": [
+              {
+                "path": "/rows/5/closing",
+                "candidate_id": "f9cb2c8712ac9c51",
+                "candidate_ids": [
+                  "f9cb2c8712ac9c51"
+                ],
+                "families": [
+                  "conservation"
+                ]
+              }
+            ]
+          }
+        ],
+        "union_objective": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "union_metric": {
+          "cost": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "changed_paths": 1,
+          "canonical_new_value_bytes": 3,
+          "path_depth_sum": 3
+        },
+        "selected_patch_count": 1,
+        "selected_candidate_ids": [
+          "f9cb2c8712ac9c51"
+        ]
+      },
+      {
+        "solver_contract": "json-consistency-repair.minimal-transfer.v1",
+        "status": "NO_ADMISSIBLE_CANDIDATES",
+        "baseline_objective": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "metric_order": [
+          "cost",
+          "changed_paths",
+          "canonical_new_value_bytes",
+          "path_depth_sum"
+        ],
+        "rejected_options": [],
+        "clusters": []
+      },
+      {
+        "solver_contract": "json-consistency-repair.minimal-transfer.v1",
+        "status": "NO_ADMISSIBLE_CANDIDATES",
+        "baseline_objective": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "metric_order": [
+          "cost",
+          "changed_paths",
+          "canonical_new_value_bytes",
+          "path_depth_sum"
+        ],
+        "rejected_options": [],
+        "clusters": []
+      }
+    ]
+  },
+  "logic_summary": {
+    "contract": "json-consistency-repair.logic-summary.v1",
+    "relation_count": 0,
+    "violation_count": 0,
+    "sat_rule_relations": 0,
+    "sat_systems": 0,
+    "unsat_systems": 0,
+    "sat_certificates": []
+  },
+  "conservation_summary": {
+    "contract": "json-consistency-repair.conservation-summary.v1",
+    "relation_count": 2,
+    "aggregate_sum_relations": 0,
+    "aggregate_count_relations": 0,
+    "scalar_balance_relations": 2,
+    "multiset_relations": 0,
+    "violation_count": 0,
+    "repairable_violation_count": 0,
+    "symmetric_unoriented_relations": 1
+  },
+  "strong_stable": true,
+  "dry_run": false,
+  "proposed_edits": [],
+  "would_commit_edits": 1,
+  "publication_performed": null,
+  "replay": {
+    "forward_digest": "7d98886de67f50b456682851bf0bbd8aef727f9d86f5a1a4471d23fafbf55764",
+    "inverse_restores_input": true
+  }
+}

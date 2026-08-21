@@ -1,0 +1,23 @@
+{
+  "$id": "https://json-consistency-repair.local/residual-information-summary-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JSON Consistency Repair residual information summary v1",
+  "type": "object",
+  "required": ["contract","mode","status","bound_count","certificate_sha256"],
+  "properties": {
+    "contract": {"const":"json-consistency-repair.residual-information-summary.v1"},
+    "mode": {"type":"string"},
+    "namespace": {"type":"string"},
+    "status": {"enum":["RESIDUAL_INFORMATION_DEBTS_VISIBLE","NO_FINITE_RESIDUAL_DEBT_MATERIALIZED"]},
+    "bounds": {"type":"array"},
+    "documents": {"type":"object"},
+    "bound_count": {"type":"integer","minimum":0},
+    "finite_bound_count": {"type":"integer","minimum":0},
+    "unknown_bound_count": {"type":"integer","minimum":0},
+    "maximum_fixed_width_selector_bits_lower_bound": {"type":["integer","null"],"minimum":0},
+    "blind_surface_sha256": {"type":["string","null"]},
+    "policy": {"type":"object"},
+    "certificate_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,16 @@
+{
+  "abstention_accuracy": 1.0,
+  "abstention_cases": 300,
+  "benchmark": "JCR_PUBLIC_SYNTHETIC_V1",
+  "correct_abstentions": 300,
+  "correct_repairs": 300,
+  "engine_version": "0.7.0",
+  "false_mutations": 0,
+  "idempotence_failures": 0,
+  "package_code_sha256": "7d16119156cdd6ad439e62fcd3a0d266085aaa6aa19965d891427619bf7b53c6",
+  "repair_accuracy": 1.0,
+  "repair_cases": 300,
+  "replay_failures": 0,
+  "scope": "synthetic in-distribution capability benchmark; not an external comparative benchmark",
+  "seed": 7007
+}

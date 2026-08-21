@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/json-consistency-repair/relation-falsification-v1.schema.json",
+  "title": "PASS037 relation falsification certificate",
+  "type": "object",
+  "required": ["contract", "enabled", "relation_count_examined", "states", "relations", "blocked_relation_ids", "blocked_candidate_ids", "certificate_sha256"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.relation-falsification.v1"},
+    "enabled": {"type": "boolean"},
+    "root_digest": {"type": ["string", "null"]},
+    "stream_digest": {"type": ["string", "null"]},
+    "relation_count_examined": {"type": "integer", "minimum": 0},
+    "relation_count_total": {"type": "integer", "minimum": 0},
+    "truncated": {"type": "boolean"},
+    "max_relations": {"type": "integer", "minimum": 0},
+    "states": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "relations": {"type": "array", "items": {"type": "object", "required": ["relation_id", "kind", "state", "decision_sha256"], "additionalProperties": true}},
+    "blocked_relation_ids": {"type": "array", "items": {"type": "string"}},
+    "blocked_candidate_ids": {"type": "array", "items": {"type": "string"}},
+    "blocked_relation_count": {"type": "integer", "minimum": 0},
+    "blocked_candidate_count": {"type": "integer", "minimum": 0},
+    "policy": {"type": "object"},
+    "certificate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

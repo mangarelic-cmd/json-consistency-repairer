@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://example.invalid/json-consistency-repair/constraint-bridge-summary-v1.schema.json",
+  "title":"json-consistency-repair constraint bridge summary v1",
+  "type":"object",
+  "required":["contract","relation_count","dsl_relations","linear_systems","schema_bridges","violation_count","repairable_violation_count"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.constraint-bridge-summary.v1"},
+    "relation_count":{"type":"integer","minimum":0},
+    "dsl_relations":{"type":"integer","minimum":0},
+    "linear_systems":{"type":"integer","minimum":0},
+    "schema_bridges":{"type":"integer","minimum":0},
+    "violation_count":{"type":"integer","minimum":0},
+    "repairable_violation_count":{"type":"integer","minimum":0}
+  },
+  "additionalProperties":false
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/json-consistency-repair/incremental-recompute-v1.schema.json",
+  "title": "PASS038 targeted incremental recomputation certificate",
+  "type": "object",
+  "required": ["contract","status","prior_registry_present","current_registry_sha256","current_obligations_sha256","change_tokens","proof_dependency_index","invalidated_proof_nodes","retained_proof_nodes","equivalence_scope","publication_gate","certificate_sha256"],
+  "properties": {
+    "contract": {"const":"json-consistency-repair.incremental-recompute.v1"},
+    "status": {"enum":["BASELINE_REGISTERED","INCREMENTAL_EQ_FULL","FULL_RECOMPUTE_REQUIRED"]},
+    "prior_registry_present": {"type":"boolean"},
+    "prior_registry_sha256": {"type":"string"},
+    "prior_registry_snapshot": {"type":"object"},
+    "current_registry_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "current_obligations_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "change_tokens": {"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "wake_plan": {"type":["object","null"]},
+    "proof_dependency_index": {"type":"object"},
+    "invalidated_proof_nodes": {"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "retained_proof_nodes": {"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "incremental_equivalence": {"type":["boolean","null"]},
+    "equivalence_scope": {"type":"string"},
+    "publication_gate": {"type":"string"},
+    "certificate_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

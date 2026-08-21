@@ -1,0 +1,589 @@
+{
+  "$defs": {
+    "authorityScope": {
+      "additionalProperties": true,
+      "properties": {
+        "document": {
+          "type": "string"
+        },
+        "documents": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 256,
+          "type": "array"
+        },
+        "operations": {
+          "items": {
+            "enum": [
+              "add",
+              "replace",
+              "witness",
+              "project",
+              "default",
+              "*"
+            ],
+            "type": "string"
+          },
+          "maxItems": 32,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "path": {
+          "type": "string"
+        },
+        "paths": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 256,
+          "type": "array"
+        },
+        "schema_version": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "schema_versions": {
+          "items": {
+            "type": [
+              "string",
+              "number"
+            ]
+          },
+          "maxItems": 256,
+          "type": "array"
+        },
+        "valid_from": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "valid_until": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "type": "object"
+    }
+  },
+  "$id": "https://json-consistency-repair.local/source-manifest-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authoritative_values": {
+      "items": {
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "source_path": {
+            "type": "string"
+          },
+          "target_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "claim_provenance": {
+      "items": {
+        "oneOf": [
+          {
+            "additionalProperties": true,
+            "properties": {
+              "claim_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "classification": {
+                "enum": [
+                  "SOURCE_EXACT",
+                  "DERIVED_EXACT",
+                  "USER_DECLARED",
+                  "INFERRED",
+                  "UNVERIFIED_ATTRIBUTION"
+                ]
+              },
+              "pointer": {
+                "type": "string"
+              },
+              "rule_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "source_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "source_pointer": {
+                "type": "string"
+              },
+              "template": {}
+            },
+            "required": [
+              "classification"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "maxItems": 1024,
+      "type": "array"
+    },
+    "current_schema_version": {
+      "type": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "delegations": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "authority_scope": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/authorityScope"
+              },
+              {
+                "items": {
+                  "$ref": "#/$defs/authorityScope"
+                },
+                "maxItems": 256,
+                "type": "array"
+              }
+            ]
+          },
+          "delegate_source_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "delegation_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "grantor_source_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "revoked": {
+            "type": "boolean"
+          },
+          "scope": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/authorityScope"
+              },
+              {
+                "items": {
+                  "$ref": "#/$defs/authorityScope"
+                },
+                "maxItems": 256,
+                "type": "array"
+              }
+            ]
+          }
+        },
+        "required": [
+          "grantor_source_id",
+          "delegate_source_id"
+        ],
+        "type": "object"
+      },
+      "maxItems": 1024,
+      "type": "array"
+    },
+    "evaluation_time": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence_policy": {
+      "additionalProperties": true,
+      "properties": {
+        "identical_content_is_correlated": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "identity_bridges": {
+      "items": {
+        "properties": {
+          "canonical_field": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "logical_id": {
+            "type": "string"
+          },
+          "members": {
+            "items": {
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "source_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_id",
+                "field"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "canonical_field",
+          "members"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "materialization_hints": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "enum": [
+              "AUTO",
+              "WITNESS",
+              "INDEPENDENT_WITNESS",
+              "AUTHORITATIVE"
+            ]
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "source_path": {
+            "type": "string"
+          },
+          "target_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "target_path",
+          "source_id",
+          "source_path"
+        ],
+        "type": "object"
+      },
+      "maxItems": 1024,
+      "type": "array"
+    },
+    "projections": {
+      "items": {
+        "properties": {
+          "authoritative": {
+            "type": "boolean"
+          },
+          "events_path": {
+            "type": "string"
+          },
+          "kind": {
+            "const": "last_event_value"
+          },
+          "path_field": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "target_path": {
+            "type": "string"
+          },
+          "value_field": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "source_id",
+          "target_path"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "revocations": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 1024,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "semantic_claims": {
+      "oneOf": [
+        {
+          "additionalProperties": true,
+          "properties": {
+            "claim_id": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "classification": {
+              "enum": [
+                "SOURCE_EXACT",
+                "DERIVED_EXACT",
+                "USER_DECLARED",
+                "INFERRED",
+                "UNVERIFIED_ATTRIBUTION"
+              ]
+            },
+            "pointer": {
+              "type": "string"
+            },
+            "rule_id": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_id": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_pointer": {
+              "type": "string"
+            },
+            "template": {}
+          },
+          "required": [
+            "classification"
+          ],
+          "type": "object"
+        },
+        {
+          "items": {
+            "oneOf": [
+              {
+                "additionalProperties": true,
+                "properties": {
+                  "claim_id": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "classification": {
+                    "enum": [
+                      "SOURCE_EXACT",
+                      "DERIVED_EXACT",
+                      "USER_DECLARED",
+                      "INFERRED",
+                      "UNVERIFIED_ATTRIBUTION"
+                    ]
+                  },
+                  "pointer": {
+                    "type": "string"
+                  },
+                  "rule_id": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "source_id": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "source_pointer": {
+                    "type": "string"
+                  },
+                  "template": {}
+                },
+                "required": [
+                  "classification"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "maxItems": 1024,
+          "type": "array"
+        }
+      ]
+    },
+    "source_correlations": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "correlation_id": {
+            "type": [
+              "string",
+              "number"
+            ]
+          },
+          "source_ids": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 256,
+            "minItems": 2,
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "source_ids"
+        ],
+        "type": "object"
+      },
+      "maxItems": 1024,
+      "type": "array"
+    },
+    "sources": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "authority_scope": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/authorityScope"
+              },
+              {
+                "items": {
+                  "$ref": "#/$defs/authorityScope"
+                },
+                "maxItems": 256,
+                "type": "array"
+              }
+            ]
+          },
+          "derived_from": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 256,
+                "type": "array",
+                "uniqueItems": true
+              }
+            ]
+          },
+          "document": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "eligible": {
+            "type": "boolean"
+          },
+          "independent_group": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "materialization_role": {
+            "enum": [
+              "WITNESS",
+              "AUTHORITATIVE"
+            ]
+          },
+          "path": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "provenance": {
+            "additionalProperties": true,
+            "properties": {
+              "derived_from": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "items": {
+                      "type": "string"
+                    },
+                    "maxItems": 256,
+                    "type": "array",
+                    "uniqueItems": true
+                  }
+                ]
+              },
+              "parents": {
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 256,
+                "type": "array",
+                "uniqueItems": true
+              }
+            },
+            "type": "object"
+          },
+          "role": {
+            "enum": [
+              "defaults",
+              "previous",
+              "reference",
+              "development",
+              "heldout",
+              "authoritative",
+              "event_log",
+              "manifest",
+              "schema"
+            ]
+          },
+          "schema_version": {
+            "type": [
+              "string",
+              "number",
+              "null"
+            ]
+          },
+          "source_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "support": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "witness_eligible": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "source_id",
+          "role",
+          "path"
+        ],
+        "type": "object"
+      },
+      "maxItems": 256,
+      "type": "array"
+    }
+  },
+  "required": [
+    "sources"
+  ],
+  "title": "JSON Consistency Repair multi-source manifest v1",
+  "type": "object"
+}

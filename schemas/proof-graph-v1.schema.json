@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://example.invalid/json-consistency-repair/proof-graph-v1.schema.json",
+  "title":"JSON Consistency Repair PASS028 Proof Graph",
+  "type":"object",
+  "required":["contract","mode","input_digest","output_digest","node_count","edge_count","section_roots","edge_root_sha256","nodes","edges","graph_sha256"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.proof-graph.v1"},
+    "mode":{"type":"string"},
+    "input_digest":{"type":"string"},
+    "output_digest":{"type":"string"},
+    "node_count":{"type":"integer","minimum":2},
+    "edge_count":{"type":"integer","minimum":1},
+    "section_roots":{"type":"object","additionalProperties":{"type":"string"}},
+    "edge_root_sha256":{"type":"string"},
+    "graph_sha256":{"type":"string"},
+    "nodes":{"type":"array","items":{"type":"object","required":["node_id","kind","scope","identity","payload_sha256","payload"]}},
+    "edges":{"type":"array","items":{"type":"object","required":["edge_id","kind","source","target","payload_sha256"]}}
+  },
+  "additionalProperties":true
+}

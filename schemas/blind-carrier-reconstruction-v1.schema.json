@@ -1,0 +1,11 @@
+{
+  "$id": "https://json-consistency-repair.local/blind-carrier-reconstruction-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JSON Consistency Repair blind carrier reconstruction v1",
+  "type": "object",
+  "required": ["contract"],
+  "properties": {
+    "contract": {"const":"json-consistency-repair.blind-carrier-reconstruction.v1"}
+  },
+  "additionalProperties": true
+}

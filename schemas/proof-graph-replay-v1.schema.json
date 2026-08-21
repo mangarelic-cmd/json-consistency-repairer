@@ -1,0 +1,18 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://example.invalid/json-consistency-repair/proof-graph-replay-v1.schema.json",
+  "title":"JSON Consistency Repair PASS028 Proof Graph Replay",
+  "type":"object",
+  "required":["contract","performed","ok"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.proof-graph-replay.v1"},
+    "performed":{"type":"boolean"},
+    "ok":{"type":"boolean"},
+    "status":{"type":"string"},
+    "expected_graph_sha256":{"type":"string"},
+    "replayed_graph_sha256":{"type":"string"},
+    "section_matches":{"type":"object","additionalProperties":{"type":"boolean"}},
+    "edge_root_match":{"type":"boolean"}
+  },
+  "additionalProperties":true
+}

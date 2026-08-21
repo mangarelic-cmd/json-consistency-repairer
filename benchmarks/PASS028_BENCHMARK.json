@@ -1,0 +1,1 @@
+{"all_checks_pass":true,"contract":"json-consistency-repair.pass028-benchmark.v1","counts":{"actor_divergence":100,"deterministic":100,"edge_tamper":100,"exact_replay":100,"factorization_divergence":100,"relation_divergence":100},"decisions":600,"expected_decisions":600,"false_accepts":0,"version":"0.28.0"}

@@ -1,0 +1,19 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://example.invalid/json-consistency-repair/distributed-consistency-v1.schema.json",
+  "title":"JSON Consistency Repair Distributed Consistency v1",
+  "type":"object",
+  "required":["contract","status","ok","snapshot_sha256s","snapshot_count","comparisons","conflicts","conflict_count","certificate_sha256"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.distributed-consistency.v1"},
+    "status":{"type":"string"},
+    "ok":{"type":"boolean"},
+    "snapshot_sha256s":{"type":"array","items":{"type":"string","pattern":"^[0-9a-f]{64}$"}},
+    "snapshot_count":{"type":"integer","minimum":1},
+    "comparisons":{"type":"integer","minimum":0},
+    "conflicts":{"type":"array","items":{"type":"object"}},
+    "conflict_count":{"type":"integer","minimum":0},
+    "certificate_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "additionalProperties":true
+}

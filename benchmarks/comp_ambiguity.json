@@ -1,0 +1,36 @@
+{
+  "stdlib_json": {
+    "accepted": 100,
+    "rejected": 0,
+    "note": "acceptance is not counted as correct repair because duplicate-key intent is ambiguous"
+  },
+  "orjson": {
+    "accepted": 100,
+    "rejected": 0,
+    "note": "acceptance is not counted as correct repair because duplicate-key intent is ambiguous"
+  },
+  "ujson": {
+    "accepted": 100,
+    "rejected": 0,
+    "note": "acceptance is not counted as correct repair because duplicate-key intent is ambiguous"
+  },
+  "json5": {
+    "accepted": 100,
+    "rejected": 0,
+    "note": "acceptance is not counted as correct repair because duplicate-key intent is ambiguous"
+  },
+  "pyyaml_safe": {
+    "accepted": 100,
+    "rejected": 0,
+    "note": "acceptance is not counted as correct repair because duplicate-key intent is ambiguous"
+  },
+  "jcr_grammar": {
+    "accepted": 0,
+    "rejected": 100,
+    "note": "safe rejection expected"
+  },
+  "jcr_clean_random": {
+    "trials": 20,
+    "mutated": 0
+  }
+}

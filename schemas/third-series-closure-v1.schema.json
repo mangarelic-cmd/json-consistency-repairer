@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://json-consistency-repair.local/schemas/third-series-closure-v1.schema.json",
+  "title": "JSON Consistency Repair third-series closure",
+  "type": "object",
+  "required": ["contract", "status", "ok", "checks"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.third-series-closure.v1"},
+    "status": {"enum": ["CLOSED", "OPEN"]},
+    "ok": {"type": "boolean"},
+    "checks": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "provenance_root": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

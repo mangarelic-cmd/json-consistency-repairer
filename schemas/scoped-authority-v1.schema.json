@@ -1,0 +1,157 @@
+{
+  "$id": "https://json-consistency-repair.local/scoped-authority-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "conflicts": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "contract": {
+      "const": "json-consistency-repair.scoped-authority.v1"
+    },
+    "delegations": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "delegate_source_id": {
+            "type": "string"
+          },
+          "delegation_id": {
+            "type": "string"
+          },
+          "grantor_source_id": {
+            "type": "string"
+          },
+          "revoked": {
+            "type": "boolean"
+          },
+          "scopes": {
+            "items": {
+              "$ref": "source-manifest-v1.schema.json#/$defs/authorityScope"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "delegation_id",
+          "grantor_source_id",
+          "delegate_source_id",
+          "scopes",
+          "revoked"
+        ],
+        "type": "object"
+      },
+      "maxItems": 1024,
+      "type": "array"
+    },
+    "evaluation": {
+      "additionalProperties": true,
+      "properties": {
+        "document": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evaluation_time": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "schema_version": {}
+      },
+      "required": [
+        "document",
+        "schema_version",
+        "evaluation_time"
+      ],
+      "type": "object"
+    },
+    "evidence_poisoning_firewall": {
+      "$ref": "evidence-poisoning-firewall-v1.schema.json"
+    },
+    "registry_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "revocations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "sources": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "authority_scopes": {
+            "items": {
+              "$ref": "source-manifest-v1.schema.json#/$defs/authorityScope"
+            },
+            "maxItems": 256,
+            "type": "array"
+          },
+          "base_authority": {
+            "enum": [
+              "DIRECT_AUTHORITATIVE",
+              "DEFAULT_AUTHORITY",
+              "MANIFEST_SCOPED_GRANT",
+              "CONTEXT_ONLY"
+            ]
+          },
+          "content_digest": {
+            "type": "string"
+          },
+          "effective_evidence_group": {
+            "type": "string"
+          },
+          "eligible": {
+            "type": "boolean"
+          },
+          "provenance_parents": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "role": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "role",
+          "eligible",
+          "effective_evidence_group",
+          "base_authority",
+          "authority_scopes",
+          "content_digest"
+        ],
+        "type": "object"
+      },
+      "maxItems": 256,
+      "type": "array"
+    },
+    "valid": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "contract",
+    "evaluation",
+    "sources",
+    "delegations",
+    "evidence_poisoning_firewall",
+    "valid",
+    "registry_sha256"
+  ],
+  "title": "JSON Consistency Repair scoped authority registry v1",
+  "type": "object"
+}

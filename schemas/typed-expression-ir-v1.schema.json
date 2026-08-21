@@ -1,0 +1,17 @@
+{
+  "$id": "https://json-consistency-repair.local/typed-expression-ir-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JSON Consistency Repair typed expression IR v1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["contract", "rule_count", "invalid_rule_count", "rules", "invalid_rules", "operator_set", "exact_arithmetic"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.typed-expression-ir.v1"},
+    "rule_count": {"type": "integer", "minimum": 0},
+    "invalid_rule_count": {"type": "integer", "minimum": 0},
+    "rules": {"type": "array", "maxItems": 4096, "items": {"$ref": "typed-expression-rule-v1.schema.json"}},
+    "invalid_rules": {"type": "array", "maxItems": 4096, "items": {"type": "object"}},
+    "operator_set": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "exact_arithmetic": {"const": true}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://example.invalid/json-consistency-repair/horizon-naturality-v1.schema.json",
+  "title":"JSON Consistency Repair Horizon Naturality v1",
+  "type":"object",
+  "required":["contract","status","ok","current_snapshot_sha256","changed_input_paths","change_tokens","drifted_old_paths","boundary_witnesses","full_recompute_required","certificate_sha256"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.horizon-naturality.v1"},
+    "status":{"type":"string"},
+    "ok":{"type":"boolean"},
+    "prior_snapshot_sha256":{"type":["string","null"]},
+    "current_snapshot_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "changed_input_paths":{"type":"array","items":{"type":"string"}},
+    "change_tokens":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "stable_old_paths_checked":{"type":"integer","minimum":0},
+    "drifted_old_paths":{"type":"array","items":{"type":"string"}},
+    "unexplained_drift_paths":{"type":"array","items":{"type":"string"}},
+    "boundary_witnesses":{"type":"array","items":{"type":"object"}},
+    "full_recompute_required":{"type":"boolean"},
+    "reason":{"type":["string","null"]},
+    "certificate_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "additionalProperties":true
+}

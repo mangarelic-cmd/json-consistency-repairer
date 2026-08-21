@@ -1,0 +1,8 @@
+{
+  "openapi":"3.1.0",
+  "info":{"title":"PASS018 demo","version":"1"},
+  "components":{"schemas":{
+    "Money":{"type":"number"},
+    "Invoice":{"type":"object","properties":{"kind":{"const":"invoice"},"total":{"$ref":"#/components/schemas/Money"}},"required":["kind","total"]}
+  }}
+}

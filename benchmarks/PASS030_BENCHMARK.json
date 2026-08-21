@@ -1,0 +1,1 @@
+{"all_checks_pass":true,"contract":"json-consistency-repair.pass030-benchmark.v1","counts":{"delegated_authority":100,"direct_scoped_authority":100,"out_of_scope_abstention":100,"proof_tamper_rejection":100,"revocation_firewall":100,"schema_version_gate":100},"decisions":600,"expected_decisions":600,"false_mutations":0,"version":"0.30.0"}

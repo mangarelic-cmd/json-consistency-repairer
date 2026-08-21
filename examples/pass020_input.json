@@ -1,0 +1,6 @@
+{
+  "nodes": [{"id":"A"},{"id":"B"},{"id":"C"}],
+  "edges": [{"source":"A","target":"B"},{"source":"B","target":"C"}],
+  "order": ["C","A","B"],
+  "events": [{"state":"NEW"},{"state":"BROKEN"},{"state":"SHIPPED"},{"state":"DELIVERED"}]
+}

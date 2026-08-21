@@ -1,0 +1,1 @@
+{"all_checks_pass":true,"contract":"json-consistency-repair.pass031-benchmark.v1","counts":{"cross_regime_gate":100,"hysteresis_band_gate":100,"stale_clock_gate":100,"uncertainty_abstention":100,"uncertainty_separation":100,"wildcard_tamper_firewall":100},"decisions":600,"expected_decisions":600,"false_mutations":0,"version":"0.31.0"}

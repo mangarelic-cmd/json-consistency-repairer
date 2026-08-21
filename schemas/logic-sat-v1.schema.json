@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "json-consistency-repair.logic-sat.v1",
+  "type": "object",
+  "required": ["contract", "status", "coverage", "assignment", "compiled_rule_ids", "clause_count"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.logic-sat.v1"},
+    "status": {"enum": ["SAT", "UNSAT"]},
+    "coverage": {"enum": ["FULL_FINITE_PREDICATE_CORE", "PARTIAL_UNCOMPILED_RULES"]},
+    "assignment": {"type": ["object", "null"]},
+    "atom_legend": {"type": "object"},
+    "compiled_rule_ids": {"type": "array", "items": {"type": "string"}},
+    "skipped_uncompiled_rule_ids": {"type": "array", "items": {"type": "string"}},
+    "compiled_rule_count": {"type": "integer", "minimum": 0},
+    "skipped_rule_count": {"type": "integer", "minimum": 0},
+    "rule_clause_count": {"type": "integer", "minimum": 0},
+    "semantic_clause_count": {"type": "integer", "minimum": 0},
+    "clause_count": {"type": "integer", "minimum": 0},
+    "unsat_core_rule_ids": {"type": "array", "items": {"type": "string"}},
+    "unsat_core_kind": {"type": "string"}
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://json-consistency-repair.local/schemas/rectification-packet-v1.schema.json",
+  "title": "JSON Consistency Repair canonical rectification packet v1",
+  "type": "object",
+  "required": ["contract", "schema_version", "mode", "terminal", "applied_chain", "decision_ledger", "remaining", "next_executable_objects", "surfaces", "section_root_sha256", "packet_sha256", "absence_semantics"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.rectification-packet.v1"},
+    "schema_version": {"const": "1.0"},
+    "mode": {"type": "string"},
+    "terminal": {"type": "object"},
+    "applied_chain": {"type": "object"},
+    "decision_ledger": {"type": "object"},
+    "remaining": {"type": "object"},
+    "next_executable_objects": {"type": "object"},
+    "surfaces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["logical_name", "state", "report_path", "sha256", "shape"],
+        "properties": {
+          "logical_name": {"type": "string"},
+          "state": {"enum": ["PRESENT", "EXPLICIT_NULL", "NOT_EMITTED"]},
+          "report_path": {"type": ["string", "null"]},
+          "sha256": {"type": ["string", "null"]},
+          "shape": {"type": ["object", "null"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "section_root_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "packet_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "certifier_seal": {"type": "object"},
+    "absence_semantics": {"const": "NOT_EMITTED_IS_NOT_FALSE_ZERO_OR_IMPOSSIBLE"}
+  },
+  "additionalProperties": true
+}

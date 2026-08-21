@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/json-consistency-repair/open-obligation-registry-v1.schema.json",
+  "title": "PASS038 persistent OPEN obligation registry",
+  "type": "object",
+  "required": ["contract","mode","terminal_output_digest","status","obligation_count","obligations","obligations_sha256","semantics","registry_sha256"],
+  "properties": {
+    "contract": {"const":"json-consistency-repair.open-obligation-registry.v1"},
+    "mode": {"type":"string"},
+    "terminal_output_digest": {"type":["string","null"]},
+    "status": {"enum":["OPEN_OBLIGATIONS_PRESENT","QUIESCENT"]},
+    "obligation_count": {"type":"integer","minimum":0},
+    "obligations": {"type":"array","items":{"type":"object","required":["obligation_id","kind","status","target_paths","origin","origin_sha256","wake_tokens","dependency_tokens","detail"],"properties":{"obligation_id":{"type":"string","pattern":"^obl_[0-9a-f]{24}$"},"kind":{"type":"string"},"status":{"const":"OPEN"},"target_paths":{"type":"array","items":{"type":"string"}},"origin":{"type":"string"},"origin_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"wake_tokens":{"type":"array","items":{"type":"string"},"uniqueItems":true},"dependency_tokens":{"type":"array","items":{"type":"string"},"uniqueItems":true}},"additionalProperties":true}},
+    "obligations_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "semantics": {"type":"object"},
+    "registry_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

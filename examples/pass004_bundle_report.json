@@ -1,0 +1,1365 @@
+{
+  "engine": "json-consistency-repair",
+  "version": "0.4.0",
+  "mode": "bundle",
+  "input_digest": "ff938696ee2986f36cad16db651748c0c0609377144e06583078f6b33ac03d7d",
+  "output_digest": "bc20f153da06c387a01cd0fbed0181dc59c54e66bf6470188e2ee2f0692e4ba5",
+  "input_document_digests": {
+    "orders.json": "4a858fc54dd60e46ecaa36bc7f3a83ffc150bd6fed2d12cc6993aa45b996a9ff",
+    "states.json": "35e72e68bb1270b9aa25cf165b28c7bd83665d3d0d066e64efba18b419851a44",
+    "users.json": "dbf5d8627ee5096086594a702d94982dffb06a7dc60428921aca47eed29d0485"
+  },
+  "output_document_digests": {
+    "orders.json": "47c92c4585cdff70f118f4d9f8f2f58f46552b11164286a8138ba918cf21986d",
+    "states.json": "3c2e19f1a2361f7dd0a0cd92556c4d56afda934822d1cb4712394a79fda9fe85",
+    "users.json": "dbf5d8627ee5096086594a702d94982dffb06a7dc60428921aca47eed29d0485"
+  },
+  "cycles": [
+    {
+      "cycle": 1,
+      "accepted": [
+        {
+          "scope": "local",
+          "document": "states.json",
+          "candidate": {
+            "candidate_id": "2f8978a8ac3e3eae",
+            "analyzer": "enum_domain",
+            "operation": "replace",
+            "path": "/rows/8/state",
+            "old_value": "ready",
+            "new_value": "READY",
+            "reason": "Canonicalize enum representation without changing enum identity.",
+            "confidence": 0.8,
+            "cost": 1,
+            "evidence": [
+              "ENUM:state:ef9f1d71b9c5",
+              "CASEFOLD_UNIQUE"
+            ],
+            "metadata": {
+              "enum_field": "state",
+              "domain_id": "ef9f1d71b9c5",
+              "domain": [
+                "DONE",
+                "READY"
+              ],
+              "relation_kind": "enum_domain",
+              "canonicalization_confidence": 0.8
+            }
+          }
+        },
+        {
+          "scope": "cross_document",
+          "document": "orders.json",
+          "target_document": "users.json",
+          "candidate": {
+            "candidate_id": "5c61533c497de829",
+            "analyzer": "bundle_reference",
+            "operation": "replace",
+            "path": "/orders/9/user_id",
+            "old_value": "u9",
+            "new_value": "U9",
+            "reason": "Restore canonical cross-document foreign-reference representation.",
+            "confidence": 0.9,
+            "cost": 1,
+            "evidence": [
+              "XFK:orders.json:/orders#user_id->users.json:/users#id",
+              "CASEFOLD_UNIQUE_GLOBAL_ID"
+            ],
+            "metadata": {
+              "reference_field": "user_id",
+              "target_document": "users.json",
+              "target_array_path": "/users",
+              "target_id_field": "id",
+              "relation_id": "9d4dade25176dab7c6a1",
+              "relation_kind": "foreign_reference_cross_document"
+            }
+          },
+          "score_before": 10,
+          "score_after": 0,
+          "acceptance": "global"
+        }
+      ],
+      "rejected": [],
+      "bundle_digest": "bc20f153da06c387a01cd0fbed0181dc59c54e66bf6470188e2ee2f0692e4ba5",
+      "document_digests": {
+        "orders.json": "47c92c4585cdff70f118f4d9f8f2f58f46552b11164286a8138ba918cf21986d",
+        "states.json": "3c2e19f1a2361f7dd0a0cd92556c4d56afda934822d1cb4712394a79fda9fe85",
+        "users.json": "dbf5d8627ee5096086594a702d94982dffb06a7dc60428921aca47eed29d0485"
+      },
+      "cross_document_issue_count": 0,
+      "cross_document_relation_count": 1,
+      "identity_registry_count": 3,
+      "new_relations": [
+        "@bundle::9d4dade25176dab7c6a1",
+        "orders.json::2215681d2d0cb07e1610",
+        "orders.json::2269e4fa525c70154b8a",
+        "orders.json::473b9eaaadb4e2e68fe0",
+        "orders.json::92ac903c455b4894edbf",
+        "orders.json::9443eed097ada6a1998b",
+        "orders.json::d07c82f0ab47752276ce",
+        "orders.json::ffb191080018f96e89b1",
+        "states.json::094a2c203217d1cdc4dc",
+        "states.json::1c6bcff974e1e1ee4da8",
+        "states.json::1e1704dee70052bfaa9b",
+        "states.json::479298d27b44297000c9",
+        "states.json::b4a06cf9362adef4a656",
+        "states.json::cc1a88d1d5429d94f7a0",
+        "states.json::d578a53c30c140664b02",
+        "states.json::fd462ec7294b81702c25",
+        "users.json::283088e6acc9e25cb377",
+        "users.json::2907e283a321adb2a7a4",
+        "users.json::3a46f901d41e409d2072",
+        "users.json::51d2f784b0297dbb0d17",
+        "users.json::64e23bdfecbad4029ac0",
+        "users.json::d5a325f635d39961c082"
+      ],
+      "stable_streak": 0
+    },
+    {
+      "cycle": 2,
+      "accepted": [],
+      "rejected": [],
+      "bundle_digest": "bc20f153da06c387a01cd0fbed0181dc59c54e66bf6470188e2ee2f0692e4ba5",
+      "document_digests": {
+        "orders.json": "47c92c4585cdff70f118f4d9f8f2f58f46552b11164286a8138ba918cf21986d",
+        "states.json": "3c2e19f1a2361f7dd0a0cd92556c4d56afda934822d1cb4712394a79fda9fe85",
+        "users.json": "dbf5d8627ee5096086594a702d94982dffb06a7dc60428921aca47eed29d0485"
+      },
+      "cross_document_issue_count": 0,
+      "cross_document_relation_count": 1,
+      "identity_registry_count": 3,
+      "new_relations": [],
+      "stable_streak": 1
+    },
+    {
+      "cycle": 3,
+      "accepted": [],
+      "rejected": [],
+      "bundle_digest": "bc20f153da06c387a01cd0fbed0181dc59c54e66bf6470188e2ee2f0692e4ba5",
+      "document_digests": {
+        "orders.json": "47c92c4585cdff70f118f4d9f8f2f58f46552b11164286a8138ba918cf21986d",
+        "states.json": "3c2e19f1a2361f7dd0a0cd92556c4d56afda934822d1cb4712394a79fda9fe85",
+        "users.json": "dbf5d8627ee5096086594a702d94982dffb06a7dc60428921aca47eed29d0485"
+      },
+      "cross_document_issue_count": 0,
+      "cross_document_relation_count": 1,
+      "identity_registry_count": 3,
+      "new_relations": [],
+      "stable_streak": 2
+    }
+  ],
+  "committed_patch_set": [
+    {
+      "scope": "local",
+      "document": "states.json",
+      "candidate": {
+        "candidate_id": "2f8978a8ac3e3eae",
+        "analyzer": "enum_domain",
+        "operation": "replace",
+        "path": "/rows/8/state",
+        "old_value": "ready",
+        "new_value": "READY",
+        "reason": "Canonicalize enum representation without changing enum identity.",
+        "confidence": 0.8,
+        "cost": 1,
+        "evidence": [
+          "ENUM:state:ef9f1d71b9c5",
+          "CASEFOLD_UNIQUE"
+        ],
+        "metadata": {
+          "enum_field": "state",
+          "domain_id": "ef9f1d71b9c5",
+          "domain": [
+            "DONE",
+            "READY"
+          ],
+          "relation_kind": "enum_domain",
+          "canonicalization_confidence": 0.8
+        }
+      }
+    },
+    {
+      "scope": "cross_document",
+      "document": "orders.json",
+      "target_document": "users.json",
+      "candidate": {
+        "candidate_id": "5c61533c497de829",
+        "analyzer": "bundle_reference",
+        "operation": "replace",
+        "path": "/orders/9/user_id",
+        "old_value": "u9",
+        "new_value": "U9",
+        "reason": "Restore canonical cross-document foreign-reference representation.",
+        "confidence": 0.9,
+        "cost": 1,
+        "evidence": [
+          "XFK:orders.json:/orders#user_id->users.json:/users#id",
+          "CASEFOLD_UNIQUE_GLOBAL_ID"
+        ],
+        "metadata": {
+          "reference_field": "user_id",
+          "target_document": "users.json",
+          "target_array_path": "/users",
+          "target_id_field": "id",
+          "relation_id": "9d4dade25176dab7c6a1",
+          "relation_kind": "foreign_reference_cross_document"
+        }
+      },
+      "score_before": 10,
+      "score_after": 0,
+      "acceptance": "global"
+    }
+  ],
+  "remaining_issues": [],
+  "identity_registry": [
+    {
+      "document": "orders.json",
+      "array_path": "/orders",
+      "id_field": "id",
+      "count": 10,
+      "uniqueness": 1.0,
+      "value_digest": "d4cb8570bbe85fbda84aaa622304b03ffea237c7e59e2b41c1b64955261bfbcb"
+    },
+    {
+      "document": "states.json",
+      "array_path": "/rows",
+      "id_field": "id",
+      "count": 10,
+      "uniqueness": 1.0,
+      "value_digest": "29dd21f55e4611d4c787c2148e39b4e341d4c10701dd03eed360aa55035bdb34"
+    },
+    {
+      "document": "users.json",
+      "array_path": "/users",
+      "id_field": "id",
+      "count": 10,
+      "uniqueness": 1.0,
+      "value_digest": "cf10d8204cd2e14fa5907652a17df4c8ff7d0f2fbcb591fcb5954984e7d7e192"
+    }
+  ],
+  "cross_document_relations": [
+    {
+      "kind": "foreign_reference_cross_document",
+      "source_document": "orders.json",
+      "source_array_path": "/orders",
+      "reference_field": "user_id",
+      "target_document": "users.json",
+      "target_array_path": "/users",
+      "target_id_field": "id",
+      "confidence": 1.0,
+      "support": 10,
+      "relation_id": "9d4dade25176dab7c6a1"
+    }
+  ],
+  "constraint_graph": {
+    "nodes": [
+      {
+        "id": "orders.json:/orders#__shape__",
+        "document": "orders.json",
+        "array_path": "/orders",
+        "field": "__shape__"
+      },
+      {
+        "id": "orders.json:/orders#id",
+        "document": "orders.json",
+        "array_path": "/orders",
+        "field": "id"
+      },
+      {
+        "id": "orders.json:/orders#user_id",
+        "document": "orders.json",
+        "array_path": "/orders",
+        "field": "user_id"
+      },
+      {
+        "id": "states.json:/rows#__shape__",
+        "document": "states.json",
+        "array_path": "/rows",
+        "field": "__shape__"
+      },
+      {
+        "id": "states.json:/rows#id",
+        "document": "states.json",
+        "array_path": "/rows",
+        "field": "id"
+      },
+      {
+        "id": "states.json:/rows#state",
+        "document": "states.json",
+        "array_path": "/rows",
+        "field": "state"
+      },
+      {
+        "id": "users.json:/users#__shape__",
+        "document": "users.json",
+        "array_path": "/users",
+        "field": "__shape__"
+      },
+      {
+        "id": "users.json:/users#id",
+        "document": "users.json",
+        "array_path": "/users",
+        "field": "id"
+      },
+      {
+        "id": "users.json:/users#name",
+        "document": "users.json",
+        "array_path": "/users",
+        "field": "name"
+      }
+    ],
+    "edges": [
+      {
+        "relation_id": "@bundle::9d4dade25176dab7c6a1",
+        "kind": "foreign_reference_cross_document",
+        "inputs": [
+          "orders.json:/orders#user_id"
+        ],
+        "output": "users.json:/users#id",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "orders.json::2215681d2d0cb07e1610",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "orders.json:/orders#user_id",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "orders.json::2269e4fa525c70154b8a",
+        "kind": "identifier_uniqueness",
+        "inputs": [
+          "orders.json:/orders#id"
+        ],
+        "output": "orders.json:/orders#id",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "orders.json::473b9eaaadb4e2e68fe0",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "orders.json:/orders#user_id",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "orders.json::92ac903c455b4894edbf",
+        "kind": "dominant_shape",
+        "inputs": [],
+        "output": "orders.json:/orders#__shape__",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "orders.json::9443eed097ada6a1998b",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "orders.json:/orders#id",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "orders.json::d07c82f0ab47752276ce",
+        "kind": "sequence_step",
+        "inputs": [
+          "orders.json:/orders#id"
+        ],
+        "output": "orders.json:/orders#id",
+        "confidence": 1.0,
+        "support": 9
+      },
+      {
+        "relation_id": "orders.json::ffb191080018f96e89b1",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "orders.json:/orders#id",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "states.json::094a2c203217d1cdc4dc",
+        "kind": "identifier_uniqueness",
+        "inputs": [
+          "states.json:/rows#id"
+        ],
+        "output": "states.json:/rows#id",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "states.json::1c6bcff974e1e1ee4da8",
+        "kind": "sequence_step",
+        "inputs": [
+          "states.json:/rows#id"
+        ],
+        "output": "states.json:/rows#id",
+        "confidence": 1.0,
+        "support": 9
+      },
+      {
+        "relation_id": "states.json::1e1704dee70052bfaa9b",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "states.json:/rows#id",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "states.json::479298d27b44297000c9",
+        "kind": "enum_domain",
+        "inputs": [],
+        "output": "states.json:/rows#state",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "states.json::b4a06cf9362adef4a656",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "states.json:/rows#state",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "states.json::cc1a88d1d5429d94f7a0",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "states.json:/rows#id",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "states.json::d578a53c30c140664b02",
+        "kind": "dominant_shape",
+        "inputs": [],
+        "output": "states.json:/rows#__shape__",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "states.json::fd462ec7294b81702c25",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "states.json:/rows#state",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "users.json::283088e6acc9e25cb377",
+        "kind": "identifier_uniqueness",
+        "inputs": [
+          "users.json:/users#id"
+        ],
+        "output": "users.json:/users#id",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "users.json::2907e283a321adb2a7a4",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "users.json:/users#name",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "users.json::3a46f901d41e409d2072",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "users.json:/users#id",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "users.json::51d2f784b0297dbb0d17",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "users.json:/users#name",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "users.json::64e23bdfecbad4029ac0",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "users.json:/users#id",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "users.json::d5a325f635d39961c082",
+        "kind": "dominant_shape",
+        "inputs": [],
+        "output": "users.json:/users#__shape__",
+        "confidence": 1.0,
+        "support": 10
+      }
+    ]
+  },
+  "knowledge_ledger": {
+    "relations": {
+      "orders.json::92ac903c455b4894edbf": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "orders.json",
+          "relation": {
+            "kind": "dominant_shape",
+            "array_path": "/orders",
+            "inputs": [],
+            "output": "__shape__",
+            "confidence": 1.0,
+            "support": 10,
+            "keys": [
+              "id",
+              "user_id"
+            ],
+            "relation_id": "92ac903c455b4894edbf"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "orders.json::ffb191080018f96e89b1": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "orders.json",
+          "relation": {
+            "kind": "required_key",
+            "array_path": "/orders",
+            "inputs": [],
+            "output": "id",
+            "confidence": 1.0,
+            "support": 10,
+            "schema_key": "id",
+            "relation_id": "ffb191080018f96e89b1"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "orders.json::473b9eaaadb4e2e68fe0": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "orders.json",
+          "relation": {
+            "kind": "required_key",
+            "array_path": "/orders",
+            "inputs": [],
+            "output": "user_id",
+            "confidence": 1.0,
+            "support": 10,
+            "schema_key": "user_id",
+            "relation_id": "473b9eaaadb4e2e68fe0"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "orders.json::9443eed097ada6a1998b": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "orders.json",
+          "relation": {
+            "kind": "type_consensus",
+            "array_path": "/orders",
+            "inputs": [],
+            "output": "id",
+            "confidence": 1.0,
+            "support": 10,
+            "dominant_type": "int",
+            "relation_id": "9443eed097ada6a1998b"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "orders.json::2215681d2d0cb07e1610": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "orders.json",
+          "relation": {
+            "kind": "type_consensus",
+            "array_path": "/orders",
+            "inputs": [],
+            "output": "user_id",
+            "confidence": 1.0,
+            "support": 10,
+            "dominant_type": "str",
+            "relation_id": "2215681d2d0cb07e1610"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "orders.json::2269e4fa525c70154b8a": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "orders.json",
+          "relation": {
+            "kind": "identifier_uniqueness",
+            "array_path": "/orders",
+            "inputs": [
+              "id"
+            ],
+            "output": "id",
+            "confidence": 1.0,
+            "support": 10,
+            "id_field": "id",
+            "relation_id": "2269e4fa525c70154b8a"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "orders.json::d07c82f0ab47752276ce": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "orders.json",
+          "relation": {
+            "kind": "sequence_step",
+            "array_path": "/orders",
+            "inputs": [
+              "id"
+            ],
+            "output": "id",
+            "confidence": 1.0,
+            "support": 9,
+            "step": 1,
+            "relation_id": "d07c82f0ab47752276ce"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "states.json::d578a53c30c140664b02": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "states.json",
+          "relation": {
+            "kind": "dominant_shape",
+            "array_path": "/rows",
+            "inputs": [],
+            "output": "__shape__",
+            "confidence": 1.0,
+            "support": 10,
+            "keys": [
+              "id",
+              "state"
+            ],
+            "relation_id": "d578a53c30c140664b02"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "states.json::cc1a88d1d5429d94f7a0": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "states.json",
+          "relation": {
+            "kind": "required_key",
+            "array_path": "/rows",
+            "inputs": [],
+            "output": "id",
+            "confidence": 1.0,
+            "support": 10,
+            "schema_key": "id",
+            "relation_id": "cc1a88d1d5429d94f7a0"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "states.json::fd462ec7294b81702c25": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "states.json",
+          "relation": {
+            "kind": "required_key",
+            "array_path": "/rows",
+            "inputs": [],
+            "output": "state",
+            "confidence": 1.0,
+            "support": 10,
+            "schema_key": "state",
+            "relation_id": "fd462ec7294b81702c25"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "states.json::1e1704dee70052bfaa9b": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "states.json",
+          "relation": {
+            "kind": "type_consensus",
+            "array_path": "/rows",
+            "inputs": [],
+            "output": "id",
+            "confidence": 1.0,
+            "support": 10,
+            "dominant_type": "int",
+            "relation_id": "1e1704dee70052bfaa9b"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "states.json::b4a06cf9362adef4a656": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "states.json",
+          "relation": {
+            "kind": "type_consensus",
+            "array_path": "/rows",
+            "inputs": [],
+            "output": "state",
+            "confidence": 1.0,
+            "support": 10,
+            "dominant_type": "str",
+            "relation_id": "b4a06cf9362adef4a656"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "states.json::479298d27b44297000c9": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "states.json",
+          "relation": {
+            "kind": "enum_domain",
+            "array_path": "/rows",
+            "inputs": [],
+            "output": "state",
+            "confidence": 1.0,
+            "support": 10,
+            "domain": [
+              "DONE",
+              "READY"
+            ],
+            "domain_id": "ef9f1d71b9c5",
+            "relation_id": "479298d27b44297000c9"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "states.json::094a2c203217d1cdc4dc": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "states.json",
+          "relation": {
+            "kind": "identifier_uniqueness",
+            "array_path": "/rows",
+            "inputs": [
+              "id"
+            ],
+            "output": "id",
+            "confidence": 1.0,
+            "support": 10,
+            "id_field": "id",
+            "relation_id": "094a2c203217d1cdc4dc"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "states.json::1c6bcff974e1e1ee4da8": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "states.json",
+          "relation": {
+            "kind": "sequence_step",
+            "array_path": "/rows",
+            "inputs": [
+              "id"
+            ],
+            "output": "id",
+            "confidence": 1.0,
+            "support": 9,
+            "step": 1,
+            "relation_id": "1c6bcff974e1e1ee4da8"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "users.json::d5a325f635d39961c082": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "users.json",
+          "relation": {
+            "kind": "dominant_shape",
+            "array_path": "/users",
+            "inputs": [],
+            "output": "__shape__",
+            "confidence": 1.0,
+            "support": 10,
+            "keys": [
+              "id",
+              "name"
+            ],
+            "relation_id": "d5a325f635d39961c082"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "users.json::64e23bdfecbad4029ac0": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "users.json",
+          "relation": {
+            "kind": "required_key",
+            "array_path": "/users",
+            "inputs": [],
+            "output": "id",
+            "confidence": 1.0,
+            "support": 10,
+            "schema_key": "id",
+            "relation_id": "64e23bdfecbad4029ac0"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "users.json::2907e283a321adb2a7a4": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "users.json",
+          "relation": {
+            "kind": "required_key",
+            "array_path": "/users",
+            "inputs": [],
+            "output": "name",
+            "confidence": 1.0,
+            "support": 10,
+            "schema_key": "name",
+            "relation_id": "2907e283a321adb2a7a4"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "users.json::3a46f901d41e409d2072": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "users.json",
+          "relation": {
+            "kind": "type_consensus",
+            "array_path": "/users",
+            "inputs": [],
+            "output": "id",
+            "confidence": 1.0,
+            "support": 10,
+            "dominant_type": "str",
+            "relation_id": "3a46f901d41e409d2072"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "users.json::51d2f784b0297dbb0d17": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "users.json",
+          "relation": {
+            "kind": "type_consensus",
+            "array_path": "/users",
+            "inputs": [],
+            "output": "name",
+            "confidence": 1.0,
+            "support": 10,
+            "dominant_type": "str",
+            "relation_id": "51d2f784b0297dbb0d17"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "users.json::283088e6acc9e25cb377": {
+        "qualified_relation": {
+          "scope": "local",
+          "document": "users.json",
+          "relation": {
+            "kind": "identifier_uniqueness",
+            "array_path": "/users",
+            "inputs": [
+              "id"
+            ],
+            "output": "id",
+            "confidence": 1.0,
+            "support": 10,
+            "id_field": "id",
+            "relation_id": "283088e6acc9e25cb377"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "@bundle::9d4dade25176dab7c6a1": {
+        "qualified_relation": {
+          "scope": "cross_document",
+          "document": null,
+          "relation": {
+            "kind": "foreign_reference_cross_document",
+            "source_document": "orders.json",
+            "source_array_path": "/orders",
+            "reference_field": "user_id",
+            "target_document": "users.json",
+            "target_array_path": "/users",
+            "target_id_field": "id",
+            "confidence": 1.0,
+            "support": 10,
+            "relation_id": "9d4dade25176dab7c6a1"
+          }
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      }
+    },
+    "newly_certified": [
+      {
+        "cycle": 1,
+        "relation_key": "orders.json::92ac903c455b4894edbf",
+        "scope": "local",
+        "document": "orders.json",
+        "relation": {
+          "kind": "dominant_shape",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "__shape__",
+          "confidence": 1.0,
+          "support": 10,
+          "keys": [
+            "id",
+            "user_id"
+          ],
+          "relation_id": "92ac903c455b4894edbf"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "orders.json::ffb191080018f96e89b1",
+        "scope": "local",
+        "document": "orders.json",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 10,
+          "schema_key": "id",
+          "relation_id": "ffb191080018f96e89b1"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "orders.json::473b9eaaadb4e2e68fe0",
+        "scope": "local",
+        "document": "orders.json",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "user_id",
+          "confidence": 1.0,
+          "support": 10,
+          "schema_key": "user_id",
+          "relation_id": "473b9eaaadb4e2e68fe0"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "orders.json::9443eed097ada6a1998b",
+        "scope": "local",
+        "document": "orders.json",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 10,
+          "dominant_type": "int",
+          "relation_id": "9443eed097ada6a1998b"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "orders.json::2215681d2d0cb07e1610",
+        "scope": "local",
+        "document": "orders.json",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "user_id",
+          "confidence": 1.0,
+          "support": 10,
+          "dominant_type": "str",
+          "relation_id": "2215681d2d0cb07e1610"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "orders.json::2269e4fa525c70154b8a",
+        "scope": "local",
+        "document": "orders.json",
+        "relation": {
+          "kind": "identifier_uniqueness",
+          "array_path": "/orders",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 10,
+          "id_field": "id",
+          "relation_id": "2269e4fa525c70154b8a"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "orders.json::d07c82f0ab47752276ce",
+        "scope": "local",
+        "document": "orders.json",
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/orders",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 9,
+          "step": 1,
+          "relation_id": "d07c82f0ab47752276ce"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "states.json::d578a53c30c140664b02",
+        "scope": "local",
+        "document": "states.json",
+        "relation": {
+          "kind": "dominant_shape",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "__shape__",
+          "confidence": 1.0,
+          "support": 10,
+          "keys": [
+            "id",
+            "state"
+          ],
+          "relation_id": "d578a53c30c140664b02"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "states.json::cc1a88d1d5429d94f7a0",
+        "scope": "local",
+        "document": "states.json",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 10,
+          "schema_key": "id",
+          "relation_id": "cc1a88d1d5429d94f7a0"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "states.json::fd462ec7294b81702c25",
+        "scope": "local",
+        "document": "states.json",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "state",
+          "confidence": 1.0,
+          "support": 10,
+          "schema_key": "state",
+          "relation_id": "fd462ec7294b81702c25"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "states.json::1e1704dee70052bfaa9b",
+        "scope": "local",
+        "document": "states.json",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 10,
+          "dominant_type": "int",
+          "relation_id": "1e1704dee70052bfaa9b"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "states.json::b4a06cf9362adef4a656",
+        "scope": "local",
+        "document": "states.json",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "state",
+          "confidence": 1.0,
+          "support": 10,
+          "dominant_type": "str",
+          "relation_id": "b4a06cf9362adef4a656"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "states.json::479298d27b44297000c9",
+        "scope": "local",
+        "document": "states.json",
+        "relation": {
+          "kind": "enum_domain",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "state",
+          "confidence": 1.0,
+          "support": 10,
+          "domain": [
+            "DONE",
+            "READY"
+          ],
+          "domain_id": "ef9f1d71b9c5",
+          "relation_id": "479298d27b44297000c9"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "states.json::094a2c203217d1cdc4dc",
+        "scope": "local",
+        "document": "states.json",
+        "relation": {
+          "kind": "identifier_uniqueness",
+          "array_path": "/rows",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 10,
+          "id_field": "id",
+          "relation_id": "094a2c203217d1cdc4dc"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "states.json::1c6bcff974e1e1ee4da8",
+        "scope": "local",
+        "document": "states.json",
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/rows",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 9,
+          "step": 1,
+          "relation_id": "1c6bcff974e1e1ee4da8"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "users.json::d5a325f635d39961c082",
+        "scope": "local",
+        "document": "users.json",
+        "relation": {
+          "kind": "dominant_shape",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "__shape__",
+          "confidence": 1.0,
+          "support": 10,
+          "keys": [
+            "id",
+            "name"
+          ],
+          "relation_id": "d5a325f635d39961c082"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "users.json::64e23bdfecbad4029ac0",
+        "scope": "local",
+        "document": "users.json",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 10,
+          "schema_key": "id",
+          "relation_id": "64e23bdfecbad4029ac0"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "users.json::2907e283a321adb2a7a4",
+        "scope": "local",
+        "document": "users.json",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "name",
+          "confidence": 1.0,
+          "support": 10,
+          "schema_key": "name",
+          "relation_id": "2907e283a321adb2a7a4"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "users.json::3a46f901d41e409d2072",
+        "scope": "local",
+        "document": "users.json",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 10,
+          "dominant_type": "str",
+          "relation_id": "3a46f901d41e409d2072"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "users.json::51d2f784b0297dbb0d17",
+        "scope": "local",
+        "document": "users.json",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "name",
+          "confidence": 1.0,
+          "support": 10,
+          "dominant_type": "str",
+          "relation_id": "51d2f784b0297dbb0d17"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "users.json::283088e6acc9e25cb377",
+        "scope": "local",
+        "document": "users.json",
+        "relation": {
+          "kind": "identifier_uniqueness",
+          "array_path": "/users",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 10,
+          "id_field": "id",
+          "relation_id": "283088e6acc9e25cb377"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_key": "@bundle::9d4dade25176dab7c6a1",
+        "scope": "cross_document",
+        "document": null,
+        "relation": {
+          "kind": "foreign_reference_cross_document",
+          "source_document": "orders.json",
+          "source_array_path": "/orders",
+          "reference_field": "user_id",
+          "target_document": "users.json",
+          "target_array_path": "/users",
+          "target_id_field": "id",
+          "confidence": 1.0,
+          "support": 10,
+          "relation_id": "9d4dade25176dab7c6a1"
+        }
+      }
+    ]
+  },
+  "strong_stable": true,
+  "transaction": {
+    "semantic_all_or_none": true,
+    "patch_count": 2,
+    "inverse_restores_bundle": true
+  },
+  "replay": {
+    "forward_digest": "bc20f153da06c387a01cd0fbed0181dc59c54e66bf6470188e2ee2f0692e4ba5",
+    "inverse_restores_input": true
+  },
+  "filesystem_commit": {
+    "strategy": "staged_directory_publish_with_rollback",
+    "input_untouched": true,
+    "published": true
+  }
+}

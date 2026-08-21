@@ -1,0 +1,59 @@
+{
+  "$id": "https://json-consistency-repair.local/material-search-contract-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "bounded_complete_over_loaded_context": {
+      "type": "boolean"
+    },
+    "contract": {
+      "const": "json-consistency-repair.material-search-contract.v1"
+    },
+    "event_projection_checked": {
+      "type": "boolean"
+    },
+    "explicit_hint_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "identity_bridge_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "no_fuzzy_matching": {
+      "type": "boolean"
+    },
+    "search_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "searched_location_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "searched_locations": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "source_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "target_path": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "contract",
+    "target_path",
+    "source_count",
+    "searched_location_count",
+    "bounded_complete_over_loaded_context",
+    "no_fuzzy_matching",
+    "search_sha256"
+  ],
+  "title": "JSON Consistency Repair bounded material search contract v1",
+  "type": "object"
+}

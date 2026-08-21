@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/json-consistency-repair/open-obligation-wake-plan-v1.schema.json",
+  "title": "PASS038 OPEN obligation wake plan",
+  "type":"object",
+  "required":["contract","prior_registry_sha256","change_tokens","woken","retained","woken_count","retained_count","status","wake_plan_sha256"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.open-obligation-wake-plan.v1"},
+    "prior_registry_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "change_tokens":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "woken":{"type":"array","items":{"type":"object"}},
+    "retained":{"type":"array","items":{"type":"object"}},
+    "woken_count":{"type":"integer","minimum":0},
+    "retained_count":{"type":"integer","minimum":0},
+    "status":{"enum":["TARGETED_WAKE","NO_OBLIGATION_WAKE"]},
+    "wake_plan_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "additionalProperties":true
+}

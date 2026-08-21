@@ -1,0 +1,19 @@
+{
+  "$id":"https://json-consistency-repair.local/semantic-quotient-v1.schema.json",
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Explicit semantic quotient certificate v1",
+  "type":"object",
+  "additionalProperties":true,
+  "required":["contract","rules","rule_count","rules_sha256","input_digest","normal_form_digest","idempotent","scope","certificate_sha256"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.semantic-quotient.v1"},
+    "rules":{"type":"array","items":{"type":"object","required":["rule_id","path","equivalence","explicit"],"properties":{"rule_id":{"type":"string"},"path":{"type":"string"},"equivalence":{"enum":["unordered_array","unordered_unique_array"]},"explicit":{"const":true}},"additionalProperties":true}},
+    "rule_count":{"type":"integer","minimum":0},
+    "rules_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "input_digest":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "normal_form_digest":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "idempotent":{"const":true},
+    "scope":{"const":"explicit_rules_only"},
+    "certificate_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+  }
+}

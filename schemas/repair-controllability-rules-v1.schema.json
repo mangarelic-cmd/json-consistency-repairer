@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/json-consistency-repair/repair-controllability-rules-v1.schema.json",
+  "title": "JSON Consistency Repair PASS036 controllability rules",
+  "type": "object",
+  "required": ["rules"],
+  "properties": {
+    "rules": {
+      "type": "array",
+      "maxItems": 256,
+      "items": {
+        "type": "object",
+        "required": ["rule_id"],
+        "properties": {
+          "rule_id": {"type": "string", "minLength": 1},
+          "control_rule_id": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["mutation_policy", "budget"]},
+          "path": {"type": "string"},
+          "path_pattern": {"type": "string"},
+          "document": {"type": ["string", "null"]},
+          "immutable": {"type": "boolean"},
+          "allowed_operations": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+          "denied_operations": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+          "must_precede": {"oneOf": [{"type": "string"}, {"type": "array", "items": {"type": "string"}}]},
+          "precedes": {"oneOf": [{"type": "string"}, {"type": "array", "items": {"type": "string"}}]},
+          "max_edits": {"type": "integer", "minimum": 0},
+          "max_cost": {"type": "integer", "minimum": 0},
+          "source": {"type": "string"},
+          "claim_provenance": {"type": "object"},
+          "semantic_provenance": {"type": "object"},
+          "provenance": {"type": "object"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "json-consistency-repair.logic-rules.v1",
+  "title": "JSON Consistency Repair exact logic rules",
+  "oneOf": [
+    {"$ref": "#/$defs/ruleArray"},
+    {
+      "type": "object",
+      "required": ["rules"],
+      "properties": {"rules": {"$ref": "#/$defs/ruleArray"}},
+      "additionalProperties": false
+    }
+  ],
+  "$defs": {
+    "predicate": {
+      "type": "object",
+      "required": ["field"],
+      "properties": {
+        "field": {"type": "string", "minLength": 1},
+        "equals": {},
+        "present": {"type": "boolean"},
+        "truthy": {"type": "boolean"},
+        "value": {},
+        "else": {}
+      },
+      "oneOf": [
+        {"required": ["equals"]},
+        {"required": ["present"]},
+        {"required": ["truthy"]}
+      ],
+      "additionalProperties": true
+    },
+    "rule": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "rule_id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["implies", "xor", "exactly_one", "one_of", "any_of", "not_both"]},
+        "array_path": {"type": "string"},
+        "document": {"type": "string"},
+        "repair_target": {"enum": ["then", "minimal"]},
+        "if": {
+          "oneOf": [
+            {"$ref": "#/$defs/predicate"},
+            {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/predicate"}}
+          ]
+        },
+        "then": {"$ref": "#/$defs/predicate"},
+        "items": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/predicate"}}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"kind": {"const": "implies"}}},
+          "then": {"required": ["if", "then"]},
+          "else": {"required": ["items"]}
+        }
+      ],
+      "additionalProperties": true
+    },
+    "ruleArray": {
+      "type": "array",
+      "maxItems": 256,
+      "items": {"$ref": "#/$defs/rule"}
+    }
+  }
+}

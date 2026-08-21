@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {"source_id": "defaults", "role": "defaults", "path": "defaults.json"},
+    {"source_id": "train", "role": "development", "path": "train.json", "independent_group": "development"},
+    {"source_id": "holdout", "role": "heldout", "path": "holdout.json", "independent_group": "holdout-A"}
+  ],
+  "identity_bridges": [
+    {
+      "logical_id": "status",
+      "canonical_field": "status",
+      "members": [
+        {"source_id": "train", "field": "state"},
+        {"source_id": "holdout", "field": "status"},
+        {"source_id": "__primary__", "field": "status"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://json-consistency-repair.local/schemas/system-rules-v1.schema.json",
+  "title": "json-consistency-repair PASS020 system rules",
+  "type": "object",
+  "required": ["rules"],
+  "properties": {
+    "rules": {
+      "type": "array",
+      "maxItems": 256,
+      "items": {
+        "type": "object",
+        "required": ["kind"],
+        "properties": {
+          "kind": {"enum": ["graph", "state_machine", "migration"]},
+          "rule_id": {"type": "string"},
+          "document": {"type": "string"},
+          "nodes_path": {"type": "string"},
+          "edges_path": {"type": "string"},
+          "node_id": {"type": "string"},
+          "source_field": {"type": "string"},
+          "target_field": {"type": "string"},
+          "require_acyclic": {"type": "boolean"},
+          "require_reciprocal": {"type": "boolean"},
+          "root_id": {},
+          "order_path": {"type": "string"},
+          "sequence_path": {"type": "string"},
+          "state_field": {"type": "string"},
+          "transitions": {"type": "array", "items": {"type": "array", "minItems": 2, "maxItems": 2}},
+          "initial": {},
+          "terminal": {},
+          "target_state": {},
+          "steps": {"type": "array", "items": {"type": "object", "required": ["operation", "path"]}},
+          "target_tests": {"type": "array", "items": {"type": "object", "required": ["path"]}}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

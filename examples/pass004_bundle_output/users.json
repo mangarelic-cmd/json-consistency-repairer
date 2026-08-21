@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "U0",
+      "name": "Ada"
+    },
+    {
+      "id": "U1",
+      "name": "Ben"
+    },
+    {
+      "id": "U2",
+      "name": "Cy"
+    },
+    {
+      "id": "U3",
+      "name": "Di"
+    },
+    {
+      "id": "U4",
+      "name": "Eli"
+    },
+    {
+      "id": "U5",
+      "name": "Fae"
+    },
+    {
+      "id": "U6",
+      "name": "Gia"
+    },
+    {
+      "id": "U7",
+      "name": "Han"
+    },
+    {
+      "id": "U8",
+      "name": "Ian"
+    },
+    {
+      "id": "U9",
+      "name": "Jo"
+    }
+  ]
+}

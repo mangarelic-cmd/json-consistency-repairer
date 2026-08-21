@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "json-consistency-repair.conservation-rules.v1",
+  "title": "json-consistency-repair authoritative conservation rules v1",
+  "oneOf": [
+    {"$ref": "#/$defs/ruleArray"},
+    {
+      "type": "object",
+      "required": ["rules"],
+      "properties": {"rules": {"$ref": "#/$defs/ruleArray"}},
+      "additionalProperties": false
+    }
+  ],
+  "$defs": {
+    "base": {
+      "type": "object",
+      "properties": {
+        "rule_id": {"type": "string"},
+        "document": {"type": "string"},
+        "array_path": {"type": "string"},
+        "source": {"enum": ["authoritative"]}
+      }
+    },
+    "aggregateSum": {
+      "type": "object",
+      "required": ["kind", "items_field", "value_field", "target"],
+      "properties": {
+        "kind": {"const": "aggregate_sum"},
+        "rule_id": {"type": "string"}, "document": {"type": "string"}, "array_path": {"type": "string"}, "source": {"enum": ["authoritative"]},
+        "items_field": {"type": "string"}, "value_field": {"type": "string"}, "target": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "aggregateCount": {
+      "type": "object",
+      "required": ["kind", "items_field", "target"],
+      "properties": {
+        "kind": {"const": "aggregate_count"},
+        "rule_id": {"type": "string"}, "document": {"type": "string"}, "array_path": {"type": "string"}, "source": {"enum": ["authoritative"]},
+        "items_field": {"type": "string"}, "target": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "term": {
+      "type": "object",
+      "required": ["field", "coefficient"],
+      "properties": {"field": {"type": "string"}, "coefficient": {"type": ["integer", "number", "string"]}},
+      "additionalProperties": false
+    },
+    "balance": {
+      "type": "object",
+      "required": ["kind", "terms", "target"],
+      "properties": {
+        "kind": {"const": "balance"},
+        "rule_id": {"type": "string"}, "document": {"type": "string"}, "array_path": {"type": "string"}, "source": {"enum": ["authoritative"]},
+        "terms": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/term"}},
+        "target": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "multiset": {
+      "type": "object",
+      "required": ["kind", "left_field", "right_field", "key_field", "quantity_field", "target_side"],
+      "properties": {
+        "kind": {"const": "multiset_balance"},
+        "rule_id": {"type": "string"}, "document": {"type": "string"}, "array_path": {"type": "string"}, "source": {"enum": ["authoritative"]},
+        "left_field": {"type": "string"}, "right_field": {"type": "string"}, "key_field": {"type": "string"}, "quantity_field": {"type": "string"},
+        "target_side": {"enum": ["left", "right"]}
+      },
+      "additionalProperties": false
+    },
+    "rule": {"oneOf": [{"$ref": "#/$defs/aggregateSum"}, {"$ref": "#/$defs/aggregateCount"}, {"$ref": "#/$defs/balance"}, {"$ref": "#/$defs/multiset"}]},
+    "ruleArray": {"type": "array", "maxItems": 256, "items": {"$ref": "#/$defs/rule"}}
+  }
+}

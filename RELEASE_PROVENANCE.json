@@ -1,0 +1,26 @@
+{
+  "artifacts": {
+    "json-consistency-repair-0.41.0-source.zip": {
+      "bytes": 883701,
+      "sha256": "c4c68f32959e03d18682acbee7f713ec18ebfb6943666dfcf0c29319e79df634"
+    },
+    "json_consistency_repair-0.41.0-py3-none-any.whl": {
+      "bytes": 298378,
+      "sha256": "ed8935405d89f6204f73bedda012e003ac87665fba8889de1b40c49ed1e3ddbb"
+    }
+  },
+  "benchmark": {
+    "bytes": 6963,
+    "path": "benchmarks/PASS041_SPEED_BENCHMARK.json",
+    "sha256": "ed5db56d146ffda50922524907f98942a6b363f4375e054de1e6bfd29ba0a521"
+  },
+  "contract": "json-consistency-repair.release-provenance.v1",
+  "git_commit": null,
+  "git_tag": null,
+  "package": "json-consistency-repair",
+  "package_code_sha256": "3b549b4ec0198b12b4b001e84183b8121f9329797ddd95586dbb0f96800b5932",
+  "reproducible_build_checked": true,
+  "self_hash_note": "This manifest intentionally does not hash itself; release artifacts cannot safely embed self-referential hashes.",
+  "version": "0.41.0",
+  "zenodo_doi": null
+}

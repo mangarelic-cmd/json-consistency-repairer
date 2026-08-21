@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "json-consistency-repair.provenance-chain.v1",
+  "type": "object",
+  "required": [
+    "contract",
+    "algorithm",
+    "genesis",
+    "genesis_hash",
+    "events",
+    "root_hash"
+  ],
+  "properties": {
+    "contract": {
+      "const": "json-consistency-repair.provenance-chain.v1"
+    },
+    "algorithm": {
+      "const": "SHA-256"
+    },
+    "genesis": {
+      "type": "object"
+    },
+    "genesis_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "events": {
+      "type": "array"
+    },
+    "root_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

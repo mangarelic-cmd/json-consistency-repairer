@@ -1,0 +1,25 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://example.invalid/json-consistency-repair/horizon-snapshot-v1.schema.json",
+  "title":"JSON Consistency Repair Horizon Snapshot v1",
+  "type":"object",
+  "required":["contract","mode","namespace","input_digest","output_digest","input_manifest","output_manifest","input_manifest_complete","output_manifest_complete","localized_relation_dependencies","distribution","snapshot_sha256"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.horizon-snapshot.v1"},
+    "mode":{"type":"string"},
+    "namespace":{"type":"string","minLength":1},
+    "input_digest":{"type":"string"},
+    "output_digest":{"type":"string"},
+    "input_manifest":{"type":"array","items":{"$ref":"#/$defs/node"}},
+    "output_manifest":{"type":"array","items":{"$ref":"#/$defs/node"}},
+    "input_manifest_complete":{"type":"boolean"},
+    "output_manifest_complete":{"type":"boolean"},
+    "manifest_limit":{"type":"integer","minimum":1},
+    "localized_relation_dependencies":{"type":"array","items":{"type":"object"}},
+    "distribution":{"type":"object"},
+    "proof_surface_sha256":{"type":"string"},
+    "snapshot_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "$defs":{"node":{"type":"object","required":["path","kind","sha256"],"properties":{"path":{"type":"string"},"kind":{"enum":["object","array","scalar"]},"sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}},"additionalProperties":false}},
+  "additionalProperties":true
+}

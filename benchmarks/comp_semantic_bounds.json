@@ -1,0 +1,32 @@
+{
+  "missing_functional_50pct": {
+    "repaired": 60,
+    "corrupted": 60,
+    "false_mutations": 0,
+    "statuses": [
+      "PASS",
+      "PASS",
+      "PASS"
+    ]
+  },
+  "solid_bound_functional_97_5pct": {
+    "repaired": 117,
+    "corrupted": 117,
+    "false_mutations": 0,
+    "statuses": [
+      "PASS",
+      "PASS",
+      "PASS"
+    ]
+  },
+  "solid_bound_arithmetic_97_5pct": {
+    "repaired": 117,
+    "corrupted": 117,
+    "false_mutations": 0,
+    "statuses": [
+      "PASS",
+      "PASS",
+      "PASS"
+    ]
+  }
+}

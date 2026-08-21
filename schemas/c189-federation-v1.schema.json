@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://example.invalid/json-consistency-repair/c189-federation-v1.schema.json",
+  "title":"JSON Consistency Repair C189 federation certificate v1",
+  "type":"object",
+  "required":["contract","mode_i","mode_ii"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.c189-federation.v1"},
+    "mode_i":{"type":"object","required":["snapshot_actor_count","packets","independence_barrier"],"properties":{"snapshot_actor_count":{"type":"integer","minimum":0},"packets":{"type":"array"},"independence_barrier":{"type":"boolean"}},"additionalProperties":true},
+    "mode_ii":{"type":"object","required":["pairwise_objects","hyperobjects","synthetic_composite_relations","cycle_receipts","fixed_point_attained"],"properties":{"pairwise_objects":{"type":"array"},"hyperobjects":{"type":"array"},"synthetic_composite_relations":{"type":"array"},"cycle_receipts":{"type":"array"},"fixed_point_attained":{"type":"boolean"}},"additionalProperties":true},
+    "federation_digest":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "additionalProperties":true
+}

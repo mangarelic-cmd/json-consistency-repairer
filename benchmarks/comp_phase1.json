@@ -1,0 +1,437 @@
+{
+  "strict": {
+    "stdlib_json": {
+      "semantic_matches": 500,
+      "cases": 500,
+      "exceptions": 0
+    },
+    "orjson": {
+      "semantic_matches": 500,
+      "cases": 500,
+      "exceptions": 0
+    },
+    "ujson": {
+      "semantic_matches": 500,
+      "cases": 500,
+      "exceptions": 0
+    },
+    "json5": {
+      "semantic_matches": 500,
+      "cases": 500,
+      "exceptions": 0
+    },
+    "pyyaml_safe": {
+      "semantic_matches": 500,
+      "cases": 500,
+      "exceptions": 0
+    },
+    "jcr_full": {
+      "semantic_matches": 30,
+      "cases": 30,
+      "committed_edits": 0,
+      "statuses": {
+        "PASS": 30
+      }
+    }
+  },
+  "syntax": {
+    "summary": {
+      "stdlib_json": {
+        "exact_recovery": 0,
+        "accepted_wrong_semantics": 0,
+        "rejected": 200,
+        "cases": 200
+      },
+      "orjson": {
+        "exact_recovery": 0,
+        "accepted_wrong_semantics": 0,
+        "rejected": 200,
+        "cases": 200
+      },
+      "ujson": {
+        "exact_recovery": 0,
+        "accepted_wrong_semantics": 0,
+        "rejected": 200,
+        "cases": 200
+      },
+      "json5": {
+        "exact_recovery": 40,
+        "accepted_wrong_semantics": 0,
+        "rejected": 160,
+        "cases": 200
+      },
+      "pyyaml_safe": {
+        "exact_recovery": 40,
+        "accepted_wrong_semantics": 40,
+        "rejected": 120,
+        "cases": 200
+      },
+      "jcr_grammar": {
+        "exact_recovery": 200,
+        "accepted_wrong_semantics": 0,
+        "rejected": 0,
+        "cases": 200
+      }
+    },
+    "by_kind": {
+      "trailing_comma": {
+        "stdlib_json": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "orjson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "ujson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "json5": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        },
+        "pyyaml_safe": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        },
+        "jcr_grammar": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        }
+      },
+      "missing_comma": {
+        "stdlib_json": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "orjson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "ujson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "json5": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "pyyaml_safe": {
+          "exact": 0,
+          "wrong": 20,
+          "reject": 0
+        },
+        "jcr_grammar": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        }
+      },
+      "missing_colon": {
+        "stdlib_json": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "orjson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "ujson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "json5": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "pyyaml_safe": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "jcr_grammar": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        }
+      },
+      "truncated_obj": {
+        "stdlib_json": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "orjson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "ujson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "json5": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "pyyaml_safe": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "jcr_grammar": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        }
+      },
+      "truncated_nested": {
+        "stdlib_json": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "orjson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "ujson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "json5": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "pyyaml_safe": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "jcr_grammar": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        }
+      },
+      "missing_quote": {
+        "stdlib_json": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "orjson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "ujson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "json5": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "pyyaml_safe": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "jcr_grammar": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        }
+      },
+      "extra_brace": {
+        "stdlib_json": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "orjson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "ujson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "json5": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "pyyaml_safe": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "jcr_grammar": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        }
+      },
+      "two_errors": {
+        "stdlib_json": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "orjson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "ujson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "json5": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "pyyaml_safe": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "jcr_grammar": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        }
+      },
+      "array_trailing": {
+        "stdlib_json": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "orjson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "ujson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "json5": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        },
+        "pyyaml_safe": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        },
+        "jcr_grammar": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        }
+      },
+      "array_missing_comma": {
+        "stdlib_json": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "orjson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "ujson": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "json5": {
+          "exact": 0,
+          "wrong": 0,
+          "reject": 20
+        },
+        "pyyaml_safe": {
+          "exact": 0,
+          "wrong": 20,
+          "reject": 0
+        },
+        "jcr_grammar": {
+          "exact": 20,
+          "wrong": 0,
+          "reject": 0
+        }
+      }
+    }
+  },
+  "permissive": {
+    "stdlib_json": {
+      "exact_accept": 0,
+      "wrong_accept": 0,
+      "reject": 60,
+      "cases": 60
+    },
+    "orjson": {
+      "exact_accept": 0,
+      "wrong_accept": 0,
+      "reject": 60,
+      "cases": 60
+    },
+    "ujson": {
+      "exact_accept": 0,
+      "wrong_accept": 0,
+      "reject": 60,
+      "cases": 60
+    },
+    "json5": {
+      "exact_accept": 60,
+      "wrong_accept": 0,
+      "reject": 0,
+      "cases": 60
+    },
+    "pyyaml_safe": {
+      "exact_accept": 20,
+      "wrong_accept": 40,
+      "reject": 0,
+      "cases": 60
+    },
+    "jcr_grammar": {
+      "exact_accept": 0,
+      "wrong_accept": 0,
+      "reject": 60,
+      "cases": 60
+    }
+  }
+}

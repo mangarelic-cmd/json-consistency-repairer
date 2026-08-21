@@ -1,0 +1,1219 @@
+{
+  "engine": "json-consistency-repair",
+  "version": "0.10.0",
+  "report_contract": {
+    "name": "json-consistency-repair.report.v1",
+    "schema_version": "1.0",
+    "status": "STABLE_WITH_REPORTED_ISSUES",
+    "status_exit_code": 10
+  },
+  "provenance": {
+    "package": "json-consistency-repair",
+    "version": "0.10.0",
+    "package_code_sha256": "f4b419d6dffbb3105081ec72b420b01fb44aa2d91342079159f9af6b83f7b4f3",
+    "git_commit": null,
+    "zenodo_doi": null,
+    "artifact_binding": "see RELEASE_PROVENANCE.json distributed with a tagged release"
+  },
+  "input_digest": "076dc3a33c90797524374211b2cf68daf8cda193fe945db1a8cad2677149c49f",
+  "security": {
+    "limits": {
+      "max_depth": 96,
+      "max_nodes": 1000000,
+      "max_string_bytes": 8388608,
+      "max_key_bytes": 16384,
+      "max_number_chars": 4096,
+      "max_object_keys": 100000,
+      "max_array_items": 1000000,
+      "max_document_bytes": 67108864,
+      "max_bundle_documents": 2048,
+      "max_bundle_bytes": 536870912,
+      "max_record_bytes": 8388608,
+      "max_record_nodes": 250000
+    },
+    "input_validation": {
+      "nodes": 35,
+      "peak_depth": 3,
+      "peak_string_bytes": 7
+    },
+    "atomic_publication": true
+  },
+  "output_digest": "076dc3a33c90797524374211b2cf68daf8cda193fe945db1a8cad2677149c49f",
+  "cycles": [
+    {
+      "cycle": 1,
+      "accepted": [],
+      "rejected": [],
+      "issue_count": 1,
+      "score": 3,
+      "digest": "076dc3a33c90797524374211b2cf68daf8cda193fe945db1a8cad2677149c49f",
+      "structural_signature": "0a46cedc6a6f1f07f5d58eabb7416196e27ecabe7e24c7f26e5504e8403c8cad",
+      "stable_streak": 1,
+      "relation_count": 8,
+      "new_relations": [
+        "094a2c203217d1cdc4dc",
+        "1c6bcff974e1e1ee4da8",
+        "1e1704dee70052bfaa9b",
+        "24ac623ef1a1d6beb555",
+        "439931db7c7fce40b20b",
+        "936b699f162beb0d42ed",
+        "9a486306384b8ae80f23",
+        "cc1a88d1d5429d94f7a0"
+      ]
+    },
+    {
+      "cycle": 2,
+      "accepted": [],
+      "rejected": [],
+      "issue_count": 1,
+      "score": 3,
+      "digest": "076dc3a33c90797524374211b2cf68daf8cda193fe945db1a8cad2677149c49f",
+      "structural_signature": "0a46cedc6a6f1f07f5d58eabb7416196e27ecabe7e24c7f26e5504e8403c8cad",
+      "stable_streak": 2,
+      "relation_count": 8,
+      "new_relations": []
+    }
+  ],
+  "committed_edits": [],
+  "remaining_issues": [
+    {
+      "analyzer": "enum_domain",
+      "code": "enum_domain_outlier",
+      "path": "/rows/10/status",
+      "message": "Value 'mystery' is outside the certified low-cardinality domain; no unique replacement is justified.",
+      "severity": "warning",
+      "repairable": false,
+      "metadata": {
+        "enum_field": "status",
+        "domain_id": "efd5e03eccd9",
+        "domain": [
+          "done",
+          "ready"
+        ],
+        "relation_kind": "enum_domain"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "kind": "dominant_shape",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "__shape__",
+      "confidence": 1.0,
+      "support": 11,
+      "keys": [
+        "id",
+        "status"
+      ],
+      "relation_id": "936b699f162beb0d42ed"
+    },
+    {
+      "kind": "required_key",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "id",
+      "confidence": 1.0,
+      "support": 11,
+      "schema_key": "id",
+      "relation_id": "cc1a88d1d5429d94f7a0"
+    },
+    {
+      "kind": "required_key",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "status",
+      "confidence": 1.0,
+      "support": 11,
+      "schema_key": "status",
+      "relation_id": "9a486306384b8ae80f23"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "id",
+      "confidence": 1.0,
+      "support": 11,
+      "dominant_type": "int",
+      "relation_id": "1e1704dee70052bfaa9b"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "status",
+      "confidence": 1.0,
+      "support": 11,
+      "dominant_type": "str",
+      "relation_id": "24ac623ef1a1d6beb555"
+    },
+    {
+      "kind": "enum_domain",
+      "array_path": "/rows",
+      "inputs": [],
+      "output": "status",
+      "confidence": 0.909090909091,
+      "support": 10,
+      "domain": [
+        "done",
+        "ready"
+      ],
+      "domain_id": "efd5e03eccd9",
+      "relation_id": "439931db7c7fce40b20b"
+    },
+    {
+      "kind": "identifier_uniqueness",
+      "array_path": "/rows",
+      "inputs": [
+        "id"
+      ],
+      "output": "id",
+      "confidence": 1.0,
+      "support": 11,
+      "id_field": "id",
+      "relation_id": "094a2c203217d1cdc4dc"
+    },
+    {
+      "kind": "sequence_step",
+      "array_path": "/rows",
+      "inputs": [
+        "id"
+      ],
+      "output": "id",
+      "confidence": 1.0,
+      "support": 10,
+      "step": 1,
+      "relation_id": "1c6bcff974e1e1ee4da8"
+    }
+  ],
+  "constraint_graph": {
+    "nodes": [
+      {
+        "id": "/rows#__shape__",
+        "array_path": "/rows",
+        "field": "__shape__"
+      },
+      {
+        "id": "/rows#id",
+        "array_path": "/rows",
+        "field": "id"
+      },
+      {
+        "id": "/rows#status",
+        "array_path": "/rows",
+        "field": "status"
+      }
+    ],
+    "edges": [
+      {
+        "relation_id": "094a2c203217d1cdc4dc",
+        "kind": "identifier_uniqueness",
+        "inputs": [
+          "/rows#id"
+        ],
+        "output": "/rows#id",
+        "confidence": 1.0,
+        "support": 11
+      },
+      {
+        "relation_id": "1c6bcff974e1e1ee4da8",
+        "kind": "sequence_step",
+        "inputs": [
+          "/rows#id"
+        ],
+        "output": "/rows#id",
+        "confidence": 1.0,
+        "support": 10
+      },
+      {
+        "relation_id": "1e1704dee70052bfaa9b",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/rows#id",
+        "confidence": 1.0,
+        "support": 11
+      },
+      {
+        "relation_id": "24ac623ef1a1d6beb555",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/rows#status",
+        "confidence": 1.0,
+        "support": 11
+      },
+      {
+        "relation_id": "439931db7c7fce40b20b",
+        "kind": "enum_domain",
+        "inputs": [],
+        "output": "/rows#status",
+        "confidence": 0.909090909091,
+        "support": 10
+      },
+      {
+        "relation_id": "936b699f162beb0d42ed",
+        "kind": "dominant_shape",
+        "inputs": [],
+        "output": "/rows#__shape__",
+        "confidence": 1.0,
+        "support": 11
+      },
+      {
+        "relation_id": "9a486306384b8ae80f23",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "/rows#status",
+        "confidence": 1.0,
+        "support": 11
+      },
+      {
+        "relation_id": "cc1a88d1d5429d94f7a0",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "/rows#id",
+        "confidence": 1.0,
+        "support": 11
+      }
+    ]
+  },
+  "typed_constraint_ir": {
+    "ir_contract": "json-consistency-repair.typed-constraint-ir.v2",
+    "root_digest": "076dc3a33c90797524374211b2cf68daf8cda193fe945db1a8cad2677149c49f",
+    "object_node_count": 35,
+    "constraint_count": 8,
+    "terminal_count": 1,
+    "candidate_count": 0,
+    "object_nodes": [
+      {
+        "node_id": "node_ea666995ef5d07e5ecbc84ff",
+        "path": "",
+        "json_type": "object",
+        "value_digest": "076dc3a33c90797524374211b2cf68daf8cda193fe945db1a8cad2677149c49f",
+        "size": 1,
+        "keys": [
+          "rows"
+        ]
+      },
+      {
+        "node_id": "node_241d260023346594528ebace",
+        "path": "/rows",
+        "json_type": "array",
+        "value_digest": "5a9849f98933e75a06994423bdb10d560137e92621c9dcf50bd4d6a322680ddd",
+        "size": 11
+      },
+      {
+        "node_id": "node_d1eac135f6a86a9ef7f0fd7c",
+        "path": "/rows/0",
+        "json_type": "object",
+        "value_digest": "4031dd38721dc5ae21b52ab9e88d0786f3ac08e5acfb9194bbe481fd72748d36",
+        "size": 2,
+        "keys": [
+          "id",
+          "status"
+        ]
+      },
+      {
+        "node_id": "node_188ddbad478770664fa4e62e",
+        "path": "/rows/0/id",
+        "json_type": "integer",
+        "value_digest": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "node_id": "node_57f989922829b90ad50b87b8",
+        "path": "/rows/0/status",
+        "json_type": "string",
+        "value_digest": "40ec7f71ea684c8b976e79e8e425f87779e6de57f4821dcfc8066dbcad2defe0"
+      },
+      {
+        "node_id": "node_64fc1d9517e8b3f509e8169b",
+        "path": "/rows/1",
+        "json_type": "object",
+        "value_digest": "a68e37b92c7ccb4a14b82bb45bda5dfffca9d1e9e176fbbcd5833eac8113c594",
+        "size": 2,
+        "keys": [
+          "id",
+          "status"
+        ]
+      },
+      {
+        "node_id": "node_20366802825beecd0b22be3e",
+        "path": "/rows/1/id",
+        "json_type": "integer",
+        "value_digest": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      {
+        "node_id": "node_362a8b72f136d6e98e670d63",
+        "path": "/rows/1/status",
+        "json_type": "string",
+        "value_digest": "58bf5b5478e5d1fb7441daeff9fd1ed60a4ad5fbfabc64715cd8608f3f59f6da"
+      },
+      {
+        "node_id": "node_5c0fd8aea384fc85d78d6e43",
+        "path": "/rows/10",
+        "json_type": "object",
+        "value_digest": "2a6b19f268a95cc574e42fea96b0a0ccc0da2c2f2dec36998898c6074ee96582",
+        "size": 2,
+        "keys": [
+          "id",
+          "status"
+        ]
+      },
+      {
+        "node_id": "node_da1c1fd31110af4c0fff4306",
+        "path": "/rows/10/id",
+        "json_type": "integer",
+        "value_digest": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+      },
+      {
+        "node_id": "node_221d7d8eb68e4f8887ec349b",
+        "path": "/rows/10/status",
+        "json_type": "string",
+        "value_digest": "c5f409c2041ea8915dc7aa53d59e5d9942a9d18a58b7275c6f0a9c45f9010271"
+      },
+      {
+        "node_id": "node_2d12d187011f6e815ce7c977",
+        "path": "/rows/2",
+        "json_type": "object",
+        "value_digest": "58e9428036656df089cb18c4f610b58dde31506d1bc172e714532e49f103dd9e",
+        "size": 2,
+        "keys": [
+          "id",
+          "status"
+        ]
+      },
+      {
+        "node_id": "node_651ed47a1998cf3391771bf6",
+        "path": "/rows/2/id",
+        "json_type": "integer",
+        "value_digest": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+      },
+      {
+        "node_id": "node_89cbd6ff8e4a01f406a1e593",
+        "path": "/rows/2/status",
+        "json_type": "string",
+        "value_digest": "40ec7f71ea684c8b976e79e8e425f87779e6de57f4821dcfc8066dbcad2defe0"
+      },
+      {
+        "node_id": "node_37ef9928b9640dad3b79be02",
+        "path": "/rows/3",
+        "json_type": "object",
+        "value_digest": "8467959d9b5c912584ff3bcdfea82dac1f847ebaafcc7f95253d6604f2110879",
+        "size": 2,
+        "keys": [
+          "id",
+          "status"
+        ]
+      },
+      {
+        "node_id": "node_fd59d822c3e3cf32e369d496",
+        "path": "/rows/3/id",
+        "json_type": "integer",
+        "value_digest": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+      },
+      {
+        "node_id": "node_cb33addb7aafb8287602e898",
+        "path": "/rows/3/status",
+        "json_type": "string",
+        "value_digest": "58bf5b5478e5d1fb7441daeff9fd1ed60a4ad5fbfabc64715cd8608f3f59f6da"
+      },
+      {
+        "node_id": "node_75711fd898548f748775b810",
+        "path": "/rows/4",
+        "json_type": "object",
+        "value_digest": "d002e5419a2913bbb1aab4889f46b4173db5a8953bb37aeb063feed68cdda8d4",
+        "size": 2,
+        "keys": [
+          "id",
+          "status"
+        ]
+      },
+      {
+        "node_id": "node_fa3a6a8f15316cca53e7faaa",
+        "path": "/rows/4/id",
+        "json_type": "integer",
+        "value_digest": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+      },
+      {
+        "node_id": "node_bca3e531ec9f93579df87d4e",
+        "path": "/rows/4/status",
+        "json_type": "string",
+        "value_digest": "40ec7f71ea684c8b976e79e8e425f87779e6de57f4821dcfc8066dbcad2defe0"
+      },
+      {
+        "node_id": "node_08767bbe0a45ecbe92835d6c",
+        "path": "/rows/5",
+        "json_type": "object",
+        "value_digest": "99262de53c28d2bec04add74a04da047675b58079e7df494414b4ccf8e821b5c",
+        "size": 2,
+        "keys": [
+          "id",
+          "status"
+        ]
+      },
+      {
+        "node_id": "node_09d51bc24006569820934b5d",
+        "path": "/rows/5/id",
+        "json_type": "integer",
+        "value_digest": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d"
+      },
+      {
+        "node_id": "node_33fb76dac4b77f4b42d32613",
+        "path": "/rows/5/status",
+        "json_type": "string",
+        "value_digest": "58bf5b5478e5d1fb7441daeff9fd1ed60a4ad5fbfabc64715cd8608f3f59f6da"
+      },
+      {
+        "node_id": "node_c68cb129d282cd5c015eabd8",
+        "path": "/rows/6",
+        "json_type": "object",
+        "value_digest": "0839c77849c50082fd83ebd5fc76f55cd5e909f8171a433bed040d3bf31d6c57",
+        "size": 2,
+        "keys": [
+          "id",
+          "status"
+        ]
+      },
+      {
+        "node_id": "node_2f5c4df9810fdcf0186a2d8e",
+        "path": "/rows/6/id",
+        "json_type": "integer",
+        "value_digest": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+      },
+      {
+        "node_id": "node_3f20bef162a7729de6d606bb",
+        "path": "/rows/6/status",
+        "json_type": "string",
+        "value_digest": "40ec7f71ea684c8b976e79e8e425f87779e6de57f4821dcfc8066dbcad2defe0"
+      },
+      {
+        "node_id": "node_36d121db29bcc176a1e33961",
+        "path": "/rows/7",
+        "json_type": "object",
+        "value_digest": "53ddaff5182cc3466542de44c276c201c9b02e55c146cccc59d6e39dfb50dcf0",
+        "size": 2,
+        "keys": [
+          "id",
+          "status"
+        ]
+      },
+      {
+        "node_id": "node_259cf61462af07f7357b84f7",
+        "path": "/rows/7/id",
+        "json_type": "integer",
+        "value_digest": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451"
+      },
+      {
+        "node_id": "node_2b54579f9f4f7f1375e67244",
+        "path": "/rows/7/status",
+        "json_type": "string",
+        "value_digest": "58bf5b5478e5d1fb7441daeff9fd1ed60a4ad5fbfabc64715cd8608f3f59f6da"
+      },
+      {
+        "node_id": "node_d1129b7b64a7bca949da8177",
+        "path": "/rows/8",
+        "json_type": "object",
+        "value_digest": "0670d7c9ae737abb254e9ca195513dc0f8484cf577c22e9ee7bb62866b84384c",
+        "size": 2,
+        "keys": [
+          "id",
+          "status"
+        ]
+      },
+      {
+        "node_id": "node_508159bfcfe8a364ec333324",
+        "path": "/rows/8/id",
+        "json_type": "integer",
+        "value_digest": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+      },
+      {
+        "node_id": "node_80b22e3ad7348329ec00c479",
+        "path": "/rows/8/status",
+        "json_type": "string",
+        "value_digest": "40ec7f71ea684c8b976e79e8e425f87779e6de57f4821dcfc8066dbcad2defe0"
+      },
+      {
+        "node_id": "node_1aaf94425907d9a67de0f308",
+        "path": "/rows/9",
+        "json_type": "object",
+        "value_digest": "e6ebaca1435f7f1981e439bcf12af91e2ff5d5c68152476717d220b24d585a71",
+        "size": 2,
+        "keys": [
+          "id",
+          "status"
+        ]
+      },
+      {
+        "node_id": "node_1f493ac1c2ce40e458174862",
+        "path": "/rows/9/id",
+        "json_type": "integer",
+        "value_digest": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+      },
+      {
+        "node_id": "node_2d8f729acfbd080dc0b812cb",
+        "path": "/rows/9/status",
+        "json_type": "string",
+        "value_digest": "58bf5b5478e5d1fb7441daeff9fd1ed60a4ad5fbfabc64715cd8608f3f59f6da"
+      }
+    ],
+    "constraints": [
+      {
+        "constraint_id": "094a2c203217d1cdc4dc",
+        "kind": "identifier_uniqueness",
+        "scope": "/rows",
+        "inputs": [
+          "id"
+        ],
+        "output": "id",
+        "confidence": 1.0,
+        "support": 11,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "identifier_uniqueness",
+          "array_path": "/rows",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 11,
+          "id_field": "id",
+          "relation_id": "094a2c203217d1cdc4dc"
+        }
+      },
+      {
+        "constraint_id": "1c6bcff974e1e1ee4da8",
+        "kind": "sequence_step",
+        "scope": "/rows",
+        "inputs": [
+          "id"
+        ],
+        "output": "id",
+        "confidence": 1.0,
+        "support": 10,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "sequence_step",
+          "array_path": "/rows",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 10,
+          "step": 1,
+          "relation_id": "1c6bcff974e1e1ee4da8"
+        }
+      },
+      {
+        "constraint_id": "1e1704dee70052bfaa9b",
+        "kind": "type_consensus",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "id",
+        "confidence": 1.0,
+        "support": 11,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 11,
+          "dominant_type": "int",
+          "relation_id": "1e1704dee70052bfaa9b"
+        }
+      },
+      {
+        "constraint_id": "24ac623ef1a1d6beb555",
+        "kind": "type_consensus",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "status",
+        "confidence": 1.0,
+        "support": 11,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "status",
+          "confidence": 1.0,
+          "support": 11,
+          "dominant_type": "str",
+          "relation_id": "24ac623ef1a1d6beb555"
+        }
+      },
+      {
+        "constraint_id": "439931db7c7fce40b20b",
+        "kind": "enum_domain",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "status",
+        "confidence": 0.909090909091,
+        "support": 10,
+        "law_truth": "TRUE",
+        "current_satisfaction": "FALSE",
+        "violation_count": 1,
+        "source_relation": {
+          "kind": "enum_domain",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "status",
+          "confidence": 0.909090909091,
+          "support": 10,
+          "domain": [
+            "done",
+            "ready"
+          ],
+          "domain_id": "efd5e03eccd9",
+          "relation_id": "439931db7c7fce40b20b"
+        }
+      },
+      {
+        "constraint_id": "936b699f162beb0d42ed",
+        "kind": "dominant_shape",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "__shape__",
+        "confidence": 1.0,
+        "support": 11,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "dominant_shape",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "__shape__",
+          "confidence": 1.0,
+          "support": 11,
+          "keys": [
+            "id",
+            "status"
+          ],
+          "relation_id": "936b699f162beb0d42ed"
+        }
+      },
+      {
+        "constraint_id": "9a486306384b8ae80f23",
+        "kind": "required_key",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "status",
+        "confidence": 1.0,
+        "support": 11,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "status",
+          "confidence": 1.0,
+          "support": 11,
+          "schema_key": "status",
+          "relation_id": "9a486306384b8ae80f23"
+        }
+      },
+      {
+        "constraint_id": "cc1a88d1d5429d94f7a0",
+        "kind": "required_key",
+        "scope": "/rows",
+        "inputs": [],
+        "output": "id",
+        "confidence": 1.0,
+        "support": 11,
+        "law_truth": "TRUE",
+        "current_satisfaction": "TRUE",
+        "violation_count": 0,
+        "source_relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 11,
+          "schema_key": "id",
+          "relation_id": "cc1a88d1d5429d94f7a0"
+        }
+      }
+    ],
+    "terminal_registry": [
+      {
+        "terminal_id": "terminal_4440f3e266ff7d2fa2da6eef",
+        "terminal_type": "DEFECT",
+        "path": "/rows/10/status",
+        "analyzer": "enum_domain",
+        "code": "enum_domain_outlier",
+        "severity": "warning",
+        "satisfaction_truth": "FALSE",
+        "reconstruction_truth": "UNKNOWN",
+        "repairable": false,
+        "candidate_ids": [],
+        "metadata": {
+          "enum_field": "status",
+          "domain_id": "efd5e03eccd9",
+          "domain": [
+            "done",
+            "ready"
+          ],
+          "relation_kind": "enum_domain"
+        },
+        "observability": "OBSERVED_VALUE",
+        "identifiability": "MULTIPLE",
+        "solution_count": 2,
+        "unique_solution_digest": null,
+        "minimal_missing_witness": {
+          "cardinality": 1,
+          "kind": "AUTHORITATIVE_SELECTOR",
+          "target_path": "/rows/10/status",
+          "description": "One independent witness selecting exactly one admissible value is sufficient.",
+          "candidate_value_digests": [
+            "58bf5b5478e5d1fb7441daeff9fd1ed60a4ad5fbfabc64715cd8608f3f59f6da",
+            "40ec7f71ea684c8b976e79e8e425f87779e6de57f4821dcfc8066dbcad2defe0"
+          ]
+        }
+      }
+    ],
+    "candidates": [],
+    "identifiability_registry": [
+      {
+        "path": "/rows/10/status",
+        "observability": "OBSERVED_VALUE",
+        "observed_value_digest": "c5f409c2041ea8915dc7aa53d59e5d9942a9d18a58b7275c6f0a9c45f9010271",
+        "identifiability": "MULTIPLE",
+        "solution_count": 2,
+        "solution_value_digests": [
+          "58bf5b5478e5d1fb7441daeff9fd1ed60a4ad5fbfabc64715cd8608f3f59f6da",
+          "40ec7f71ea684c8b976e79e8e425f87779e6de57f4821dcfc8066dbcad2defe0"
+        ],
+        "unique_solution_digest": null,
+        "finite_domains": [
+          {
+            "source": "enum_domain",
+            "rule": "efd5e03eccd9",
+            "cardinality": 2,
+            "values": [
+              "done",
+              "ready"
+            ],
+            "value_digests": [
+              "58bf5b5478e5d1fb7441daeff9fd1ed60a4ad5fbfabc64715cd8608f3f59f6da",
+              "40ec7f71ea684c8b976e79e8e425f87779e6de57f4821dcfc8066dbcad2defe0"
+            ]
+          }
+        ],
+        "domain_sources": [
+          "enum_domain"
+        ],
+        "candidate_ids": [],
+        "direction_blocked_candidate_ids": [],
+        "terminal_issue_count": 1,
+        "minimal_missing_witness": {
+          "cardinality": 1,
+          "kind": "AUTHORITATIVE_SELECTOR",
+          "target_path": "/rows/10/status",
+          "description": "One independent witness selecting exactly one admissible value is sufficient.",
+          "candidate_value_digests": [
+            "58bf5b5478e5d1fb7441daeff9fd1ed60a4ad5fbfabc64715cd8608f3f59f6da",
+            "40ec7f71ea684c8b976e79e8e425f87779e6de57f4821dcfc8066dbcad2defe0"
+          ]
+        }
+      }
+    ],
+    "identifiability_summary": {
+      "UNIQUE": 0,
+      "MULTIPLE": 1,
+      "NONE": 0,
+      "INSUFFICIENT": 0
+    },
+    "unresolved_terminal_ids": [
+      "terminal_4440f3e266ff7d2fa2da6eef"
+    ],
+    "truth_summary": {
+      "TRUE": 15,
+      "FALSE": 2,
+      "UNKNOWN": 1
+    }
+  },
+  "terminal_registry": [
+    {
+      "terminal_id": "terminal_4440f3e266ff7d2fa2da6eef",
+      "terminal_type": "DEFECT",
+      "path": "/rows/10/status",
+      "analyzer": "enum_domain",
+      "code": "enum_domain_outlier",
+      "severity": "warning",
+      "satisfaction_truth": "FALSE",
+      "reconstruction_truth": "UNKNOWN",
+      "repairable": false,
+      "candidate_ids": [],
+      "metadata": {
+        "enum_field": "status",
+        "domain_id": "efd5e03eccd9",
+        "domain": [
+          "done",
+          "ready"
+        ],
+        "relation_kind": "enum_domain"
+      },
+      "observability": "OBSERVED_VALUE",
+      "identifiability": "MULTIPLE",
+      "solution_count": 2,
+      "unique_solution_digest": null,
+      "minimal_missing_witness": {
+        "cardinality": 1,
+        "kind": "AUTHORITATIVE_SELECTOR",
+        "target_path": "/rows/10/status",
+        "description": "One independent witness selecting exactly one admissible value is sufficient.",
+        "candidate_value_digests": [
+          "58bf5b5478e5d1fb7441daeff9fd1ed60a4ad5fbfabc64715cd8608f3f59f6da",
+          "40ec7f71ea684c8b976e79e8e425f87779e6de57f4821dcfc8066dbcad2defe0"
+        ]
+      }
+    }
+  ],
+  "truth_summary": {
+    "TRUE": 15,
+    "FALSE": 2,
+    "UNKNOWN": 1
+  },
+  "identifiability_registry": [
+    {
+      "path": "/rows/10/status",
+      "observability": "OBSERVED_VALUE",
+      "observed_value_digest": "c5f409c2041ea8915dc7aa53d59e5d9942a9d18a58b7275c6f0a9c45f9010271",
+      "identifiability": "MULTIPLE",
+      "solution_count": 2,
+      "solution_value_digests": [
+        "58bf5b5478e5d1fb7441daeff9fd1ed60a4ad5fbfabc64715cd8608f3f59f6da",
+        "40ec7f71ea684c8b976e79e8e425f87779e6de57f4821dcfc8066dbcad2defe0"
+      ],
+      "unique_solution_digest": null,
+      "finite_domains": [
+        {
+          "source": "enum_domain",
+          "rule": "efd5e03eccd9",
+          "cardinality": 2,
+          "values": [
+            "done",
+            "ready"
+          ],
+          "value_digests": [
+            "58bf5b5478e5d1fb7441daeff9fd1ed60a4ad5fbfabc64715cd8608f3f59f6da",
+            "40ec7f71ea684c8b976e79e8e425f87779e6de57f4821dcfc8066dbcad2defe0"
+          ]
+        }
+      ],
+      "domain_sources": [
+        "enum_domain"
+      ],
+      "candidate_ids": [],
+      "direction_blocked_candidate_ids": [],
+      "terminal_issue_count": 1,
+      "minimal_missing_witness": {
+        "cardinality": 1,
+        "kind": "AUTHORITATIVE_SELECTOR",
+        "target_path": "/rows/10/status",
+        "description": "One independent witness selecting exactly one admissible value is sufficient.",
+        "candidate_value_digests": [
+          "58bf5b5478e5d1fb7441daeff9fd1ed60a4ad5fbfabc64715cd8608f3f59f6da",
+          "40ec7f71ea684c8b976e79e8e425f87779e6de57f4821dcfc8066dbcad2defe0"
+        ]
+      }
+    }
+  ],
+  "identifiability_summary": {
+    "UNIQUE": 0,
+    "MULTIPLE": 1,
+    "NONE": 0,
+    "INSUFFICIENT": 0
+  },
+  "knowledge_ledger": {
+    "relations": {
+      "936b699f162beb0d42ed": {
+        "relation": {
+          "kind": "dominant_shape",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "__shape__",
+          "confidence": 1.0,
+          "support": 11,
+          "keys": [
+            "id",
+            "status"
+          ],
+          "relation_id": "936b699f162beb0d42ed"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 2,
+        "seen_cycles": 2,
+        "survives_current": true
+      },
+      "cc1a88d1d5429d94f7a0": {
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 11,
+          "schema_key": "id",
+          "relation_id": "cc1a88d1d5429d94f7a0"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 2,
+        "seen_cycles": 2,
+        "survives_current": true
+      },
+      "9a486306384b8ae80f23": {
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "status",
+          "confidence": 1.0,
+          "support": 11,
+          "schema_key": "status",
+          "relation_id": "9a486306384b8ae80f23"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 2,
+        "seen_cycles": 2,
+        "survives_current": true
+      },
+      "1e1704dee70052bfaa9b": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 11,
+          "dominant_type": "int",
+          "relation_id": "1e1704dee70052bfaa9b"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 2,
+        "seen_cycles": 2,
+        "survives_current": true
+      },
+      "24ac623ef1a1d6beb555": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "status",
+          "confidence": 1.0,
+          "support": 11,
+          "dominant_type": "str",
+          "relation_id": "24ac623ef1a1d6beb555"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 2,
+        "seen_cycles": 2,
+        "survives_current": true
+      },
+      "439931db7c7fce40b20b": {
+        "relation": {
+          "kind": "enum_domain",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "status",
+          "confidence": 0.909090909091,
+          "support": 10,
+          "domain": [
+            "done",
+            "ready"
+          ],
+          "domain_id": "efd5e03eccd9",
+          "relation_id": "439931db7c7fce40b20b"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 2,
+        "seen_cycles": 2,
+        "survives_current": true
+      },
+      "094a2c203217d1cdc4dc": {
+        "relation": {
+          "kind": "identifier_uniqueness",
+          "array_path": "/rows",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 11,
+          "id_field": "id",
+          "relation_id": "094a2c203217d1cdc4dc"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 2,
+        "seen_cycles": 2,
+        "survives_current": true
+      },
+      "1c6bcff974e1e1ee4da8": {
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/rows",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 10,
+          "step": 1,
+          "relation_id": "1c6bcff974e1e1ee4da8"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 2,
+        "seen_cycles": 2,
+        "survives_current": true
+      }
+    },
+    "newly_certified": [
+      {
+        "cycle": 1,
+        "relation_id": "936b699f162beb0d42ed",
+        "relation": {
+          "kind": "dominant_shape",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "__shape__",
+          "confidence": 1.0,
+          "support": 11,
+          "keys": [
+            "id",
+            "status"
+          ],
+          "relation_id": "936b699f162beb0d42ed"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "cc1a88d1d5429d94f7a0",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 11,
+          "schema_key": "id",
+          "relation_id": "cc1a88d1d5429d94f7a0"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "9a486306384b8ae80f23",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "status",
+          "confidence": 1.0,
+          "support": 11,
+          "schema_key": "status",
+          "relation_id": "9a486306384b8ae80f23"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "1e1704dee70052bfaa9b",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 11,
+          "dominant_type": "int",
+          "relation_id": "1e1704dee70052bfaa9b"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "24ac623ef1a1d6beb555",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "status",
+          "confidence": 1.0,
+          "support": 11,
+          "dominant_type": "str",
+          "relation_id": "24ac623ef1a1d6beb555"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "439931db7c7fce40b20b",
+        "relation": {
+          "kind": "enum_domain",
+          "array_path": "/rows",
+          "inputs": [],
+          "output": "status",
+          "confidence": 0.909090909091,
+          "support": 10,
+          "domain": [
+            "done",
+            "ready"
+          ],
+          "domain_id": "efd5e03eccd9",
+          "relation_id": "439931db7c7fce40b20b"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "094a2c203217d1cdc4dc",
+        "relation": {
+          "kind": "identifier_uniqueness",
+          "array_path": "/rows",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 11,
+          "id_field": "id",
+          "relation_id": "094a2c203217d1cdc4dc"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "1c6bcff974e1e1ee4da8",
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/rows",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 10,
+          "step": 1,
+          "relation_id": "1c6bcff974e1e1ee4da8"
+        }
+      }
+    ]
+  },
+  "strong_stable": true,
+  "dry_run": false,
+  "proposed_edits": [],
+  "would_commit_edits": 0,
+  "publication_performed": null,
+  "replay": {
+    "forward_digest": "076dc3a33c90797524374211b2cf68daf8cda193fe945db1a8cad2677149c49f",
+    "inverse_restores_input": true
+  }
+}

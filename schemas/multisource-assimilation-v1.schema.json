@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://json-consistency-repair.local/multisource-assimilation-v1.schema.json",
+  "title": "JSON Consistency Repair multi-source assimilation certificate v1",
+  "type": "object",
+  "required": ["contract", "enabled", "source_registry", "identity_registry", "assimilation", "relation_lifecycle"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.multisource-assimilation.v1"},
+    "enabled": {"type": "boolean"},
+    "source_registry": {"type": "object"},
+    "identity_registry": {"type": "object"},
+    "identity_collisions": {"type": "array"},
+    "assimilation": {"type": "object"},
+    "relation_lifecycle": {"type": "object"},
+    "policy": {"type": "object"},
+    "assimilation_digest": {"type": "string"}
+  },
+  "additionalProperties": true
+}

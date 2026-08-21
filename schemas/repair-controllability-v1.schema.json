@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/json-consistency-repair/repair-controllability-v1.schema.json",
+  "title": "PASS036 repair controllability certificate",
+  "type": "object",
+  "required": ["contract", "status", "reachability", "controllability", "requested_action_count", "checks", "certificate_sha256"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.repair-controllability.v1"},
+    "enabled": {"type": "boolean"},
+    "status": {"enum": ["NO_ACTION_REQUIRED", "CONTROLLABLE", "REACHABLE_UNDER_OPEN_CONTROL_WORLD", "IDENTIFIABLE_BUT_UNREACHABLE"]},
+    "reachability": {"enum": ["NO_ACTION", "REACHABLE", "UNREACHABLE"]},
+    "controllability": {"enum": ["NO_ACTION", "EXPLICITLY_CONTROLLABLE", "OPEN_WORLD_REACHABLE", "NOT_CONTROLLABLE"]},
+    "document": {"type": ["string", "null"]},
+    "rules": {"type": "array"},
+    "requested_action_count": {"type": "integer", "minimum": 0},
+    "requested_cost": {"type": "integer", "minimum": 0},
+    "budget": {"type": "object"},
+    "permissions": {"type": "array"},
+    "precedence_edges": {"type": "array"},
+    "selected_order": {"type": "array", "items": {"type": "string"}},
+    "precedence_cycles": {"type": "array"},
+    "target_digest": {"type": ["string", "null"]},
+    "checks": {"type": "object"},
+    "certificate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

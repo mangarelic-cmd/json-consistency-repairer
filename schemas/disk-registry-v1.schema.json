@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://json-consistency-repair.local/schemas/disk-registry-v1.schema.json",
+  "title": "JSON Consistency Repair exact disk registry summary",
+  "type": "object",
+  "required": ["contract", "backend", "exact", "recovered_functional_pairs", "lookup_rows", "semantic_digest"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.disk-registry.v1"},
+    "backend": {"enum": ["sqlite3", "disabled"]},
+    "exact": {"type": "boolean"},
+    "ephemeral": {"type": "boolean"},
+    "recovered_functional_pairs": {"type": "integer", "minimum": 0},
+    "lookup_rows": {"type": "integer", "minimum": 0},
+    "semantic_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

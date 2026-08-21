@@ -1,0 +1,280 @@
+{
+  "benchmark": "PASS041_SC_HOT_PATH_SPEED_AND_COVERAGE",
+  "engine": "json-consistency-repair",
+  "version": "0.41.0",
+  "date": "2026-08-21",
+  "architecture": {
+    "full": {
+      "scan": "ALL",
+      "correction_search": "GLOBAL_EXHAUSTIVE",
+      "falsification": "ALL_RELEVANT_RELATIONS",
+      "certification": "FULL_INDEPENDENT"
+    },
+    "fast": {
+      "scan": "ALL_ANALYZERS",
+      "correction_search": "UNIQUE_LOCAL_REPAIR_CONES_ONLY",
+      "falsification": "ACTION_RELATIONS_ONLY",
+      "certification": "FAST_SCAN_ONLY",
+      "escalation": "execution_mode=full"
+    }
+  },
+  "same_corpus_dirty_speed": [
+    {
+      "rows": 100,
+      "v040_full_seconds": 1.770521705999272,
+      "pass041_full_seconds": 0.7996073230006004,
+      "pass041_fast_seconds": 0.027492195999002433,
+      "v040_to_pass041_full_speedup_x": 2.2142389833990332,
+      "v040_to_pass041_fast_speedup_x": 64.40088329297217,
+      "pass041_full_to_fast_speedup_x": 29.08488368952464,
+      "exact_repair": true
+    },
+    {
+      "rows": 500,
+      "v040_full_seconds": 7.715142163000564,
+      "pass041_full_seconds": 2.5548578279995127,
+      "pass041_fast_seconds": 0.12424210000062885,
+      "v040_to_pass041_full_speedup_x": 3.0197931479583042,
+      "v040_to_pass041_fast_speedup_x": 62.09764776160025,
+      "pass041_full_to_fast_speedup_x": 20.563543500846986,
+      "exact_repair": true
+    },
+    {
+      "rows": 1000,
+      "v040_full_seconds": 16.621606405999046,
+      "pass041_full_seconds": 4.496159167998485,
+      "pass041_fast_seconds": 0.24985367099907307,
+      "v040_to_pass041_full_speedup_x": 3.696845637561879,
+      "v040_to_pass041_fast_speedup_x": 66.52536398418862,
+      "pass041_full_to_fast_speedup_x": 17.995169532710868,
+      "exact_repair": true
+    }
+  ],
+  "pass041_full_raw": [
+    {
+      "mode": "full",
+      "n": 100,
+      "dirty": true,
+      "seconds_median": 0.7996073230006004,
+      "seconds_all": [
+        0.7996073230006004
+      ],
+      "status": "PASS",
+      "edits": 1,
+      "exact": true
+    },
+    {
+      "mode": "full",
+      "n": 500,
+      "dirty": true,
+      "seconds_median": 2.5548578279995127,
+      "seconds_all": [
+        2.5548578279995127
+      ],
+      "status": "PASS",
+      "edits": 2,
+      "exact": true
+    },
+    {
+      "mode": "full",
+      "n": 1000,
+      "dirty": true,
+      "seconds_median": 4.496159167998485,
+      "seconds_all": [
+        4.496159167998485
+      ],
+      "status": "PASS",
+      "edits": 2,
+      "exact": true
+    }
+  ],
+  "pass041_fast_raw": [
+    {
+      "mode": "fast",
+      "n": 100,
+      "dirty": true,
+      "seconds_median": 0.027492195999002433,
+      "seconds_all": [
+        0.027492195999002433,
+        0.026745937000669073,
+        0.027758954000091762
+      ],
+      "status": "PASS",
+      "edits": 1,
+      "exact": true
+    },
+    {
+      "mode": "fast",
+      "n": 500,
+      "dirty": true,
+      "seconds_median": 0.12424210000062885,
+      "seconds_all": [
+        0.1257950389990583,
+        0.12424210000062885,
+        0.12353650099976221
+      ],
+      "status": "PASS",
+      "edits": 2,
+      "exact": true
+    },
+    {
+      "mode": "fast",
+      "n": 1000,
+      "dirty": true,
+      "seconds_median": 0.24985367099907307,
+      "seconds_all": [
+        0.26599822099888115,
+        0.2485038489994622,
+        0.24985367099907307
+      ],
+      "status": "PASS",
+      "edits": 2,
+      "exact": true
+    }
+  ],
+  "pass041_fast_valid_raw": [
+    {
+      "mode": "fast",
+      "n": 100,
+      "dirty": false,
+      "seconds_median": 0.01514752200091607,
+      "seconds_all": [
+        0.018593344999317196,
+        0.01461150499926589,
+        0.01514752200091607
+      ],
+      "status": "PASS",
+      "edits": 0,
+      "exact": true
+    },
+    {
+      "mode": "fast",
+      "n": 500,
+      "dirty": false,
+      "seconds_median": 0.06391819700002088,
+      "seconds_all": [
+        0.06391819700002088,
+        0.06407802400099172,
+        0.0623500250003417
+      ],
+      "status": "PASS",
+      "edits": 0,
+      "exact": true
+    },
+    {
+      "mode": "fast",
+      "n": 1000,
+      "dirty": false,
+      "seconds_median": 0.1242731559996173,
+      "seconds_all": [
+        0.15860224800053402,
+        0.1241154719991755,
+        0.1242731559996173
+      ],
+      "status": "PASS",
+      "edits": 0,
+      "exact": true
+    }
+  ],
+  "pass041_fast_5000": {
+    "valid": {
+      "n": 5000,
+      "seconds_median": 0.729,
+      "status": "PASS",
+      "edits": 0,
+      "exact": true
+    },
+    "dirty": {
+      "n": 5000,
+      "seconds_median": 1.4781,
+      "status": "PASS",
+      "edits": 2,
+      "exact": true
+    }
+  },
+  "syntax_frontier": [
+    {
+      "case": "trailing_comma",
+      "contract_exact": true,
+      "result": "remove_trailing_comma"
+    },
+    {
+      "case": "missing_comma",
+      "contract_exact": true,
+      "result": "insert_comma"
+    },
+    {
+      "case": "missing_colon",
+      "contract_exact": true,
+      "result": "insert_colon"
+    },
+    {
+      "case": "truncated_obj",
+      "contract_exact": true,
+      "result": "insert_object_close"
+    },
+    {
+      "case": "truncated_nested",
+      "contract_exact": true,
+      "result": "close_truncated_container"
+    },
+    {
+      "case": "single_quotes",
+      "contract_exact": true,
+      "result": "normalize_single_quoted_strings"
+    },
+    {
+      "case": "unquoted_key",
+      "contract_exact": true,
+      "result": "quote_unquoted_identifier_keys"
+    },
+    {
+      "case": "comment",
+      "contract_exact": true,
+      "result": "strip_js_comments"
+    },
+    {
+      "case": "duplicate_key",
+      "contract_exact": true,
+      "result": "REFUSED_AMBIGUOUS"
+    },
+    {
+      "case": "missing_quote",
+      "contract_exact": true,
+      "result": "close_unterminated_string"
+    },
+    {
+      "case": "extra_brace",
+      "contract_exact": true,
+      "result": "remove_unexpected_delimiter"
+    },
+    {
+      "case": "two_errors",
+      "contract_exact": true,
+      "result": "bounded_minimal_composition"
+    },
+    {
+      "case": "array_trailing",
+      "contract_exact": true,
+      "result": "remove_trailing_comma"
+    },
+    {
+      "case": "array_missing_comma",
+      "contract_exact": true,
+      "result": "insert_comma"
+    }
+  ],
+  "syntax_contract": "14/14",
+  "determinable_syntax_repairs": "13/13",
+  "ambiguous_duplicate_key_refusal": "1/1",
+  "validation": {
+    "collected_tests": 462,
+    "all_collected_tests_passed_in_groups": true,
+    "pass041_stress": "600/600",
+    "pass040_plus_pass041": "25/25",
+    "false_mutations_in_speed_corpus": 0,
+    "full_final_certification": "PASS",
+    "fast_never_claims_full_certification": true
+  },
+  "interpretation": "Speed is obtained by avoiding repeated pure projections, reusing identical-state analyses, and deepening expensive search/falsification only around actionable local cones. Full mode remains the authority for exhaustive certification."
+}

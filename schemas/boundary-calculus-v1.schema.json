@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"json-consistency-repair.boundary-calculus.v1",
+  "type":"object",
+  "required":["contract"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.boundary-calculus.v1"},
+    "mode":{"enum":["bundle","streaming"]},
+    "cycles":{"type":"array"},
+    "final":{"type":"object"},
+    "registry":{"type":"object"},
+    "documents":{"type":"object"}
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"json-consistency-repair.boundary-registry.v1",
+  "type":"object",
+  "required":["contract","boundary_count","contracts","bounds_of_bounds"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.boundary-registry.v1"},
+    "boundary_count":{"type":"integer","minimum":0},
+    "contracts":{"type":"array","items":{"type":"object","required":["boundary_id","source","path_pattern","constraints"]}},
+    "bounds_of_bounds":{"type":"object","required":["conflict_count","conflicts","status"],"properties":{
+      "conflict_count":{"type":"integer","minimum":0},
+      "conflicts":{"type":"array"},
+      "status":{"enum":["COHERENT","CONFLICT"]}
+    }}
+  }
+}

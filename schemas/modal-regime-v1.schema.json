@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "json-consistency-repair.modal-regime.v1",
+  "type": "object",
+  "required": [
+    "kind",
+    "relation_id",
+    "discriminator",
+    "regimes"
+  ],
+  "properties": {
+    "kind": {
+      "const": "modal_regime"
+    },
+    "relation_id": {
+      "type": "string"
+    },
+    "discriminator": {
+      "type": "string"
+    },
+    "regimes": {
+      "type": "array",
+      "minItems": 2
+    }
+  }
+}

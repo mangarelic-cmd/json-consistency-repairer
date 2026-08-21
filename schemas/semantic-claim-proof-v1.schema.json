@@ -1,0 +1,72 @@
+{
+  "$id": "https://json-consistency-repair.local/semantic-claim-proof-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "claim_family": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "claim_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "claim_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "classification": {
+      "enum": [
+        "SOURCE_EXACT",
+        "DERIVED_EXACT",
+        "USER_DECLARED",
+        "INFERRED",
+        "UNVERIFIED_ATTRIBUTION"
+      ]
+    },
+    "contract": {
+      "const": "json-consistency-repair.semantic-claim-proof.v1"
+    },
+    "derived_value_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "proof_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_inclusions": {
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 1024,
+      "type": "array"
+    },
+    "verified": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "contract",
+    "claim_id",
+    "claim_family",
+    "classification",
+    "verified",
+    "reason",
+    "claim_payload",
+    "claim_sha256",
+    "source_inclusions",
+    "proof_sha256"
+  ],
+  "title": "JSON Consistency Repair semantic claim proof v1",
+  "type": "object"
+}

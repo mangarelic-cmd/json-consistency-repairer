@@ -1,0 +1,23 @@
+{
+  "$id": "https://json-consistency-repair.local/fifth-series-closure-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JSON Consistency Repair fifth series closure v1",
+  "type": "object",
+  "required": ["contract","series","status","ok","checks","completed_substantive_passes","remaining_substantive_passes","closure_sha256"],
+  "properties": {
+    "contract": {"const":"json-consistency-repair.fifth-series-closure.v1"},
+    "series": {"const":"PASS033-PASS040"},
+    "status": {"enum":["CLOSED","OPEN"]},
+    "ok": {"type":"boolean"},
+    "checks": {"type":"object","additionalProperties":{"type":"boolean"}},
+    "completed_substantive_passes": {"type":"integer","minimum":0,"maximum":8},
+    "remaining_substantive_passes": {"type":"integer","minimum":0,"maximum":8},
+    "proof_graph_sha256": {"type":["string","null"]},
+    "rectification_packet_sha256": {"type":["string","null"]},
+    "provenance_root": {"type":["string","null"]},
+    "residual_information_sha256": {"type":["string","null"]},
+    "blind_carrier_sha256": {"type":["string","null"]},
+    "closure_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

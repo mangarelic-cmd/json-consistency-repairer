@@ -1,0 +1,107 @@
+{
+  "$id": "https://json-consistency-repair.local/evidence-poisoning-firewall-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "contract": {
+      "const": "json-consistency-repair.evidence-poisoning-firewall.v1"
+    },
+    "correlation_edges": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "a": {
+            "type": "string"
+          },
+          "b": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "a",
+          "b"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "derivation_lineage_is_not_independent": {
+      "type": "boolean"
+    },
+    "effective_groups": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "effective_group": {
+            "type": "string"
+          },
+          "roles": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "source_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "effective_group",
+          "source_ids",
+          "roles"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "finding_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "findings": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "firewall_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "identical_content_is_always_flagged": {
+      "type": "boolean"
+    },
+    "identical_content_is_not_independent_when_strict_policy_enabled": {
+      "type": "boolean"
+    },
+    "same_effective_group_is_not_independent": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "contract",
+    "effective_groups",
+    "correlation_edges",
+    "findings",
+    "finding_count",
+    "firewall_sha256"
+  ],
+  "title": "JSON Consistency Repair evidence poisoning firewall v1",
+  "type": "object"
+}

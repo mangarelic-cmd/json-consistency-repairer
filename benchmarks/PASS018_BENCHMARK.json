@@ -1,0 +1,18 @@
+{
+  "all_checks_pass": true,
+  "benchmark": "JCR_PASS018_CONSTRAINT_BRIDGE_SYNTHETIC_V1",
+  "categories": {
+    "dsl_exact": 100,
+    "linear_ambiguous_abstain": 100,
+    "linear_joint_missing": 100,
+    "linear_unique": 100,
+    "ref_bridge": 100,
+    "schema_exact": 100
+  },
+  "engine_version": "0.18.0",
+  "expected_per_category": 100,
+  "false_mutations": 0,
+  "package_code_sha256": "f3c4b5902fc78c07650afce5bedddd139e5b33fef6e289c18f643ea8ac44d2a1",
+  "scope": "synthetic in-distribution PASS018 DSL/schema/exact-linear benchmark; not an external comparative dominance benchmark",
+  "total_checks": 600
+}

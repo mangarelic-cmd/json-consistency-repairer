@@ -1,0 +1,61 @@
+{
+  "$id": "json-consistency-repair.typed-constraint-ir.v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "ir_contract": {
+      "const": "json-consistency-repair.typed-constraint-ir.v1"
+    },
+    "materialization_scope": {
+      "enum": [
+        "FULL",
+        "BOUNDED_STREAM"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "bundle",
+        "streaming"
+      ]
+    },
+    "root_digest": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "terminal_registry": {
+      "type": "array"
+    },
+    "truth_summary": {
+      "properties": {
+        "FALSE": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "TRUE": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "UNKNOWN": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "TRUE",
+        "FALSE",
+        "UNKNOWN"
+      ],
+      "type": "object"
+    },
+    "unresolved_terminal_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "ir_contract",
+    "truth_summary"
+  ],
+  "type": "object"
+}

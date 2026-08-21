@@ -1,0 +1,23 @@
+{
+  "all_checks_pass": true,
+  "benchmark": "JCR_FINAL_CANDIDATE_SYNTHETIC_V2",
+  "bundle_abstain": 50,
+  "bundle_abstain_ok": 50,
+  "bundle_exact": 100,
+  "bundle_exact_ok": 100,
+  "engine_version": "0.16.0",
+  "false_mutations": 0,
+  "idempotence_failures": 0,
+  "package_code_sha256": "c832befac43c073b0b2ccbedda73266699700d8031bf19170ac6533cd15eb9bf",
+  "replay_failures": 0,
+  "scope": "synthetic in-distribution multi-mode closure benchmark; not an external comparative dominance benchmark",
+  "security_refusal": 100,
+  "security_refusal_ok": 100,
+  "seed": 8008,
+  "single_abstain": 150,
+  "single_abstain_ok": 150,
+  "single_exact": 150,
+  "single_exact_ok": 150,
+  "stream_second_pass": 50,
+  "stream_second_pass_ok": 50
+}

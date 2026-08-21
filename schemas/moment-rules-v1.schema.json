@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/json-consistency-repair/moment-rules-v1.schema.json",
+  "title": "JSON Consistency Repair moment/distribution rules v1",
+  "type": "object",
+  "required": ["rules"],
+  "properties": {
+    "rules": {
+      "type": "array",
+      "maxItems": 256,
+      "items": {
+        "type": "object",
+        "required": ["kind"],
+        "properties": {
+          "kind": {"enum": ["weighted_mean","weighted_sum","variance","covariance","probability_total","uncertainty_variance","unit_normalize"]},
+          "rule_id": {"type": "string"},
+          "document": {"type": "string"},
+          "array_path": {"type": "string"},
+          "items_field": {"type": "string"},
+          "value_field": {"type": "string"},
+          "weight_field": {"type": "string"},
+          "x_field": {"type": "string"},
+          "y_field": {"type": "string"},
+          "probability_field": {"type": "string"},
+          "uncertainty_field": {"type": "string"},
+          "target": {"type": "string"},
+          "ddof": {"type": "integer", "minimum": 0},
+          "mode": {"enum": ["weighted_mean","sum"]},
+          "unit_field": {"type": "string"},
+          "canonical_unit": {"type": "string"},
+          "conversions": {"type": "object"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

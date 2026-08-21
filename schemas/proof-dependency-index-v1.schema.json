@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/json-consistency-repair/proof-dependency-index-v1.schema.json",
+  "title": "PASS038 conservative proof dependency index",
+  "type":"object",
+  "required":["contract","proof_graph_sha256","node_count","nodes","coverage_policy","index_sha256"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.proof-dependency-index.v1"},
+    "proof_graph_sha256":{"type":["string","null"]},
+    "node_count":{"type":"integer","minimum":0},
+    "nodes":{"type":"array","items":{"type":"object","required":["node_id","kind","dependency_tokens"],"properties":{"node_id":{"type":"string"},"kind":{"type":["string","null"]},"dependency_tokens":{"type":"array","items":{"type":"string"},"uniqueItems":true}},"additionalProperties":true}},
+    "coverage_policy":{"const":"OPAQUE_NODE_IS_GLOBAL_AND_MUST_BE_INVALIDATED"},
+    "index_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "additionalProperties":true
+}

@@ -1,0 +1,32 @@
+{
+  "$id": "https://json-consistency-repair.local/repair-path-algebra-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JSON Consistency Repair finite repair-path algebra v1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["contract", "action_count", "max_actions", "frontier_overflow", "actions", "critical_pair_count", "critical_pairs", "open_critical_pair_count", "termination", "confluence_status", "algebra_sha256"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.repair-path-algebra.v1"},
+    "action_count": {"type": "integer", "minimum": 0},
+    "max_actions": {"type": "integer", "minimum": 1},
+    "frontier_overflow": {"type": "boolean"},
+    "actions": {"type": "array", "items": {"$ref": "typed-repair-action-v1.schema.json"}},
+    "critical_pair_count": {"type": "integer", "minimum": 0},
+    "critical_pairs": {"type": "array", "items": {"$ref": "critical-pair-v1.schema.json"}},
+    "open_critical_pair_count": {"type": "integer", "minimum": 0},
+    "termination": {
+      "type": "object",
+      "required": ["status", "measure", "initial_rank", "strict_decrease_per_transition", "action_reuse_forbidden", "scope"],
+      "properties": {
+        "status": {"enum": ["TERMINATION_PROVEN_FINITE_FRONTIER", "REWRITE_TERMINATION_FRONTIER_TOO_LARGE"]},
+        "measure": {"const": "remaining_unused_action_identities"},
+        "initial_rank": {"type": "integer", "minimum": 0},
+        "strict_decrease_per_transition": {"const": true},
+        "action_reuse_forbidden": {"const": true},
+        "scope": {"const": "current_finite_candidate_frontier_only"}
+      }
+    },
+    "confluence_status": {"enum": ["CONFLUENT_ON_CURRENT_FINITE_FRONTIER", "CRITICAL_PAIR_OPEN", "CONFLUENCE_UNCOMPUTED_FRONTIER_TOO_LARGE"]},
+    "algebra_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

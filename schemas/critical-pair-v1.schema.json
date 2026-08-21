@@ -1,0 +1,16 @@
+{
+  "$id": "https://json-consistency-repair.local/critical-pair-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JSON Consistency Repair critical pair v1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["contract", "left", "right", "status", "joinable", "pair_sha256"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.critical-pair.v1"},
+    "left": {"type": "string"},
+    "right": {"type": "string"},
+    "status": {"enum": ["SAME_ACTION", "PROVEN_COMMUTE_DISJOINT", "PAIR_NOT_COAPPLICABLE_FROM_SNAPSHOT", "JOINABLE_CRITICAL_PAIR", "CRITICAL_PAIR_OPEN", "CRITICAL_PAIR_FRONTIER_TOO_LARGE"]},
+    "joinable": {"type": "boolean"},
+    "pair_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

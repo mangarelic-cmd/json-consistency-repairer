@@ -1,0 +1,56 @@
+{
+  "$id": "https://json-consistency-repair.local/json-merkle-inclusion-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "contract": {
+      "const": "json-consistency-repair.json-merkle-inclusion.v1"
+    },
+    "fragment_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "frames": {
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 4096,
+      "type": "array"
+    },
+    "pointer": {
+      "type": "string"
+    },
+    "proof_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "root_merkle_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source_canonical_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "source_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "contract",
+    "pointer",
+    "fragment",
+    "fragment_sha256",
+    "frames",
+    "root_merkle_sha256",
+    "proof_sha256"
+  ],
+  "title": "JSON Merkle inclusion proof v1",
+  "type": "object"
+}

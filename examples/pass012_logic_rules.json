@@ -1,0 +1,20 @@
+{
+  "rules": [
+    {
+      "rule_id": "paid_implies_archived",
+      "kind": "implies",
+      "array_path": "/rows",
+      "if": {"field": "paid", "equals": true},
+      "then": {"field": "archived", "equals": true}
+    },
+    {
+      "rule_id": "exactly_one_delivery_channel",
+      "kind": "exactly_one",
+      "array_path": "/rows",
+      "items": [
+        {"field": "email_enabled", "equals": true},
+        {"field": "sms_enabled", "equals": true}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "$id": "https://example.invalid/json-consistency-repair/robust-envelope-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "evaluation_time": {
+      "type": "string"
+    },
+    "rules": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "allowed_values": {
+            "type": "array"
+          },
+          "candidate_metadata_key": {
+            "type": "string"
+          },
+          "center_path": {
+            "type": "string"
+          },
+          "document": {
+            "type": "string"
+          },
+          "enter_above": {
+            "type": [
+              "number",
+              "string"
+            ]
+          },
+          "evaluation_time": {
+            "type": "string"
+          },
+          "exit_below": {
+            "type": [
+              "number",
+              "string"
+            ]
+          },
+          "k": {
+            "type": [
+              "number",
+              "string"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "uncertainty_interval",
+              "clock_freshness",
+              "regime_guard",
+              "hysteresis"
+            ]
+          },
+          "lower_path": {
+            "type": "string"
+          },
+          "max_age_seconds": {
+            "type": [
+              "number",
+              "string"
+            ]
+          },
+          "max_future_skew_seconds": {
+            "type": [
+              "number",
+              "string"
+            ]
+          },
+          "metric_path": {
+            "type": "string"
+          },
+          "off_value": {},
+          "on_value": {},
+          "path": {
+            "type": "string"
+          },
+          "path_pattern": {
+            "type": "string"
+          },
+          "path_prefix": {
+            "type": "string"
+          },
+          "radius_path": {
+            "type": "string"
+          },
+          "regime_path": {
+            "type": "string"
+          },
+          "require_candidate_regime": {
+            "type": "boolean"
+          },
+          "rule_id": {
+            "type": "string"
+          },
+          "sigma_path": {
+            "type": "string"
+          },
+          "state_path": {
+            "type": "string"
+          },
+          "timestamp_path": {
+            "type": "string"
+          },
+          "uncertainty_radius_path": {
+            "type": "string"
+          },
+          "upper_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "type": "object"
+      },
+      "maxItems": 256,
+      "type": "array"
+    }
+  },
+  "required": [
+    "rules"
+  ],
+  "title": "JSON Consistency Repair Robust Envelope Rules",
+  "type": "object"
+}

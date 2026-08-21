@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://json-consistency-repair.local/schemas/system-graph-state-v1.schema.json",
+  "title": "PASS020 system graph/state summary",
+  "type": "object",
+  "required": ["contract", "relation_count", "graph_relations", "state_machine_relations", "reachability_relations", "migration_plans", "issue_count", "repairable_issue_count"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.system-graph-state.v1"},
+    "relation_count": {"type": "integer", "minimum": 0},
+    "graph_relations": {"type": "integer", "minimum": 0},
+    "state_machine_relations": {"type": "integer", "minimum": 0},
+    "reachability_relations": {"type": "integer", "minimum": 0},
+    "migration_plans": {"type": "integer", "minimum": 0},
+    "issue_count": {"type": "integer", "minimum": 0},
+    "repairable_issue_count": {"type": "integer", "minimum": 0}
+  },
+  "additionalProperties": true
+}

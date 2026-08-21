@@ -1,0 +1,15 @@
+{
+  "$id":"https://json-consistency-repair.local/symmetry-canonicality-summary-v1.schema.json",
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Symmetry/canonicality report summary v1",
+  "type":"object",
+  "additionalProperties":true,
+  "required":["contract"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.symmetry-canonicality-summary.v1"},
+    "mode":{"enum":["bundle","streaming"]},
+    "cycles":{"type":"array"},
+    "documents":{"type":"object"},
+    "rules":{"type":"array"}
+  }
+}

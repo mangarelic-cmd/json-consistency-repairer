@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "json-consistency-repair.machine.v1",
+  "type": "object",
+  "required": ["contract", "schema_version", "ok", "status", "exit_code", "engine", "mode", "result", "error"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.machine.v1"},
+    "schema_version": {"const": "1.0"},
+    "ok": {"type": "boolean"},
+    "status": {"enum": ["PASS", "STABLE_WITH_REPORTED_ISSUES", "OPEN_REPAIRABLE", "INPUT_ERROR", "SECURITY_REFUSAL", "IO_ERROR", "INTERNAL_ERROR"]},
+    "exit_code": {"enum": [0, 10, 11, 20, 21, 30, 70]},
+    "engine": {
+      "type": "object",
+      "required": ["name", "version", "package_code_sha256"],
+      "properties": {
+        "name": {"const": "json-consistency-repair"},
+        "version": {"type": "string"},
+        "package_code_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "mode": {"type": ["string", "null"]},
+    "result": {"type": ["object", "null"]},
+    "error": {"type": ["object", "null"]}
+  },
+  "additionalProperties": false
+}

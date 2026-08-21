@@ -1,0 +1,61 @@
+{
+  "$id": "https://json-consistency-repair.local/semantic-claim-provenance-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "blocked_claim_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "claim_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "claims": {
+      "items": {
+        "$ref": "semantic-claim-proof-v1.schema.json"
+      },
+      "maxItems": 4096,
+      "type": "array"
+    },
+    "contract": {
+      "const": "json-consistency-repair.semantic-claim-provenance.v1"
+    },
+    "policy": {
+      "type": "object"
+    },
+    "registry_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source_commitments": {
+      "items": {
+        "additionalProperties": true,
+        "required": [
+          "source_id",
+          "canonical_sha256",
+          "merkle_sha256"
+        ],
+        "type": "object"
+      },
+      "maxItems": 1024,
+      "type": "array"
+    },
+    "verified_claim_count": {
+      "minimum": 0,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "contract",
+    "source_commitments",
+    "claims",
+    "claim_count",
+    "verified_claim_count",
+    "blocked_claim_count",
+    "policy",
+    "registry_sha256"
+  ],
+  "title": "JSON Consistency Repair semantic claim provenance registry v1",
+  "type": "object"
+}

@@ -1,0 +1,82 @@
+{
+  "$id": "https://json-consistency-repair.local/authority-proof-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_registry_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "authorized": {
+      "type": "boolean"
+    },
+    "contract": {
+      "const": "json-consistency-repair.authority-proof.v1"
+    },
+    "delegation_chain": {
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 17,
+      "type": "array"
+    },
+    "document": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "effective_evidence_group": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evaluation_time": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "matched_scope": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "source-manifest-v1.schema.json#/$defs/authorityScope"
+        }
+      ]
+    },
+    "operation": {
+      "type": "string"
+    },
+    "proof_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "schema_version": {},
+    "source_id": {
+      "type": "string"
+    },
+    "target_path": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "contract",
+    "source_id",
+    "target_path",
+    "operation",
+    "authorized",
+    "reason",
+    "delegation_chain",
+    "authority_registry_sha256",
+    "proof_sha256"
+  ],
+  "title": "JSON Consistency Repair authority proof v1",
+  "type": "object"
+}

@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://example.invalid/json-consistency-repair/dynamic-q-descent-v1.schema.json",
+  "title":"JSON Consistency Repair dynamic Q descent v1",
+  "type":"object",
+  "required":["contract"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.dynamic-q-descent.v1"},
+    "terminal_count":{"type":"integer","minimum":0},
+    "terminals":{"type":"array"},
+    "global_q":{"type":"object","properties":{"q_answer":{"type":"integer","minimum":0},"q_boundary":{"type":"integer","minimum":0},"q_return":{"type":"integer","minimum":0},"lexicographic_vector":{"type":"array","minItems":3,"maxItems":3,"items":{"type":"integer","minimum":0}}},"additionalProperties":true}
+  },
+  "additionalProperties":true
+}

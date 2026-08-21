@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/json-consistency-repair/relation-falsification-summary-v1.schema.json",
+  "title": "PASS037 relation falsification summary",
+  "type": "object",
+  "required": ["contract"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.relation-falsification-summary.v1"},
+    "mode": {"type": "string"},
+    "scope": {"type": "string"},
+    "cycles": {"type": "array"},
+    "final": {"type": ["object", "null"]},
+    "documents": {"type": "object"},
+    "certificate_samples": {"type": "array"},
+    "state_totals": {"type": "object"},
+    "final_blocked_relation_count": {"type": "integer", "minimum": 0},
+    "final_blocked_candidate_count": {"type": "integer", "minimum": 0},
+    "portable_relation_count": {"type": "integer", "minimum": 0}
+  },
+  "additionalProperties": true
+}

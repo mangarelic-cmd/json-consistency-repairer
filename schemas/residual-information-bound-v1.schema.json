@@ -1,0 +1,25 @@
+{
+  "$id": "https://json-consistency-repair.local/residual-information-bound-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JSON Consistency Repair residual information bound v1",
+  "type": "object",
+  "required": ["contract","status","namespace","target_path","finite_candidate_set_established","candidate_count","candidate_values","candidate_commitments","minimum_fixed_width_selector_bits","unique_on_declared_carrier","external_information_required","policy","certificate_sha256"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.residual-information-bound.v1"},
+    "status": {"enum": ["FINITE_BOUND_NOT_ESTABLISHED","NO_ADMISSIBLE_FINITE_COMPLETION_MATERIALIZED","UNIQUE_ON_DECLARED_CARRIER","RESIDUAL_INFORMATION_REQUIRED"]},
+    "namespace": {"type":"string"},
+    "target_path": {"type":"string"},
+    "source_kind": {"type":"string"},
+    "source_sha256": {"type":["string","null"]},
+    "finite_candidate_set_established": {"type":"boolean"},
+    "candidate_count": {"type":["integer","null"],"minimum":0},
+    "candidate_values": {"type":"array"},
+    "candidate_commitments": {"type":"array","items":{"type":"string"}},
+    "minimum_fixed_width_selector_bits": {"type":["integer","null"],"minimum":0},
+    "unique_on_declared_carrier": {"type":"boolean"},
+    "external_information_required": {"type":"boolean"},
+    "policy": {"type":"object"},
+    "certificate_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

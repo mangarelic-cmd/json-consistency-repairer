@@ -1,0 +1,21 @@
+{
+  "$id": "https://json-consistency-repair.local/typed-repair-action-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JSON Consistency Repair typed repair action v1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["contract", "candidate_id", "analyzer", "operation", "path", "read_set", "write_set", "precondition_digest", "postvalue_digest", "one_shot_identity", "action_sha256"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.typed-repair-action.v1"},
+    "candidate_id": {"type": "string"},
+    "analyzer": {"type": "string"},
+    "operation": {"type": "string"},
+    "path": {"type": "string"},
+    "read_set": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "write_set": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "precondition_digest": {"type": "string"},
+    "postvalue_digest": {"type": "string"},
+    "one_shot_identity": {"const": true},
+    "action_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

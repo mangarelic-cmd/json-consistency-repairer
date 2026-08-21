@@ -1,0 +1,44 @@
+{
+  "rows": [
+    {
+      "id": 0,
+      "state": "READY"
+    },
+    {
+      "id": 1,
+      "state": "DONE"
+    },
+    {
+      "id": 2,
+      "state": "READY"
+    },
+    {
+      "id": 3,
+      "state": "DONE"
+    },
+    {
+      "id": 4,
+      "state": "READY"
+    },
+    {
+      "id": 5,
+      "state": "DONE"
+    },
+    {
+      "id": 6,
+      "state": "READY"
+    },
+    {
+      "id": 7,
+      "state": "DONE"
+    },
+    {
+      "id": 8,
+      "state": "READY"
+    },
+    {
+      "id": 9,
+      "state": "DONE"
+    }
+  ]
+}

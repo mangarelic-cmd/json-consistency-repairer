@@ -1,0 +1,24 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://example.invalid/json-consistency-repair/incremental-equivalence-v1.schema.json",
+  "title":"PASS038 incremental proof equivalence certificate",
+  "type":"object",
+  "required":["contract","status","prior_proof_graph_present","current_proof_graph_sha256","full_proof_graph_replay_ok","reused_node_ids","reused_node_count","recomputed_or_new_node_ids","recomputed_or_new_node_count","drifted_retained_node_ids","incremental_proof_equivalence","publication_gate","certificate_sha256"],
+  "properties":{
+    "contract":{"const":"json-consistency-repair.incremental-equivalence.v1"},
+    "status":{"enum":["BASELINE_NO_PRIOR_PROOF_GRAPH","INCREMENTAL_PROOF_EQ_FULL","FULL_RECOMPUTE_REQUIRED"]},
+    "prior_proof_graph_present":{"type":"boolean"},
+    "prior_proof_graph_sha256":{"type":["string","null"]},
+    "current_proof_graph_sha256":{"type":["string","null"]},
+    "full_proof_graph_replay_ok":{"type":"boolean"},
+    "reused_node_ids":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "reused_node_count":{"type":"integer","minimum":0},
+    "recomputed_or_new_node_ids":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "recomputed_or_new_node_count":{"type":"integer","minimum":0},
+    "drifted_retained_node_ids":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "incremental_proof_equivalence":{"type":["boolean","null"]},
+    "publication_gate":{"const":"FULL_PROOF_GRAPH_REPLAY_REQUIRED"},
+    "certificate_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "additionalProperties":true
+}

@@ -1,0 +1,1 @@
+{"all_checks_pass":true,"contract":"json-consistency-repair.pass027-benchmark.v1","counts":{"coupling_preserved":100,"dynamic_merge":100,"dynamic_split":100,"solver_recomposition":100,"strict_refinement":100,"unknown_dependency_guard":100},"decisions":600,"expected_decisions":600,"false_mutations":0,"version":"0.27.0"}

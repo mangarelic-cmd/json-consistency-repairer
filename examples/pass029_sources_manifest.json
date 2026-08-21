@@ -1,0 +1,21 @@
+{
+  "sources": [
+    {
+      "source_id": "legacy-authority",
+      "role": "authoritative",
+      "path": "pass029_authority_v1.json",
+      "schema_version": 1,
+      "independent_group": "legacy-authority"
+    }
+  ],
+  "identity_bridges": [
+    {
+      "logical_id": "status-field",
+      "canonical_field": "status",
+      "members": [
+        {"source_id": "__primary__", "field": "status"},
+        {"source_id": "legacy-authority", "field": "state"}
+      ]
+    }
+  ]
+}

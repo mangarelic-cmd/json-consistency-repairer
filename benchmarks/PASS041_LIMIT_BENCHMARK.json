@@ -1,0 +1,910 @@
+{
+  "engine": "json-consistency-repair",
+  "version": "0.41.0",
+  "benchmark": "PASS041_SC_MINIMAL_DISPLACEMENT_LIMITS",
+  "three_missing_nonmonotonicity": {
+    "trials": [
+      {
+        "seed": 7388,
+        "indices": [
+          3,
+          30,
+          11
+        ],
+        "exact": 3,
+        "edits": 3,
+        "status": "PASS",
+        "seconds": 0.5605497850001484
+      },
+      {
+        "seed": 7389,
+        "indices": [
+          19,
+          6,
+          30
+        ],
+        "exact": 3,
+        "edits": 3,
+        "status": "PASS",
+        "seconds": 0.5046466100002363
+      },
+      {
+        "seed": 7390,
+        "indices": [
+          36,
+          20,
+          7
+        ],
+        "exact": 3,
+        "edits": 3,
+        "status": "PASS",
+        "seconds": 0.5264433339998504
+      }
+    ],
+    "all_exact": true
+  },
+  "wrong_value_boundary": {
+    "functional": [
+      {
+        "wrong": 3,
+        "rate": 0.075,
+        "trials": [
+          {
+            "seed": 0,
+            "exact": 3,
+            "m": 3,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 3,
+            "status": "PASS",
+            "seconds": 0.5090774390000661
+          },
+          {
+            "seed": 1,
+            "exact": 3,
+            "m": 3,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 3,
+            "status": "PASS",
+            "seconds": 0.5606837340001221
+          },
+          {
+            "seed": 2,
+            "exact": 3,
+            "m": 3,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 3,
+            "status": "PASS",
+            "seconds": 0.5094466729997293
+          }
+        ],
+        "exact_repair_recall": 1.0,
+        "zero_false_mutation_trials": 3,
+        "mean_seconds": 0.5264026153333058
+      },
+      {
+        "wrong": 8,
+        "rate": 0.2,
+        "trials": [
+          {
+            "seed": 0,
+            "exact": 8,
+            "m": 8,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 8,
+            "status": "PASS",
+            "seconds": 0.5476762889993552
+          },
+          {
+            "seed": 1,
+            "exact": 8,
+            "m": 8,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 8,
+            "status": "PASS",
+            "seconds": 0.5471053050005139
+          },
+          {
+            "seed": 2,
+            "exact": 8,
+            "m": 8,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 8,
+            "status": "PASS",
+            "seconds": 0.5466189520002445
+          }
+        ],
+        "exact_repair_recall": 1.0,
+        "zero_false_mutation_trials": 3,
+        "mean_seconds": 0.5471335153333712
+      },
+      {
+        "wrong": 12,
+        "rate": 0.3,
+        "trials": [
+          {
+            "seed": 0,
+            "exact": 12,
+            "m": 12,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 12,
+            "status": "PASS",
+            "seconds": 0.6312852080000084
+          },
+          {
+            "seed": 1,
+            "exact": 12,
+            "m": 12,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 12,
+            "status": "PASS",
+            "seconds": 0.592135944999427
+          },
+          {
+            "seed": 2,
+            "exact": 12,
+            "m": 12,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 12,
+            "status": "PASS",
+            "seconds": 0.5881456409997554
+          }
+        ],
+        "exact_repair_recall": 1.0,
+        "zero_false_mutation_trials": 3,
+        "mean_seconds": 0.6038555979997303
+      },
+      {
+        "wrong": 16,
+        "rate": 0.4,
+        "trials": [
+          {
+            "seed": 0,
+            "exact": 0,
+            "m": 16,
+            "false_mutations": 0,
+            "unchanged_bad": 16,
+            "edits": 0,
+            "status": "PASS",
+            "seconds": 0.36232091800047783
+          },
+          {
+            "seed": 1,
+            "exact": 16,
+            "m": 16,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 16,
+            "status": "PASS",
+            "seconds": 0.6792950019998898
+          },
+          {
+            "seed": 2,
+            "exact": 16,
+            "m": 16,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 16,
+            "status": "PASS",
+            "seconds": 0.6429144749999978
+          }
+        ],
+        "exact_repair_recall": 0.6666666666666666,
+        "zero_false_mutation_trials": 3,
+        "mean_seconds": 0.5615101316667884
+      }
+    ],
+    "arithmetic": [
+      {
+        "wrong": 3,
+        "rate": 0.075,
+        "trials": [
+          {
+            "seed": 0,
+            "exact": 3,
+            "m": 3,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 3,
+            "status": "PASS",
+            "seconds": 0.49361270900044474
+          },
+          {
+            "seed": 1,
+            "exact": 3,
+            "m": 3,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 3,
+            "status": "PASS",
+            "seconds": 0.49283801799992943
+          },
+          {
+            "seed": 2,
+            "exact": 3,
+            "m": 3,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 3,
+            "status": "PASS",
+            "seconds": 0.5335236110004189
+          }
+        ],
+        "exact_repair_recall": 1.0,
+        "zero_false_mutation_trials": 3,
+        "mean_seconds": 0.5066581126669311
+      },
+      {
+        "wrong": 8,
+        "rate": 0.2,
+        "trials": [
+          {
+            "seed": 0,
+            "exact": 8,
+            "m": 8,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 8,
+            "status": "PASS",
+            "seconds": 0.5696044490005079
+          },
+          {
+            "seed": 1,
+            "exact": 8,
+            "m": 8,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 8,
+            "status": "PASS",
+            "seconds": 0.5779726300006587
+          },
+          {
+            "seed": 2,
+            "exact": 8,
+            "m": 8,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 8,
+            "status": "PASS",
+            "seconds": 0.558359288000247
+          }
+        ],
+        "exact_repair_recall": 1.0,
+        "zero_false_mutation_trials": 3,
+        "mean_seconds": 0.5686454556671379
+      },
+      {
+        "wrong": 12,
+        "rate": 0.3,
+        "trials": [
+          {
+            "seed": 0,
+            "exact": 0,
+            "m": 12,
+            "false_mutations": 0,
+            "unchanged_bad": 12,
+            "edits": 0,
+            "status": "PASS",
+            "seconds": 0.43951447299969004
+          },
+          {
+            "seed": 1,
+            "exact": 12,
+            "m": 12,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 12,
+            "status": "PASS",
+            "seconds": 0.6035861740001565
+          },
+          {
+            "seed": 2,
+            "exact": 12,
+            "m": 12,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 12,
+            "status": "PASS",
+            "seconds": 0.6154871230000936
+          }
+        ],
+        "exact_repair_recall": 0.6666666666666666,
+        "zero_false_mutation_trials": 3,
+        "mean_seconds": 0.5528625899999801
+      },
+      {
+        "wrong": 16,
+        "rate": 0.4,
+        "trials": [
+          {
+            "seed": 0,
+            "exact": 0,
+            "m": 16,
+            "false_mutations": 0,
+            "unchanged_bad": 16,
+            "edits": 0,
+            "status": "PASS",
+            "seconds": 0.38821253500009334
+          },
+          {
+            "seed": 1,
+            "exact": 16,
+            "m": 16,
+            "false_mutations": 0,
+            "unchanged_bad": 0,
+            "edits": 16,
+            "status": "PASS",
+            "seconds": 0.7487984439994761
+          },
+          {
+            "seed": 2,
+            "exact": 0,
+            "m": 16,
+            "false_mutations": 0,
+            "unchanged_bad": 16,
+            "edits": 0,
+            "status": "PASS",
+            "seconds": 0.3993369959998745
+          }
+        ],
+        "exact_repair_recall": 0.3333333333333333,
+        "zero_false_mutation_trials": 3,
+        "mean_seconds": 0.5121159916664814
+      }
+    ]
+  },
+  "sparse_route_negative_controls": {
+    "random_structured_trials": 10,
+    "random_sparse_promotions": 0,
+    "coherent_competing_mode_trials": 5,
+    "coherent_sparse_promotions": 0
+  },
+  "syntax_frontier": [
+    {
+      "case": "trailing_comma",
+      "repaired": true,
+      "exact": true,
+      "expected_automatic": true,
+      "value": {
+        "a": 1
+      },
+      "report": [
+        {
+          "operation": "remove_trailing_comma",
+          "position": 6,
+          "edit_distance": 1,
+          "canonical_parse_unique": true,
+          "route": [
+            {
+              "operation": "remove_trailing_comma",
+              "position": 6,
+              "cost": 1
+            }
+          ],
+          "convergent_routes": [
+            [
+              {
+                "operation": "remove_trailing_comma",
+                "position": 6,
+                "cost": 1
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "case": "missing_comma",
+      "repaired": true,
+      "exact": true,
+      "expected_automatic": true,
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "report": [
+        {
+          "operation": "insert_comma",
+          "position": 6,
+          "edit_distance": 1,
+          "canonical_parse_unique": true,
+          "route": [
+            {
+              "operation": "insert_comma",
+              "position": 6,
+              "cost": 1
+            }
+          ],
+          "convergent_routes": [
+            [
+              {
+                "operation": "insert_comma",
+                "position": 7,
+                "cost": 1
+              }
+            ],
+            [
+              {
+                "operation": "insert_comma",
+                "position": 6,
+                "cost": 1
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "case": "missing_colon",
+      "repaired": true,
+      "exact": true,
+      "expected_automatic": true,
+      "value": {
+        "a": 1
+      },
+      "report": [
+        {
+          "operation": "insert_colon",
+          "position": 4,
+          "edit_distance": 1,
+          "canonical_parse_unique": true,
+          "route": [
+            {
+              "operation": "insert_colon",
+              "position": 4,
+              "cost": 1
+            }
+          ],
+          "convergent_routes": [
+            [
+              {
+                "operation": "insert_colon",
+                "position": 5,
+                "cost": 1
+              }
+            ],
+            [
+              {
+                "operation": "insert_colon",
+                "position": 4,
+                "cost": 1
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "case": "truncated_obj",
+      "repaired": true,
+      "exact": true,
+      "expected_automatic": true,
+      "value": {
+        "a": 1
+      },
+      "report": [
+        {
+          "operation": "insert_object_close",
+          "position": 6,
+          "edit_distance": 1,
+          "canonical_parse_unique": true,
+          "route": [
+            {
+              "operation": "insert_object_close",
+              "position": 6,
+              "cost": 1
+            }
+          ],
+          "convergent_routes": [
+            [
+              {
+                "operation": "insert_object_close",
+                "position": 6,
+                "cost": 1
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "case": "truncated_nested",
+      "repaired": true,
+      "exact": true,
+      "expected_automatic": true,
+      "value": {
+        "a": [
+          1,
+          2
+        ]
+      },
+      "report": [
+        {
+          "operation": "close_truncated_container",
+          "position": 9,
+          "edit_distance": 2,
+          "canonical_parse_unique": true,
+          "route": [
+            {
+              "operation": "close_truncated_container",
+              "position": 9,
+              "cost": 2
+            }
+          ],
+          "convergent_routes": [
+            [
+              {
+                "operation": "close_truncated_container",
+                "position": 9,
+                "cost": 2
+              }
+            ],
+            [
+              {
+                "operation": "insert_array_close",
+                "position": 9,
+                "cost": 1
+              },
+              {
+                "operation": "insert_object_close",
+                "position": 10,
+                "cost": 1
+              }
+            ],
+            [
+              {
+                "operation": "insert_object_close",
+                "position": 9,
+                "cost": 1
+              },
+              {
+                "operation": "insert_array_close",
+                "position": 9,
+                "cost": 1
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "case": "single_quotes",
+      "repaired": false,
+      "exact": true,
+      "expected_automatic": false,
+      "value": null,
+      "report": []
+    },
+    {
+      "case": "unquoted_key",
+      "repaired": false,
+      "exact": true,
+      "expected_automatic": false,
+      "value": null,
+      "report": []
+    },
+    {
+      "case": "comment",
+      "repaired": false,
+      "exact": true,
+      "expected_automatic": false,
+      "value": null,
+      "report": []
+    },
+    {
+      "case": "duplicate_key",
+      "repaired": false,
+      "exact": true,
+      "expected_automatic": false,
+      "value": null,
+      "report": []
+    },
+    {
+      "case": "missing_quote",
+      "repaired": true,
+      "exact": true,
+      "expected_automatic": true,
+      "value": {
+        "a": "x"
+      },
+      "report": [
+        {
+          "operation": "close_unterminated_string",
+          "position": 7,
+          "edit_distance": 1,
+          "canonical_parse_unique": true,
+          "route": [
+            {
+              "operation": "close_unterminated_string",
+              "position": 7,
+              "cost": 1
+            }
+          ],
+          "convergent_routes": [
+            [
+              {
+                "operation": "close_unterminated_string",
+                "position": 7,
+                "cost": 1
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "case": "extra_brace",
+      "repaired": true,
+      "exact": true,
+      "expected_automatic": true,
+      "value": {
+        "a": 1
+      },
+      "report": [
+        {
+          "operation": "remove_unexpected_delimiter",
+          "position": 6,
+          "edit_distance": 1,
+          "canonical_parse_unique": true,
+          "route": [
+            {
+              "operation": "remove_unexpected_delimiter",
+              "position": 6,
+              "cost": 1
+            }
+          ],
+          "convergent_routes": [
+            [
+              {
+                "operation": "remove_unexpected_delimiter",
+                "position": 6,
+                "cost": 1
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "case": "two_errors",
+      "repaired": true,
+      "exact": true,
+      "expected_automatic": true,
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "report": [
+        {
+          "operation": "bounded_minimal_composition",
+          "position": 4,
+          "edit_distance": 2,
+          "canonical_parse_unique": true,
+          "route": [
+            {
+              "operation": "insert_colon",
+              "position": 4,
+              "cost": 1
+            },
+            {
+              "operation": "insert_comma",
+              "position": 7,
+              "cost": 1
+            }
+          ],
+          "convergent_routes": [
+            [
+              {
+                "operation": "insert_comma",
+                "position": 7,
+                "cost": 1
+              },
+              {
+                "operation": "insert_colon",
+                "position": 5,
+                "cost": 1
+              }
+            ],
+            [
+              {
+                "operation": "insert_colon",
+                "position": 5,
+                "cost": 1
+              },
+              {
+                "operation": "insert_comma",
+                "position": 8,
+                "cost": 1
+              }
+            ],
+            [
+              {
+                "operation": "insert_comma",
+                "position": 6,
+                "cost": 1
+              },
+              {
+                "operation": "insert_colon",
+                "position": 5,
+                "cost": 1
+              }
+            ],
+            [
+              {
+                "operation": "insert_colon",
+                "position": 5,
+                "cost": 1
+              },
+              {
+                "operation": "insert_comma",
+                "position": 7,
+                "cost": 1
+              }
+            ],
+            [
+              {
+                "operation": "insert_comma",
+                "position": 7,
+                "cost": 1
+              },
+              {
+                "operation": "insert_colon",
+                "position": 4,
+                "cost": 1
+              }
+            ],
+            [
+              {
+                "operation": "insert_colon",
+                "position": 4,
+                "cost": 1
+              },
+              {
+                "operation": "insert_comma",
+                "position": 8,
+                "cost": 1
+              }
+            ],
+            [
+              {
+                "operation": "insert_comma",
+                "position": 6,
+                "cost": 1
+              },
+              {
+                "operation": "insert_colon",
+                "position": 4,
+                "cost": 1
+              }
+            ],
+            [
+              {
+                "operation": "insert_colon",
+                "position": 4,
+                "cost": 1
+              },
+              {
+                "operation": "insert_comma",
+                "position": 7,
+                "cost": 1
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "case": "array_trailing",
+      "repaired": true,
+      "exact": true,
+      "expected_automatic": true,
+      "value": [
+        1,
+        2
+      ],
+      "report": [
+        {
+          "operation": "remove_trailing_comma",
+          "position": 4,
+          "edit_distance": 1,
+          "canonical_parse_unique": true,
+          "route": [
+            {
+              "operation": "remove_trailing_comma",
+              "position": 4,
+              "cost": 1
+            }
+          ],
+          "convergent_routes": [
+            [
+              {
+                "operation": "remove_trailing_comma",
+                "position": 4,
+                "cost": 1
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "case": "array_missing_comma",
+      "repaired": true,
+      "exact": true,
+      "expected_automatic": true,
+      "value": [
+        1,
+        2
+      ],
+      "report": [
+        {
+          "operation": "insert_comma",
+          "position": 2,
+          "edit_distance": 1,
+          "canonical_parse_unique": true,
+          "route": [
+            {
+              "operation": "insert_comma",
+              "position": 2,
+              "cost": 1
+            }
+          ],
+          "convergent_routes": [
+            [
+              {
+                "operation": "insert_comma",
+                "position": 3,
+                "cost": 1
+              }
+            ],
+            [
+              {
+                "operation": "insert_comma",
+                "position": 2,
+                "cost": 1
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "syntax_exact_automatic_repairs": 10,
+  "syntax_total": 14,
+  "full_object_performance": {
+    "v0.40.0": [
+      {
+        "seconds": 8.333506951000345,
+        "edits": 2,
+        "status": "PASS"
+      }
+    ],
+    "v0.41.0": [
+      {
+        "seconds": 4.175632161000067,
+        "edits": 2,
+        "status": "PASS"
+      }
+    ],
+    "v0.40.0_median_seconds": 8.333506951000345,
+    "v0.41.0_median_seconds": 4.175632161000067
+  },
+  "rss_attribution": {
+    "plain_interpreter_maxrss_kb": 131388,
+    "with_jcr_import_maxrss_kb": 131388,
+    "incremental_import_overhead_kb": 0
+  },
+  "pass_semantics": "NO_UNRESOLVED_VIOLATION_UNDER_CURRENT_CERTIFIED_RELATIONS; NOT_EXTERNAL_GROUND_TRUTH_PROOF",
+  "external_market_comparator_gate": {
+    "status": "EXTERNAL_GATE_OPEN",
+    "reason": "No specialized JSON repair comparator package/corpus is installed; json/orjson/ujson/json5 are parsers, not semantic repair equivalents."
+  }
+}

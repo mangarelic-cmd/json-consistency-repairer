@@ -1,0 +1,10 @@
+{
+  "orders": [
+    {"id": 1, "subtotal": 10, "tax": 2, "total": 12, "country": "CA", "currency": "CAD"},
+    {"id": 2, "subtotal": 20, "tax": 4, "total": 24, "country": "CA", "currency": "CAD"},
+    {"id": 3, "subtotal": 30, "tax": 6, "total": 36, "country": "US", "currency": "USD"},
+    {"id": 4, "subtotal": 40, "tax": 8, "total": 999, "country": "CA", "currency": "CAD"},
+    {"id": 5, "subtotal": 50, "tax": 10, "total": 60, "country": "US", "currency": "USD"},
+    {"id": 6, "subtotal": 60, "tax": 12, "total": 72, "country": "CA", "currency": "CAD"}
+  ]
+}

@@ -1,0 +1,1769 @@
+{
+  "engine": "json-consistency-repair",
+  "version": "0.3.0",
+  "input_digest": "27a0faab2e386dbd9ec30cbf8a090daea470229cff97ad1fcd331d04ac7ed660",
+  "output_digest": "23a4d6388aac9070c7f65f598952cca1cbba71ee05b1ee0938cdbd0fcd00cb1f",
+  "cycles": [
+    {
+      "cycle": 1,
+      "accepted": [
+        {
+          "candidate": {
+            "candidate_id": "3bedd1ded9079cd8",
+            "analyzer": "identifier_reference",
+            "operation": "replace",
+            "path": "/orders/11/user_id",
+            "old_value": "u11",
+            "new_value": "U11",
+            "reason": "Restore canonical foreign-reference representation.",
+            "confidence": 0.9166666666666666,
+            "cost": 1,
+            "evidence": [
+              "FK:user_id->/users#id",
+              "CASEFOLD_UNIQUE_ID"
+            ],
+            "metadata": {
+              "reference_field": "user_id",
+              "target_array_path": "/users",
+              "target_id_field": "id",
+              "relation_kind": "foreign_reference"
+            }
+          },
+          "score_before": 16,
+          "score_after": 6,
+          "families": [
+            "identifier_reference"
+          ],
+          "acceptance": "global"
+        },
+        {
+          "candidate": {
+            "candidate_id": "984ee8a69d343dda",
+            "analyzer": "sequential",
+            "operation": "replace",
+            "path": "/orders/9/total",
+            "old_value": 999,
+            "new_value": 120,
+            "reason": "Restore exact sequence value from both neighbors.",
+            "confidence": 0.9,
+            "cost": 1,
+            "evidence": [
+              "SEQ:total:step=12:left",
+              "SEQ:total:step=12:right"
+            ],
+            "metadata": {
+              "field": "total",
+              "step": 12,
+              "left": 108,
+              "right": 132,
+              "relation_kind": "sequence_step"
+            }
+          },
+          "score_before": 6,
+          "score_after": 3,
+          "families": [
+            "sequential"
+          ],
+          "acceptance": "global"
+        },
+        {
+          "candidate": {
+            "candidate_id": "923f2b8e08777012",
+            "analyzer": "enum_domain",
+            "operation": "replace",
+            "path": "/users/11/state",
+            "old_value": "active",
+            "new_value": "ACTIVE",
+            "reason": "Canonicalize enum representation without changing enum identity.",
+            "confidence": 0.8571428571428571,
+            "cost": 1,
+            "evidence": [
+              "ENUM:state:65f0a15ab17e",
+              "CASEFOLD_UNIQUE"
+            ],
+            "metadata": {
+              "enum_field": "state",
+              "domain_id": "65f0a15ab17e",
+              "domain": [
+                "ACTIVE",
+                "INACTIVE"
+              ],
+              "relation_kind": "enum_domain",
+              "canonicalization_confidence": 0.857142857143
+            }
+          },
+          "score_before": 3,
+          "score_after": 0,
+          "families": [
+            "enum_domain"
+          ],
+          "acceptance": "global"
+        }
+      ],
+      "rejected": [],
+      "issue_count": 0,
+      "score": 0,
+      "digest": "23a4d6388aac9070c7f65f598952cca1cbba71ee05b1ee0938cdbd0fcd00cb1f",
+      "structural_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "stable_streak": 0,
+      "relation_count": 27,
+      "new_relations": [
+        "24e77d646512af1853e7",
+        "2ab6f57135b03c251808",
+        "2cc4fc96a0378a7786bc",
+        "2e92d312e7b5141385f7",
+        "3252a8db641187a11821",
+        "3ef021bc7f3817a6368f",
+        "5e163adc5735063e7d2c",
+        "67003a66effe0983c73c",
+        "67d5da24c7466b773117",
+        "94ea3ffaf513e53f60ba",
+        "9832c55be0842ccc6672",
+        "a558a69e91a2f9b92081",
+        "a905833356afd00e0ac5",
+        "ae40bf66051f5d776757",
+        "b33c678a28ee0e325559",
+        "b4ea9e338a7a8cc4d404",
+        "bc9de1a22c658f24691b",
+        "bdecab1dcd5da3c16b4e",
+        "c1695eab841ffa2ffb3b",
+        "d7f12e3f4bd14865a43a",
+        "e10314fb5ad1e98ad950",
+        "e15eaf991c74914ff99f",
+        "e5ab60eeac04299dfa29",
+        "e8211df5b22bad0453ce",
+        "ebdf3f09d60c46455d7b",
+        "ecf3c584e9abb7f72f64",
+        "f9b51340cd3de03842d9"
+      ]
+    },
+    {
+      "cycle": 2,
+      "accepted": [],
+      "rejected": [],
+      "issue_count": 0,
+      "score": 0,
+      "digest": "23a4d6388aac9070c7f65f598952cca1cbba71ee05b1ee0938cdbd0fcd00cb1f",
+      "structural_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "stable_streak": 1,
+      "relation_count": 27,
+      "new_relations": []
+    },
+    {
+      "cycle": 3,
+      "accepted": [],
+      "rejected": [],
+      "issue_count": 0,
+      "score": 0,
+      "digest": "23a4d6388aac9070c7f65f598952cca1cbba71ee05b1ee0938cdbd0fcd00cb1f",
+      "structural_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "stable_streak": 2,
+      "relation_count": 27,
+      "new_relations": []
+    }
+  ],
+  "committed_edits": [
+    {
+      "candidate_id": "3bedd1ded9079cd8",
+      "analyzer": "identifier_reference",
+      "operation": "replace",
+      "path": "/orders/11/user_id",
+      "old_value": "u11",
+      "new_value": "U11",
+      "reason": "Restore canonical foreign-reference representation.",
+      "confidence": 0.9166666666666666,
+      "cost": 1,
+      "evidence": [
+        "FK:user_id->/users#id",
+        "CASEFOLD_UNIQUE_ID"
+      ],
+      "metadata": {
+        "reference_field": "user_id",
+        "target_array_path": "/users",
+        "target_id_field": "id",
+        "relation_kind": "foreign_reference"
+      }
+    },
+    {
+      "candidate_id": "984ee8a69d343dda",
+      "analyzer": "sequential",
+      "operation": "replace",
+      "path": "/orders/9/total",
+      "old_value": 999,
+      "new_value": 120,
+      "reason": "Restore exact sequence value from both neighbors.",
+      "confidence": 0.9,
+      "cost": 1,
+      "evidence": [
+        "SEQ:total:step=12:left",
+        "SEQ:total:step=12:right"
+      ],
+      "metadata": {
+        "field": "total",
+        "step": 12,
+        "left": 108,
+        "right": 132,
+        "relation_kind": "sequence_step"
+      }
+    },
+    {
+      "candidate_id": "923f2b8e08777012",
+      "analyzer": "enum_domain",
+      "operation": "replace",
+      "path": "/users/11/state",
+      "old_value": "active",
+      "new_value": "ACTIVE",
+      "reason": "Canonicalize enum representation without changing enum identity.",
+      "confidence": 0.8571428571428571,
+      "cost": 1,
+      "evidence": [
+        "ENUM:state:65f0a15ab17e",
+        "CASEFOLD_UNIQUE"
+      ],
+      "metadata": {
+        "enum_field": "state",
+        "domain_id": "65f0a15ab17e",
+        "domain": [
+          "ACTIVE",
+          "INACTIVE"
+        ],
+        "relation_kind": "enum_domain",
+        "canonicalization_confidence": 0.857142857143
+      }
+    }
+  ],
+  "remaining_issues": [],
+  "relations": [
+    {
+      "kind": "dominant_shape",
+      "array_path": "/users",
+      "inputs": [],
+      "output": "__shape__",
+      "confidence": 1.0,
+      "support": 12,
+      "keys": [
+        "id",
+        "state"
+      ],
+      "relation_id": "a558a69e91a2f9b92081"
+    },
+    {
+      "kind": "required_key",
+      "array_path": "/users",
+      "inputs": [],
+      "output": "id",
+      "confidence": 1.0,
+      "support": 12,
+      "schema_key": "id",
+      "relation_id": "5e163adc5735063e7d2c"
+    },
+    {
+      "kind": "required_key",
+      "array_path": "/users",
+      "inputs": [],
+      "output": "state",
+      "confidence": 1.0,
+      "support": 12,
+      "schema_key": "state",
+      "relation_id": "3252a8db641187a11821"
+    },
+    {
+      "kind": "dominant_shape",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "__shape__",
+      "confidence": 1.0,
+      "support": 12,
+      "keys": [
+        "id",
+        "subtotal",
+        "tax",
+        "total",
+        "user_id"
+      ],
+      "relation_id": "e8211df5b22bad0453ce"
+    },
+    {
+      "kind": "required_key",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "id",
+      "confidence": 1.0,
+      "support": 12,
+      "schema_key": "id",
+      "relation_id": "94ea3ffaf513e53f60ba"
+    },
+    {
+      "kind": "required_key",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "subtotal",
+      "confidence": 1.0,
+      "support": 12,
+      "schema_key": "subtotal",
+      "relation_id": "2e92d312e7b5141385f7"
+    },
+    {
+      "kind": "required_key",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "tax",
+      "confidence": 1.0,
+      "support": 12,
+      "schema_key": "tax",
+      "relation_id": "ebdf3f09d60c46455d7b"
+    },
+    {
+      "kind": "required_key",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "total",
+      "confidence": 1.0,
+      "support": 12,
+      "schema_key": "total",
+      "relation_id": "bdecab1dcd5da3c16b4e"
+    },
+    {
+      "kind": "required_key",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "user_id",
+      "confidence": 1.0,
+      "support": 12,
+      "schema_key": "user_id",
+      "relation_id": "2ab6f57135b03c251808"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/users",
+      "inputs": [],
+      "output": "id",
+      "confidence": 1.0,
+      "support": 12,
+      "dominant_type": "str",
+      "relation_id": "ecf3c584e9abb7f72f64"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/users",
+      "inputs": [],
+      "output": "state",
+      "confidence": 1.0,
+      "support": 12,
+      "dominant_type": "str",
+      "relation_id": "a905833356afd00e0ac5"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "id",
+      "confidence": 1.0,
+      "support": 12,
+      "dominant_type": "int",
+      "relation_id": "e5ab60eeac04299dfa29"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "user_id",
+      "confidence": 1.0,
+      "support": 12,
+      "dominant_type": "str",
+      "relation_id": "2cc4fc96a0378a7786bc"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "subtotal",
+      "confidence": 1.0,
+      "support": 12,
+      "dominant_type": "int",
+      "relation_id": "67003a66effe0983c73c"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "tax",
+      "confidence": 1.0,
+      "support": 12,
+      "dominant_type": "int",
+      "relation_id": "3ef021bc7f3817a6368f"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "total",
+      "confidence": 1.0,
+      "support": 12,
+      "dominant_type": "int",
+      "relation_id": "9832c55be0842ccc6672"
+    },
+    {
+      "kind": "enum_domain",
+      "array_path": "/users",
+      "inputs": [],
+      "output": "state",
+      "confidence": 1.0,
+      "support": 12,
+      "domain": [
+        "ACTIVE",
+        "INACTIVE"
+      ],
+      "domain_id": "65f0a15ab17e",
+      "relation_id": "e15eaf991c74914ff99f"
+    },
+    {
+      "kind": "identifier_uniqueness",
+      "array_path": "/users",
+      "inputs": [
+        "id"
+      ],
+      "output": "id",
+      "confidence": 1.0,
+      "support": 12,
+      "id_field": "id",
+      "relation_id": "24e77d646512af1853e7"
+    },
+    {
+      "kind": "identifier_uniqueness",
+      "array_path": "/orders",
+      "inputs": [
+        "id"
+      ],
+      "output": "id",
+      "confidence": 1.0,
+      "support": 12,
+      "id_field": "id",
+      "relation_id": "b33c678a28ee0e325559"
+    },
+    {
+      "kind": "foreign_reference",
+      "array_path": "/orders",
+      "inputs": [
+        "user_id"
+      ],
+      "output": "user_id",
+      "confidence": 1.0,
+      "support": 12,
+      "reference_field": "user_id",
+      "target_array_path": "/users",
+      "target_id_field": "id",
+      "relation_id": "67d5da24c7466b773117"
+    },
+    {
+      "kind": "exact_arithmetic",
+      "array_path": "/orders",
+      "inputs": [
+        "total",
+        "tax"
+      ],
+      "output": "subtotal",
+      "confidence": 1.0,
+      "support": 12,
+      "formula": "EXACT:subtotal=total-tax",
+      "operator": "-",
+      "direction_certified": false,
+      "direction_source": "candidate_level_federation_required",
+      "direction_confidence": 0.0,
+      "relation_id": "e10314fb5ad1e98ad950"
+    },
+    {
+      "kind": "exact_arithmetic",
+      "array_path": "/orders",
+      "inputs": [
+        "total",
+        "subtotal"
+      ],
+      "output": "tax",
+      "confidence": 1.0,
+      "support": 12,
+      "formula": "EXACT:tax=total-subtotal",
+      "operator": "-",
+      "direction_certified": false,
+      "direction_source": "candidate_level_federation_required",
+      "direction_confidence": 0.0,
+      "relation_id": "bc9de1a22c658f24691b"
+    },
+    {
+      "kind": "exact_arithmetic",
+      "array_path": "/orders",
+      "inputs": [
+        "subtotal",
+        "tax"
+      ],
+      "output": "total",
+      "confidence": 1.0,
+      "support": 12,
+      "formula": "EXACT:total=subtotal+tax",
+      "operator": "+",
+      "direction_certified": true,
+      "direction_source": "stable_object_key_order",
+      "direction_confidence": 1.0,
+      "relation_id": "d7f12e3f4bd14865a43a"
+    },
+    {
+      "kind": "sequence_step",
+      "array_path": "/orders",
+      "inputs": [
+        "id"
+      ],
+      "output": "id",
+      "confidence": 1.0,
+      "support": 11,
+      "step": 1,
+      "relation_id": "f9b51340cd3de03842d9"
+    },
+    {
+      "kind": "sequence_step",
+      "array_path": "/orders",
+      "inputs": [
+        "subtotal"
+      ],
+      "output": "subtotal",
+      "confidence": 1.0,
+      "support": 11,
+      "step": 10,
+      "relation_id": "c1695eab841ffa2ffb3b"
+    },
+    {
+      "kind": "sequence_step",
+      "array_path": "/orders",
+      "inputs": [
+        "tax"
+      ],
+      "output": "tax",
+      "confidence": 1.0,
+      "support": 11,
+      "step": 2,
+      "relation_id": "ae40bf66051f5d776757"
+    },
+    {
+      "kind": "sequence_step",
+      "array_path": "/orders",
+      "inputs": [
+        "total"
+      ],
+      "output": "total",
+      "confidence": 1.0,
+      "support": 11,
+      "step": 12,
+      "relation_id": "b4ea9e338a7a8cc4d404"
+    }
+  ],
+  "constraint_graph": {
+    "nodes": [
+      {
+        "id": "/orders#__shape__",
+        "array_path": "/orders",
+        "field": "__shape__"
+      },
+      {
+        "id": "/orders#id",
+        "array_path": "/orders",
+        "field": "id"
+      },
+      {
+        "id": "/orders#subtotal",
+        "array_path": "/orders",
+        "field": "subtotal"
+      },
+      {
+        "id": "/orders#tax",
+        "array_path": "/orders",
+        "field": "tax"
+      },
+      {
+        "id": "/orders#total",
+        "array_path": "/orders",
+        "field": "total"
+      },
+      {
+        "id": "/orders#user_id",
+        "array_path": "/orders",
+        "field": "user_id"
+      },
+      {
+        "id": "/users#__shape__",
+        "array_path": "/users",
+        "field": "__shape__"
+      },
+      {
+        "id": "/users#id",
+        "array_path": "/users",
+        "field": "id"
+      },
+      {
+        "id": "/users#state",
+        "array_path": "/users",
+        "field": "state"
+      }
+    ],
+    "edges": [
+      {
+        "relation_id": "24e77d646512af1853e7",
+        "kind": "identifier_uniqueness",
+        "inputs": [
+          "/users#id"
+        ],
+        "output": "/users#id",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "2ab6f57135b03c251808",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "/orders#user_id",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "2cc4fc96a0378a7786bc",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/orders#user_id",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "2e92d312e7b5141385f7",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "/orders#subtotal",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "3252a8db641187a11821",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "/users#state",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "3ef021bc7f3817a6368f",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/orders#tax",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "5e163adc5735063e7d2c",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "/users#id",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "67003a66effe0983c73c",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/orders#subtotal",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "67d5da24c7466b773117",
+        "kind": "foreign_reference",
+        "inputs": [
+          "/orders#user_id"
+        ],
+        "output": "/orders#user_id",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "94ea3ffaf513e53f60ba",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "/orders#id",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "9832c55be0842ccc6672",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/orders#total",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "a558a69e91a2f9b92081",
+        "kind": "dominant_shape",
+        "inputs": [],
+        "output": "/users#__shape__",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "a905833356afd00e0ac5",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/users#state",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "ae40bf66051f5d776757",
+        "kind": "sequence_step",
+        "inputs": [
+          "/orders#tax"
+        ],
+        "output": "/orders#tax",
+        "confidence": 1.0,
+        "support": 11
+      },
+      {
+        "relation_id": "b33c678a28ee0e325559",
+        "kind": "identifier_uniqueness",
+        "inputs": [
+          "/orders#id"
+        ],
+        "output": "/orders#id",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "b4ea9e338a7a8cc4d404",
+        "kind": "sequence_step",
+        "inputs": [
+          "/orders#total"
+        ],
+        "output": "/orders#total",
+        "confidence": 1.0,
+        "support": 11
+      },
+      {
+        "relation_id": "bc9de1a22c658f24691b",
+        "kind": "exact_arithmetic",
+        "inputs": [
+          "/orders#total",
+          "/orders#subtotal"
+        ],
+        "output": "/orders#tax",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "bdecab1dcd5da3c16b4e",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "/orders#total",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "c1695eab841ffa2ffb3b",
+        "kind": "sequence_step",
+        "inputs": [
+          "/orders#subtotal"
+        ],
+        "output": "/orders#subtotal",
+        "confidence": 1.0,
+        "support": 11
+      },
+      {
+        "relation_id": "d7f12e3f4bd14865a43a",
+        "kind": "exact_arithmetic",
+        "inputs": [
+          "/orders#subtotal",
+          "/orders#tax"
+        ],
+        "output": "/orders#total",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "e10314fb5ad1e98ad950",
+        "kind": "exact_arithmetic",
+        "inputs": [
+          "/orders#total",
+          "/orders#tax"
+        ],
+        "output": "/orders#subtotal",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "e15eaf991c74914ff99f",
+        "kind": "enum_domain",
+        "inputs": [],
+        "output": "/users#state",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "e5ab60eeac04299dfa29",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/orders#id",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "e8211df5b22bad0453ce",
+        "kind": "dominant_shape",
+        "inputs": [],
+        "output": "/orders#__shape__",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "ebdf3f09d60c46455d7b",
+        "kind": "required_key",
+        "inputs": [],
+        "output": "/orders#tax",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "ecf3c584e9abb7f72f64",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/users#id",
+        "confidence": 1.0,
+        "support": 12
+      },
+      {
+        "relation_id": "f9b51340cd3de03842d9",
+        "kind": "sequence_step",
+        "inputs": [
+          "/orders#id"
+        ],
+        "output": "/orders#id",
+        "confidence": 1.0,
+        "support": 11
+      }
+    ]
+  },
+  "knowledge_ledger": {
+    "relations": {
+      "a558a69e91a2f9b92081": {
+        "relation": {
+          "kind": "dominant_shape",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "__shape__",
+          "confidence": 1.0,
+          "support": 12,
+          "keys": [
+            "id",
+            "state"
+          ],
+          "relation_id": "a558a69e91a2f9b92081"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "5e163adc5735063e7d2c": {
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "id",
+          "relation_id": "5e163adc5735063e7d2c"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "3252a8db641187a11821": {
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "state",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "state",
+          "relation_id": "3252a8db641187a11821"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "e8211df5b22bad0453ce": {
+        "relation": {
+          "kind": "dominant_shape",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "__shape__",
+          "confidence": 1.0,
+          "support": 12,
+          "keys": [
+            "id",
+            "subtotal",
+            "tax",
+            "total",
+            "user_id"
+          ],
+          "relation_id": "e8211df5b22bad0453ce"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "94ea3ffaf513e53f60ba": {
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "id",
+          "relation_id": "94ea3ffaf513e53f60ba"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "2e92d312e7b5141385f7": {
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "subtotal",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "subtotal",
+          "relation_id": "2e92d312e7b5141385f7"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "ebdf3f09d60c46455d7b": {
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "tax",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "tax",
+          "relation_id": "ebdf3f09d60c46455d7b"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "bdecab1dcd5da3c16b4e": {
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "total",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "total",
+          "relation_id": "bdecab1dcd5da3c16b4e"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "2ab6f57135b03c251808": {
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "user_id",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "user_id",
+          "relation_id": "2ab6f57135b03c251808"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "ecf3c584e9abb7f72f64": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "str",
+          "relation_id": "ecf3c584e9abb7f72f64"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "a905833356afd00e0ac5": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "state",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "str",
+          "relation_id": "a905833356afd00e0ac5"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "e5ab60eeac04299dfa29": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "int",
+          "relation_id": "e5ab60eeac04299dfa29"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "2cc4fc96a0378a7786bc": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "user_id",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "str",
+          "relation_id": "2cc4fc96a0378a7786bc"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "67003a66effe0983c73c": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "subtotal",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "int",
+          "relation_id": "67003a66effe0983c73c"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "3ef021bc7f3817a6368f": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "tax",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "int",
+          "relation_id": "3ef021bc7f3817a6368f"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "9832c55be0842ccc6672": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "total",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "int",
+          "relation_id": "9832c55be0842ccc6672"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "e15eaf991c74914ff99f": {
+        "relation": {
+          "kind": "enum_domain",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "state",
+          "confidence": 1.0,
+          "support": 12,
+          "domain": [
+            "ACTIVE",
+            "INACTIVE"
+          ],
+          "domain_id": "65f0a15ab17e",
+          "relation_id": "e15eaf991c74914ff99f"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "24e77d646512af1853e7": {
+        "relation": {
+          "kind": "identifier_uniqueness",
+          "array_path": "/users",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 12,
+          "id_field": "id",
+          "relation_id": "24e77d646512af1853e7"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "b33c678a28ee0e325559": {
+        "relation": {
+          "kind": "identifier_uniqueness",
+          "array_path": "/orders",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 12,
+          "id_field": "id",
+          "relation_id": "b33c678a28ee0e325559"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "67d5da24c7466b773117": {
+        "relation": {
+          "kind": "foreign_reference",
+          "array_path": "/orders",
+          "inputs": [
+            "user_id"
+          ],
+          "output": "user_id",
+          "confidence": 1.0,
+          "support": 12,
+          "reference_field": "user_id",
+          "target_array_path": "/users",
+          "target_id_field": "id",
+          "relation_id": "67d5da24c7466b773117"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "e10314fb5ad1e98ad950": {
+        "relation": {
+          "kind": "exact_arithmetic",
+          "array_path": "/orders",
+          "inputs": [
+            "total",
+            "tax"
+          ],
+          "output": "subtotal",
+          "confidence": 1.0,
+          "support": 12,
+          "formula": "EXACT:subtotal=total-tax",
+          "operator": "-",
+          "direction_certified": false,
+          "direction_source": "candidate_level_federation_required",
+          "direction_confidence": 0.0,
+          "relation_id": "e10314fb5ad1e98ad950"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "bc9de1a22c658f24691b": {
+        "relation": {
+          "kind": "exact_arithmetic",
+          "array_path": "/orders",
+          "inputs": [
+            "total",
+            "subtotal"
+          ],
+          "output": "tax",
+          "confidence": 1.0,
+          "support": 12,
+          "formula": "EXACT:tax=total-subtotal",
+          "operator": "-",
+          "direction_certified": false,
+          "direction_source": "candidate_level_federation_required",
+          "direction_confidence": 0.0,
+          "relation_id": "bc9de1a22c658f24691b"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "d7f12e3f4bd14865a43a": {
+        "relation": {
+          "kind": "exact_arithmetic",
+          "array_path": "/orders",
+          "inputs": [
+            "subtotal",
+            "tax"
+          ],
+          "output": "total",
+          "confidence": 1.0,
+          "support": 12,
+          "formula": "EXACT:total=subtotal+tax",
+          "operator": "+",
+          "direction_certified": true,
+          "direction_source": "stable_object_key_order",
+          "direction_confidence": 1.0,
+          "relation_id": "d7f12e3f4bd14865a43a"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "f9b51340cd3de03842d9": {
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/orders",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 11,
+          "step": 1,
+          "relation_id": "f9b51340cd3de03842d9"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "c1695eab841ffa2ffb3b": {
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/orders",
+          "inputs": [
+            "subtotal"
+          ],
+          "output": "subtotal",
+          "confidence": 1.0,
+          "support": 11,
+          "step": 10,
+          "relation_id": "c1695eab841ffa2ffb3b"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "ae40bf66051f5d776757": {
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/orders",
+          "inputs": [
+            "tax"
+          ],
+          "output": "tax",
+          "confidence": 1.0,
+          "support": 11,
+          "step": 2,
+          "relation_id": "ae40bf66051f5d776757"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "b4ea9e338a7a8cc4d404": {
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/orders",
+          "inputs": [
+            "total"
+          ],
+          "output": "total",
+          "confidence": 1.0,
+          "support": 11,
+          "step": 12,
+          "relation_id": "b4ea9e338a7a8cc4d404"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      }
+    },
+    "newly_certified": [
+      {
+        "cycle": 1,
+        "relation_id": "a558a69e91a2f9b92081",
+        "relation": {
+          "kind": "dominant_shape",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "__shape__",
+          "confidence": 1.0,
+          "support": 12,
+          "keys": [
+            "id",
+            "state"
+          ],
+          "relation_id": "a558a69e91a2f9b92081"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "5e163adc5735063e7d2c",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "id",
+          "relation_id": "5e163adc5735063e7d2c"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "3252a8db641187a11821",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "state",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "state",
+          "relation_id": "3252a8db641187a11821"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "e8211df5b22bad0453ce",
+        "relation": {
+          "kind": "dominant_shape",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "__shape__",
+          "confidence": 1.0,
+          "support": 12,
+          "keys": [
+            "id",
+            "subtotal",
+            "tax",
+            "total",
+            "user_id"
+          ],
+          "relation_id": "e8211df5b22bad0453ce"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "94ea3ffaf513e53f60ba",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "id",
+          "relation_id": "94ea3ffaf513e53f60ba"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "2e92d312e7b5141385f7",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "subtotal",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "subtotal",
+          "relation_id": "2e92d312e7b5141385f7"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "ebdf3f09d60c46455d7b",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "tax",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "tax",
+          "relation_id": "ebdf3f09d60c46455d7b"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "bdecab1dcd5da3c16b4e",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "total",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "total",
+          "relation_id": "bdecab1dcd5da3c16b4e"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "2ab6f57135b03c251808",
+        "relation": {
+          "kind": "required_key",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "user_id",
+          "confidence": 1.0,
+          "support": 12,
+          "schema_key": "user_id",
+          "relation_id": "2ab6f57135b03c251808"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "ecf3c584e9abb7f72f64",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "str",
+          "relation_id": "ecf3c584e9abb7f72f64"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "a905833356afd00e0ac5",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "state",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "str",
+          "relation_id": "a905833356afd00e0ac5"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "e5ab60eeac04299dfa29",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "int",
+          "relation_id": "e5ab60eeac04299dfa29"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "2cc4fc96a0378a7786bc",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "user_id",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "str",
+          "relation_id": "2cc4fc96a0378a7786bc"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "67003a66effe0983c73c",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "subtotal",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "int",
+          "relation_id": "67003a66effe0983c73c"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "3ef021bc7f3817a6368f",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "tax",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "int",
+          "relation_id": "3ef021bc7f3817a6368f"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "9832c55be0842ccc6672",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "total",
+          "confidence": 1.0,
+          "support": 12,
+          "dominant_type": "int",
+          "relation_id": "9832c55be0842ccc6672"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "e15eaf991c74914ff99f",
+        "relation": {
+          "kind": "enum_domain",
+          "array_path": "/users",
+          "inputs": [],
+          "output": "state",
+          "confidence": 1.0,
+          "support": 12,
+          "domain": [
+            "ACTIVE",
+            "INACTIVE"
+          ],
+          "domain_id": "65f0a15ab17e",
+          "relation_id": "e15eaf991c74914ff99f"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "24e77d646512af1853e7",
+        "relation": {
+          "kind": "identifier_uniqueness",
+          "array_path": "/users",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 12,
+          "id_field": "id",
+          "relation_id": "24e77d646512af1853e7"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "b33c678a28ee0e325559",
+        "relation": {
+          "kind": "identifier_uniqueness",
+          "array_path": "/orders",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 12,
+          "id_field": "id",
+          "relation_id": "b33c678a28ee0e325559"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "67d5da24c7466b773117",
+        "relation": {
+          "kind": "foreign_reference",
+          "array_path": "/orders",
+          "inputs": [
+            "user_id"
+          ],
+          "output": "user_id",
+          "confidence": 1.0,
+          "support": 12,
+          "reference_field": "user_id",
+          "target_array_path": "/users",
+          "target_id_field": "id",
+          "relation_id": "67d5da24c7466b773117"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "e10314fb5ad1e98ad950",
+        "relation": {
+          "kind": "exact_arithmetic",
+          "array_path": "/orders",
+          "inputs": [
+            "total",
+            "tax"
+          ],
+          "output": "subtotal",
+          "confidence": 1.0,
+          "support": 12,
+          "formula": "EXACT:subtotal=total-tax",
+          "operator": "-",
+          "direction_certified": false,
+          "direction_source": "candidate_level_federation_required",
+          "direction_confidence": 0.0,
+          "relation_id": "e10314fb5ad1e98ad950"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "bc9de1a22c658f24691b",
+        "relation": {
+          "kind": "exact_arithmetic",
+          "array_path": "/orders",
+          "inputs": [
+            "total",
+            "subtotal"
+          ],
+          "output": "tax",
+          "confidence": 1.0,
+          "support": 12,
+          "formula": "EXACT:tax=total-subtotal",
+          "operator": "-",
+          "direction_certified": false,
+          "direction_source": "candidate_level_federation_required",
+          "direction_confidence": 0.0,
+          "relation_id": "bc9de1a22c658f24691b"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "d7f12e3f4bd14865a43a",
+        "relation": {
+          "kind": "exact_arithmetic",
+          "array_path": "/orders",
+          "inputs": [
+            "subtotal",
+            "tax"
+          ],
+          "output": "total",
+          "confidence": 1.0,
+          "support": 12,
+          "formula": "EXACT:total=subtotal+tax",
+          "operator": "+",
+          "direction_certified": true,
+          "direction_source": "stable_object_key_order",
+          "direction_confidence": 1.0,
+          "relation_id": "d7f12e3f4bd14865a43a"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "f9b51340cd3de03842d9",
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/orders",
+          "inputs": [
+            "id"
+          ],
+          "output": "id",
+          "confidence": 1.0,
+          "support": 11,
+          "step": 1,
+          "relation_id": "f9b51340cd3de03842d9"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "c1695eab841ffa2ffb3b",
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/orders",
+          "inputs": [
+            "subtotal"
+          ],
+          "output": "subtotal",
+          "confidence": 1.0,
+          "support": 11,
+          "step": 10,
+          "relation_id": "c1695eab841ffa2ffb3b"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "ae40bf66051f5d776757",
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/orders",
+          "inputs": [
+            "tax"
+          ],
+          "output": "tax",
+          "confidence": 1.0,
+          "support": 11,
+          "step": 2,
+          "relation_id": "ae40bf66051f5d776757"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "b4ea9e338a7a8cc4d404",
+        "relation": {
+          "kind": "sequence_step",
+          "array_path": "/orders",
+          "inputs": [
+            "total"
+          ],
+          "output": "total",
+          "confidence": 1.0,
+          "support": 11,
+          "step": 12,
+          "relation_id": "b4ea9e338a7a8cc4d404"
+        }
+      }
+    ]
+  },
+  "strong_stable": true,
+  "replay": {
+    "forward_digest": "23a4d6388aac9070c7f65f598952cca1cbba71ee05b1ee0938cdbd0fcd00cb1f",
+    "inverse_restores_input": true
+  }
+}

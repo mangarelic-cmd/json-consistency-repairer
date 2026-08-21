@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "json-consistency-repair.cold-replay.v1",
+  "type": "object",
+  "required": [
+    "contract",
+    "performed",
+    "input_digest",
+    "output_digest",
+    "would_commit_edits",
+    "strong_fixed_point_attained"
+  ],
+  "properties": {
+    "contract": {
+      "const": "json-consistency-repair.cold-replay.v1"
+    },
+    "performed": {
+      "const": true
+    },
+    "input_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "output_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "would_commit_edits": {
+      "const": 0
+    },
+    "strong_fixed_point_attained": {
+      "const": true
+    },
+    "same_output": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, cite the software release and its associated Zenodo record."
+title: "json-consistency-repair"
+type: software
+authors:
+  - family-names: "Bolduc"
+    given-names: "Son D."
+version: "0.41.0"
+date-released: "2026-08-21"
+license: MIT
+abstract: "Conservative recursive JSON consistency repair with exact constraint discovery, reversible minimal patches, provenance and authority gates, active falsification, proof replay, bounded-memory streaming, cross-document repair, persistent open obligations, distributed coherence checks, residual-information bounds, and fast/full execution modes."

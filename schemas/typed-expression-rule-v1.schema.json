@@ -1,0 +1,36 @@
+{
+  "$id": "https://json-consistency-repair.local/typed-expression-rule-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JSON Consistency Repair typed expression rule v1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["contract", "kind", "rule_id", "array_path", "lhs", "rhs", "fields", "solve_for", "orientation", "operators", "exact", "rule_sha256"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.typed-expression-rule.v1"},
+    "kind": {"const": "expression"},
+    "rule_id": {"type": "string", "minLength": 1},
+    "array_path": {"type": "string"},
+    "lhs": {"$ref": "#/$defs/expression"},
+    "rhs": {"$ref": "#/$defs/expression"},
+    "fields": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "solve_for": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "orientation": {"type": "string"},
+    "operators": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "exact": {"const": true},
+    "rule_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "expression": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["op", "value_type"],
+      "properties": {
+        "op": {"enum": ["field", "const", "neg", "add", "sub", "mul", "div", "pow_int", "abs", "min", "max", "floor", "ceil", "sqrt", "mod"]},
+        "value_type": {"type": "string"},
+        "name": {"type": "string"},
+        "args": {"type": "array", "items": {"$ref": "#/$defs/expression"}},
+        "exponent": {"type": "integer"}
+      }
+    }
+  }
+}

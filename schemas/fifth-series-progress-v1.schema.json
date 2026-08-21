@@ -1,0 +1,56 @@
+{
+  "$id": "https://json-consistency-repair.local/fifth-series-progress-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "checks": {
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "type": "object"
+    },
+    "closed": {
+      "type": "boolean"
+    },
+    "completed_substantive_passes": {
+      "maximum": 8,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "contract": {
+      "const": "json-consistency-repair.fifth-series-progress.v1"
+    },
+    "current_pass": {
+      "maximum": 40,
+      "minimum": 33,
+      "type": "integer"
+    },
+    "remaining_substantive_passes": {
+      "maximum": 8,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "series": {
+      "const": "PASS033-PASS040"
+    },
+    "status": {
+      "enum": [
+        "IN_PROGRESS",
+        "OPEN",
+        "CLOSED"
+      ]
+    }
+  },
+  "required": [
+    "contract",
+    "series",
+    "current_pass",
+    "status",
+    "checks",
+    "completed_substantive_passes",
+    "remaining_substantive_passes",
+    "closed"
+  ],
+  "title": "JSON Consistency Repair fifth series progress v1",
+  "type": "object"
+}

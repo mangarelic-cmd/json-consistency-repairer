@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://json-consistency-repair.local/schemas/streaming-record-bridge-v1.schema.json",
+  "title": "JSON Consistency Repair PASS024 streaming record bridge execution",
+  "type": "object",
+  "required": ["contract", "enabled", "cycles", "records_evaluated", "atomic_record_transactions", "inner_committed_edits", "final_remaining_inner_issues"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.streaming-record-bridge.v1"},
+    "enabled": {"type": "boolean"},
+    "cycles": {"type": "integer", "minimum": 0},
+    "records_evaluated": {"type": "integer", "minimum": 0},
+    "atomic_record_transactions": {"type": "integer", "minimum": 0},
+    "inner_committed_edits": {"type": "integer", "minimum": 0},
+    "final_remaining_inner_issues": {"type": "integer", "minimum": 0},
+    "final_lifecycle": {"type": "object"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,723 @@
+{
+  "engine": "json-consistency-repair",
+  "version": "0.2.0",
+  "input_digest": "a3eefebd903c20a62fe3919dd2d695731958a9042dae7dfdc8933f45d3c3cd61",
+  "output_digest": "9301809312aa92161d05f02d6a3b7cfd0ec3c0437dc79ca6cd0e6e73459cd891",
+  "cycles": [
+    {
+      "cycle": 1,
+      "accepted": [
+        {
+          "candidate": {
+            "candidate_id": "805af9893af88e94",
+            "analyzer": "exact_arithmetic",
+            "operation": "replace",
+            "path": "/orders/10/total",
+            "old_value": 99999,
+            "new_value": 136,
+            "reason": "Restore exact arithmetic invariant.",
+            "confidence": 0.9523809523809523,
+            "cost": 1,
+            "evidence": [
+              "EXACT:total=subtotal+tax"
+            ],
+            "metadata": {
+              "formula": "EXACT:total=subtotal+tax",
+              "support": 20,
+              "relation_kind": "exact_arithmetic",
+              "operator": "+",
+              "direction_certified": true,
+              "direction_source": "stable_object_key_order",
+              "direction_confidence": 1.0,
+              "direction_seen": 21
+            }
+          },
+          "score_before": 12,
+          "score_after": 3,
+          "families": [
+            "exact_arithmetic"
+          ],
+          "acceptance": "global"
+        },
+        {
+          "candidate": {
+            "candidate_id": "6dc574855018348c",
+            "analyzer": "temporal",
+            "operation": "replace",
+            "path": "/orders/10/end",
+            "old_value": "2026-08-11T17:00:00",
+            "new_value": "2026-08-11T11:00:00",
+            "reason": "Restore stable temporal delta.",
+            "confidence": 0.9523809523809523,
+            "cost": 1,
+            "evidence": [
+              "TIME:end=start+3600.0s"
+            ],
+            "metadata": {
+              "start": "start",
+              "end": "end",
+              "seconds": 3600.0,
+              "support": 20,
+              "relation_kind": "temporal_delta"
+            }
+          },
+          "score_before": 3,
+          "score_after": 0,
+          "families": [
+            "temporal"
+          ],
+          "acceptance": "global"
+        }
+      ],
+      "rejected": [],
+      "issue_count": 0,
+      "score": 0,
+      "digest": "9301809312aa92161d05f02d6a3b7cfd0ec3c0437dc79ca6cd0e6e73459cd891",
+      "structural_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "stable_streak": 0,
+      "relation_count": 9,
+      "new_relations": [
+        "1c383be039c15d65c978",
+        "543d1ec3b11883b82859",
+        "954bf9f9946c36d2227f",
+        "be3fa42d8fad6a8fe885",
+        "cd8b183e00b894938a73",
+        "d847ff081180fde609ca",
+        "e020e8d2b90748228279",
+        "e07f6e81c29b42d1efe4",
+        "eb11f99464777fc72336"
+      ]
+    },
+    {
+      "cycle": 2,
+      "accepted": [],
+      "rejected": [],
+      "issue_count": 0,
+      "score": 0,
+      "digest": "9301809312aa92161d05f02d6a3b7cfd0ec3c0437dc79ca6cd0e6e73459cd891",
+      "structural_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "stable_streak": 1,
+      "relation_count": 9,
+      "new_relations": []
+    },
+    {
+      "cycle": 3,
+      "accepted": [],
+      "rejected": [],
+      "issue_count": 0,
+      "score": 0,
+      "digest": "9301809312aa92161d05f02d6a3b7cfd0ec3c0437dc79ca6cd0e6e73459cd891",
+      "structural_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "stable_streak": 2,
+      "relation_count": 9,
+      "new_relations": []
+    }
+  ],
+  "committed_edits": [
+    {
+      "candidate_id": "805af9893af88e94",
+      "analyzer": "exact_arithmetic",
+      "operation": "replace",
+      "path": "/orders/10/total",
+      "old_value": 99999,
+      "new_value": 136,
+      "reason": "Restore exact arithmetic invariant.",
+      "confidence": 0.9523809523809523,
+      "cost": 1,
+      "evidence": [
+        "EXACT:total=subtotal+tax"
+      ],
+      "metadata": {
+        "formula": "EXACT:total=subtotal+tax",
+        "support": 20,
+        "relation_kind": "exact_arithmetic",
+        "operator": "+",
+        "direction_certified": true,
+        "direction_source": "stable_object_key_order",
+        "direction_confidence": 1.0,
+        "direction_seen": 21
+      }
+    },
+    {
+      "candidate_id": "6dc574855018348c",
+      "analyzer": "temporal",
+      "operation": "replace",
+      "path": "/orders/10/end",
+      "old_value": "2026-08-11T17:00:00",
+      "new_value": "2026-08-11T11:00:00",
+      "reason": "Restore stable temporal delta.",
+      "confidence": 0.9523809523809523,
+      "cost": 1,
+      "evidence": [
+        "TIME:end=start+3600.0s"
+      ],
+      "metadata": {
+        "start": "start",
+        "end": "end",
+        "seconds": 3600.0,
+        "support": 20,
+        "relation_kind": "temporal_delta"
+      }
+    }
+  ],
+  "remaining_issues": [],
+  "relations": [
+    {
+      "kind": "type_consensus",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "subtotal",
+      "confidence": 1.0,
+      "support": 21,
+      "dominant_type": "int",
+      "relation_id": "be3fa42d8fad6a8fe885"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "tax",
+      "confidence": 1.0,
+      "support": 21,
+      "dominant_type": "int",
+      "relation_id": "1c383be039c15d65c978"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "total",
+      "confidence": 1.0,
+      "support": 21,
+      "dominant_type": "int",
+      "relation_id": "e07f6e81c29b42d1efe4"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "start",
+      "confidence": 1.0,
+      "support": 21,
+      "dominant_type": "str",
+      "relation_id": "cd8b183e00b894938a73"
+    },
+    {
+      "kind": "type_consensus",
+      "array_path": "/orders",
+      "inputs": [],
+      "output": "end",
+      "confidence": 1.0,
+      "support": 21,
+      "dominant_type": "str",
+      "relation_id": "e020e8d2b90748228279"
+    },
+    {
+      "kind": "exact_arithmetic",
+      "array_path": "/orders",
+      "inputs": [
+        "total",
+        "tax"
+      ],
+      "output": "subtotal",
+      "confidence": 1.0,
+      "support": 21,
+      "formula": "EXACT:subtotal=total-tax",
+      "operator": "-",
+      "direction_certified": false,
+      "direction_source": null,
+      "direction_confidence": 0.0,
+      "relation_id": "954bf9f9946c36d2227f"
+    },
+    {
+      "kind": "exact_arithmetic",
+      "array_path": "/orders",
+      "inputs": [
+        "total",
+        "subtotal"
+      ],
+      "output": "tax",
+      "confidence": 1.0,
+      "support": 21,
+      "formula": "EXACT:tax=total-subtotal",
+      "operator": "-",
+      "direction_certified": false,
+      "direction_source": null,
+      "direction_confidence": 0.0,
+      "relation_id": "543d1ec3b11883b82859"
+    },
+    {
+      "kind": "exact_arithmetic",
+      "array_path": "/orders",
+      "inputs": [
+        "subtotal",
+        "tax"
+      ],
+      "output": "total",
+      "confidence": 1.0,
+      "support": 21,
+      "formula": "EXACT:total=subtotal+tax",
+      "operator": "+",
+      "direction_certified": true,
+      "direction_source": "stable_object_key_order",
+      "direction_confidence": 1.0,
+      "relation_id": "eb11f99464777fc72336"
+    },
+    {
+      "kind": "temporal_delta",
+      "array_path": "/orders",
+      "inputs": [
+        "start"
+      ],
+      "output": "end",
+      "confidence": 1.0,
+      "support": 21,
+      "seconds": 3600.0,
+      "formula": "end=start+3600.0s",
+      "relation_id": "d847ff081180fde609ca"
+    }
+  ],
+  "constraint_graph": {
+    "nodes": [
+      {
+        "id": "/orders#end",
+        "array_path": "/orders",
+        "field": "end"
+      },
+      {
+        "id": "/orders#start",
+        "array_path": "/orders",
+        "field": "start"
+      },
+      {
+        "id": "/orders#subtotal",
+        "array_path": "/orders",
+        "field": "subtotal"
+      },
+      {
+        "id": "/orders#tax",
+        "array_path": "/orders",
+        "field": "tax"
+      },
+      {
+        "id": "/orders#total",
+        "array_path": "/orders",
+        "field": "total"
+      }
+    ],
+    "edges": [
+      {
+        "relation_id": "1c383be039c15d65c978",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/orders#tax",
+        "confidence": 1.0,
+        "support": 21
+      },
+      {
+        "relation_id": "543d1ec3b11883b82859",
+        "kind": "exact_arithmetic",
+        "inputs": [
+          "/orders#total",
+          "/orders#subtotal"
+        ],
+        "output": "/orders#tax",
+        "confidence": 1.0,
+        "support": 21
+      },
+      {
+        "relation_id": "954bf9f9946c36d2227f",
+        "kind": "exact_arithmetic",
+        "inputs": [
+          "/orders#total",
+          "/orders#tax"
+        ],
+        "output": "/orders#subtotal",
+        "confidence": 1.0,
+        "support": 21
+      },
+      {
+        "relation_id": "be3fa42d8fad6a8fe885",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/orders#subtotal",
+        "confidence": 1.0,
+        "support": 21
+      },
+      {
+        "relation_id": "cd8b183e00b894938a73",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/orders#start",
+        "confidence": 1.0,
+        "support": 21
+      },
+      {
+        "relation_id": "d847ff081180fde609ca",
+        "kind": "temporal_delta",
+        "inputs": [
+          "/orders#start"
+        ],
+        "output": "/orders#end",
+        "confidence": 1.0,
+        "support": 21
+      },
+      {
+        "relation_id": "e020e8d2b90748228279",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/orders#end",
+        "confidence": 1.0,
+        "support": 21
+      },
+      {
+        "relation_id": "e07f6e81c29b42d1efe4",
+        "kind": "type_consensus",
+        "inputs": [],
+        "output": "/orders#total",
+        "confidence": 1.0,
+        "support": 21
+      },
+      {
+        "relation_id": "eb11f99464777fc72336",
+        "kind": "exact_arithmetic",
+        "inputs": [
+          "/orders#subtotal",
+          "/orders#tax"
+        ],
+        "output": "/orders#total",
+        "confidence": 1.0,
+        "support": 21
+      }
+    ]
+  },
+  "knowledge_ledger": {
+    "relations": {
+      "be3fa42d8fad6a8fe885": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "subtotal",
+          "confidence": 1.0,
+          "support": 21,
+          "dominant_type": "int",
+          "relation_id": "be3fa42d8fad6a8fe885"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "1c383be039c15d65c978": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "tax",
+          "confidence": 1.0,
+          "support": 21,
+          "dominant_type": "int",
+          "relation_id": "1c383be039c15d65c978"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "e07f6e81c29b42d1efe4": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "total",
+          "confidence": 1.0,
+          "support": 21,
+          "dominant_type": "int",
+          "relation_id": "e07f6e81c29b42d1efe4"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "cd8b183e00b894938a73": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "start",
+          "confidence": 1.0,
+          "support": 21,
+          "dominant_type": "str",
+          "relation_id": "cd8b183e00b894938a73"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "e020e8d2b90748228279": {
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "end",
+          "confidence": 1.0,
+          "support": 21,
+          "dominant_type": "str",
+          "relation_id": "e020e8d2b90748228279"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "954bf9f9946c36d2227f": {
+        "relation": {
+          "kind": "exact_arithmetic",
+          "array_path": "/orders",
+          "inputs": [
+            "total",
+            "tax"
+          ],
+          "output": "subtotal",
+          "confidence": 1.0,
+          "support": 21,
+          "formula": "EXACT:subtotal=total-tax",
+          "operator": "-",
+          "direction_certified": false,
+          "direction_source": null,
+          "direction_confidence": 0.0,
+          "relation_id": "954bf9f9946c36d2227f"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "543d1ec3b11883b82859": {
+        "relation": {
+          "kind": "exact_arithmetic",
+          "array_path": "/orders",
+          "inputs": [
+            "total",
+            "subtotal"
+          ],
+          "output": "tax",
+          "confidence": 1.0,
+          "support": 21,
+          "formula": "EXACT:tax=total-subtotal",
+          "operator": "-",
+          "direction_certified": false,
+          "direction_source": null,
+          "direction_confidence": 0.0,
+          "relation_id": "543d1ec3b11883b82859"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "eb11f99464777fc72336": {
+        "relation": {
+          "kind": "exact_arithmetic",
+          "array_path": "/orders",
+          "inputs": [
+            "subtotal",
+            "tax"
+          ],
+          "output": "total",
+          "confidence": 1.0,
+          "support": 21,
+          "formula": "EXACT:total=subtotal+tax",
+          "operator": "+",
+          "direction_certified": true,
+          "direction_source": "stable_object_key_order",
+          "direction_confidence": 1.0,
+          "relation_id": "eb11f99464777fc72336"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      },
+      "d847ff081180fde609ca": {
+        "relation": {
+          "kind": "temporal_delta",
+          "array_path": "/orders",
+          "inputs": [
+            "start"
+          ],
+          "output": "end",
+          "confidence": 1.0,
+          "support": 21,
+          "seconds": 3600.0,
+          "formula": "end=start+3600.0s",
+          "relation_id": "d847ff081180fde609ca"
+        },
+        "first_seen_cycle": 1,
+        "last_seen_cycle": 3,
+        "seen_cycles": 3,
+        "survives_current": true
+      }
+    },
+    "newly_certified": [
+      {
+        "cycle": 1,
+        "relation_id": "be3fa42d8fad6a8fe885",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "subtotal",
+          "confidence": 1.0,
+          "support": 21,
+          "dominant_type": "int",
+          "relation_id": "be3fa42d8fad6a8fe885"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "1c383be039c15d65c978",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "tax",
+          "confidence": 1.0,
+          "support": 21,
+          "dominant_type": "int",
+          "relation_id": "1c383be039c15d65c978"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "e07f6e81c29b42d1efe4",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "total",
+          "confidence": 1.0,
+          "support": 21,
+          "dominant_type": "int",
+          "relation_id": "e07f6e81c29b42d1efe4"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "cd8b183e00b894938a73",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "start",
+          "confidence": 1.0,
+          "support": 21,
+          "dominant_type": "str",
+          "relation_id": "cd8b183e00b894938a73"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "e020e8d2b90748228279",
+        "relation": {
+          "kind": "type_consensus",
+          "array_path": "/orders",
+          "inputs": [],
+          "output": "end",
+          "confidence": 1.0,
+          "support": 21,
+          "dominant_type": "str",
+          "relation_id": "e020e8d2b90748228279"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "954bf9f9946c36d2227f",
+        "relation": {
+          "kind": "exact_arithmetic",
+          "array_path": "/orders",
+          "inputs": [
+            "total",
+            "tax"
+          ],
+          "output": "subtotal",
+          "confidence": 1.0,
+          "support": 21,
+          "formula": "EXACT:subtotal=total-tax",
+          "operator": "-",
+          "direction_certified": false,
+          "direction_source": null,
+          "direction_confidence": 0.0,
+          "relation_id": "954bf9f9946c36d2227f"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "543d1ec3b11883b82859",
+        "relation": {
+          "kind": "exact_arithmetic",
+          "array_path": "/orders",
+          "inputs": [
+            "total",
+            "subtotal"
+          ],
+          "output": "tax",
+          "confidence": 1.0,
+          "support": 21,
+          "formula": "EXACT:tax=total-subtotal",
+          "operator": "-",
+          "direction_certified": false,
+          "direction_source": null,
+          "direction_confidence": 0.0,
+          "relation_id": "543d1ec3b11883b82859"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "eb11f99464777fc72336",
+        "relation": {
+          "kind": "exact_arithmetic",
+          "array_path": "/orders",
+          "inputs": [
+            "subtotal",
+            "tax"
+          ],
+          "output": "total",
+          "confidence": 1.0,
+          "support": 21,
+          "formula": "EXACT:total=subtotal+tax",
+          "operator": "+",
+          "direction_certified": true,
+          "direction_source": "stable_object_key_order",
+          "direction_confidence": 1.0,
+          "relation_id": "eb11f99464777fc72336"
+        }
+      },
+      {
+        "cycle": 1,
+        "relation_id": "d847ff081180fde609ca",
+        "relation": {
+          "kind": "temporal_delta",
+          "array_path": "/orders",
+          "inputs": [
+            "start"
+          ],
+          "output": "end",
+          "confidence": 1.0,
+          "support": 21,
+          "seconds": 3600.0,
+          "formula": "end=start+3600.0s",
+          "relation_id": "d847ff081180fde609ca"
+        }
+      }
+    ]
+  },
+  "strong_stable": true,
+  "replay": {
+    "forward_digest": "9301809312aa92161d05f02d6a3b7cfd0ec3c0437dc79ca6cd0e6e73459cd891",
+    "inverse_restores_input": true
+  }
+}

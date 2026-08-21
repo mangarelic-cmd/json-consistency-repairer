@@ -1,0 +1,56 @@
+{
+  "$id": "https://json-consistency-repair.local/semantic-claim-provenance-firewall-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "blocked_candidate_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "blocked_candidates": {
+      "type": "array"
+    },
+    "blocked_relation_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "blocked_relations": {
+      "type": "array"
+    },
+    "certificate_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "configuration_gates": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "contract": {
+      "const": "json-consistency-repair.semantic-claim-provenance-firewall.v1"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "gated_rule_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "registry": {
+      "$ref": "semantic-claim-provenance-v1.schema.json"
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "GATED_UNVERIFIED_ATTRIBUTION"
+      ]
+    }
+  },
+  "required": [
+    "contract",
+    "enabled"
+  ],
+  "title": "JSON Consistency Repair semantic claim provenance firewall v1",
+  "type": "object"
+}

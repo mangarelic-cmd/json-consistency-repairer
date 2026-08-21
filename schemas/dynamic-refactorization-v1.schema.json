@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/json-consistency-repair/dynamic-refactorization-v1.schema.json",
+  "title": "JSON Consistency Repair Dynamic Refactorization v1",
+  "type": "object",
+  "required": ["contract", "status", "events", "invalidated_block_ids"],
+  "properties": {
+    "contract": {"const": "json-consistency-repair.dynamic-refactorization.v1"},
+    "status": {"enum": ["INITIAL_FACTORIZATION", "STABLE_FACTORIZATION", "REFACTORIZED"]},
+    "events": {"type": "array", "items": {"type": "object"}},
+    "invalidated_block_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,15 @@
+{
+  "rules": [
+    {
+      "kind": "balance",
+      "array_path": "/rows",
+      "terms": [
+        {"field": "opening", "coefficient": 1},
+        {"field": "received", "coefficient": 1},
+        {"field": "sold", "coefficient": -1},
+        {"field": "closing", "coefficient": -1}
+      ],
+      "target": "closing"
+    }
+  ]
+}

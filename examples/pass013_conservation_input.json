@@ -1,0 +1,10 @@
+{
+  "rows": [
+    {"opening": 100, "received": 20, "sold": 15, "closing": 105},
+    {"opening": 110, "received": 20, "sold": 15, "closing": 115},
+    {"opening": 120, "received": 20, "sold": 15, "closing": 125},
+    {"opening": 130, "received": 20, "sold": 15, "closing": 135},
+    {"opening": 140, "received": 20, "sold": 15, "closing": 145},
+    {"opening": 150, "received": 20, "sold": 15, "closing": 999}
+  ]
+}
