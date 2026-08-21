@@ -1,0 +1,38 @@
+{
+  "title": "JSON Consistency Repair v0.41.0 — Conservative Causal JSON Rectification Engine",
+  "upload_type": "software",
+  "version": "0.41.0",
+  "publication_date": "2026-08-21",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Bolduc, Son David",
+      "orcid": "0009-0008-5955-4581"
+    }
+  ],
+  "description": "Conservative JSON rectification engine for deterministic syntax recovery and evidence-bounded semantic consistency repair, with exact constraint discovery, reversible minimal patches, provenance and authority controls, active falsification, proof replay, bounded-memory streaming, distributed-coherence checks, residual-information bounds, blind reconstruction, and fast/full execution modes.",
+  "keywords": [
+    "JSON repair",
+    "JSON consistency",
+    "data repair",
+    "causal computing",
+    "semantic validation",
+    "constraint discovery",
+    "deterministic repair",
+    "reversible patching",
+    "data integrity",
+    "provenance",
+    "active falsification",
+    "schema validation",
+    "JSONL",
+    "streaming",
+    "software quality"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/mangarelic-cmd/json-consistency-repairer",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
