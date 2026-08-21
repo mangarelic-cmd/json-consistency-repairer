@@ -1,0 +1,41 @@
+name: bootstrap-source-tree
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'JSON_CONSISTENCY_REPAIR_V0_41_0_PASS041_FINAL_RELEASE_SINGLE.zip'
+      - '.github/workflows/bootstrap-source.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unpack verified v0.41.0 source tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          ZIP='JSON_CONSISTENCY_REPAIR_V0_41_0_PASS041_FINAL_RELEASE_SINGLE.zip'
+          if [ ! -f "$ZIP" ]; then
+            echo 'Release ZIP already unpacked; nothing to do.'
+            exit 0
+          fi
+          rm -rf /tmp/jcr-release
+          mkdir -p /tmp/jcr-release
+          unzip -q "$ZIP" -d /tmp/jcr-release
+          test -f /tmp/jcr-release/json-consistency-repair-0.41.0/README.md
+          rsync -a --exclude='.github/workflows/' /tmp/jcr-release/json-consistency-repair-0.41.0/ ./
+          rm -f "$ZIP"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No source-tree changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Unpack verified v0.41.0 source tree'
+          git push
