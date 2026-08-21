@@ -1,0 +1,45 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  verify-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify source tree
+        run: |
+          python -m pip install --upgrade pip pytest
+          python -m pytest -q
+          python -m compileall -q src
+      - name: Check bundled wheel
+        run: |
+          python -m venv /tmp/jcr-release-venv
+          /tmp/jcr-release-venv/bin/python -m pip install --upgrade pip
+          /tmp/jcr-release-venv/bin/python -m pip install dist/json_consistency_repair-0.41.0-py3-none-any.whl
+          /tmp/jcr-release-venv/bin/python -m pip check
+      - name: Publish GitHub Release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: RELEASE_NOTES_v0.41.0.md
+          files: |
+            dist/json_consistency_repair-0.41.0-py3-none-any.whl
+            dist/json-consistency-repair-0.41.0-source.zip
+            RELEASE_PROVENANCE.json
+            benchmarks/PASS041_SPEED_BENCHMARK.json
+            benchmarks/PASS041_LIMIT_BENCHMARK.json
+            validation/PASS041_FINAL_VERIFICATION.md
+            validation/PASS041_FINAL_VERIFICATION.json
+            publication/LA_RECTIFICATION_CONTINUE_REPARATION_COHERENCE_JSON_SC_FR.pdf
+            publication/THE_RECTIFICATION_CONTINUES_JSON_CONSISTENCY_REPAIR_SC_EN.pdf
