@@ -1,11 +1,22 @@
 cff-version: 1.2.0
-message: "If you use this software, cite the software release and its associated Zenodo record."
-title: "json-consistency-repair"
+message: "If you use this software, cite the exact software release archived on Zenodo."
+title: "JSON Consistency Repair"
 type: software
 authors:
   - family-names: "Bolduc"
-    given-names: "Son D."
+    given-names: "Son David"
+    orcid: "https://orcid.org/0009-0008-5955-4581"
 version: "0.41.0"
 date-released: "2026-08-21"
 license: MIT
+repository-code: "https://github.com/mangarelic-cmd/json-consistency-repairer"
+url: "https://doi.org/10.5281/zenodo.22045902"
+doi: "10.5281/zenodo.22045902"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22045902"
+    description: "Exact archived v0.41.0 release"
+  - type: doi
+    value: "10.5281/zenodo.22045901"
+    description: "Concept DOI for all versions"
 abstract: "Conservative recursive JSON consistency repair with exact constraint discovery, reversible minimal patches, provenance and authority gates, active falsification, proof replay, bounded-memory streaming, cross-document repair, persistent open obligations, distributed coherence checks, residual-information bounds, and fast/full execution modes."
