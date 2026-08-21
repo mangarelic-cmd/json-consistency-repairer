@@ -1,0 +1,40 @@
+name: Link Zenodo DOI
+
+on:
+  push:
+    paths:
+      - '.github/workflows/link-zenodo.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  link:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add DOI badge and citation block
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('README.md')
+          text = p.read_text(encoding='utf-8')
+          badge = '[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22045902.svg)](https://doi.org/10.5281/zenodo.22045902)\n'
+          citation = '''\n## Citation\n\nExact v0.41.0 archive: [10.5281/zenodo.22045902](https://doi.org/10.5281/zenodo.22045902)  \nConcept DOI for all versions: [10.5281/zenodo.22045901](https://doi.org/10.5281/zenodo.22045901)\n\n> Bolduc, S. D. (2026). *JSON Consistency Repair v0.41.0 — Conservative Causal JSON Rectification Engine* [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.22045902\n'''
+          if '10.5281/zenodo.22045902' not in text:
+              first_newline = text.find('\n')
+              text = text[:first_newline+1] + '\n' + badge + text[first_newline+1:]
+              marker = '\n## Install\n'
+              if marker in text:
+                  text = text.replace(marker, citation + marker, 1)
+              else:
+                  text += citation
+              p.write_text(text, encoding='utf-8')
+      - name: Commit DOI linkage
+        run: |
+          if git diff --quiet -- README.md; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Link README to Zenodo DOI"
+          git push
