@@ -1,0 +1,80 @@
+name: Publish v0.41.0
+
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v0.41.0.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify source tree
+        run: |
+          python -m pip install --upgrade pip pytest
+          python -m pytest -q
+          python -m compileall -q src
+      - name: Verify bundled wheel
+        run: |
+          python -m venv /tmp/jcr-release-venv
+          /tmp/jcr-release-venv/bin/python -m pip install --upgrade pip
+          /tmp/jcr-release-venv/bin/python -m pip install dist/json_consistency_repair-0.41.0-py3-none-any.whl
+          /tmp/jcr-release-venv/bin/python -m pip check
+      - name: Create and push tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git rev-parse v0.41.0 >/dev/null 2>&1; then
+            echo "Tag v0.41.0 already exists"
+          else
+            git tag -a v0.41.0 -m "JSON Consistency Repair v0.41.0 — PASS041"
+            git push origin v0.41.0
+          fi
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v0.41.0 >/dev/null 2>&1; then
+            echo "Release v0.41.0 already exists"
+          else
+            gh release create v0.41.0 \
+              --title "JSON Consistency Repair v0.41.0 — PASS041" \
+              --notes-file RELEASE_NOTES_v0.41.0.md \
+              --latest \
+              dist/json_consistency_repair-0.41.0-py3-none-any.whl \
+              dist/json-consistency-repair-0.41.0-source.zip \
+              RELEASE_PROVENANCE.json \
+              benchmarks/PASS041_SPEED_BENCHMARK.json \
+              benchmarks/PASS041_LIMIT_BENCHMARK.json \
+              validation/PASS041_FINAL_VERIFICATION.md \
+              validation/PASS041_FINAL_VERIFICATION.json \
+              publication/LA_RECTIFICATION_CONTINUE_REPARATION_COHERENCE_JSON_SC_FR.pdf \
+              publication/THE_RECTIFICATION_CONTINUES_JSON_CONSISTENCY_REPAIR_SC_EN.pdf
+          fi
+      - name: Record successful publication
+        run: |
+          cat > publication/GITHUB_RELEASE_v0.41.0.md <<'EOF'
+          # GitHub Release v0.41.0
+
+          Release: https://github.com/mangarelic-cmd/json-consistency-repairer/releases/tag/v0.41.0
+
+          Tag: `v0.41.0`
+
+          Zenodo exact-release DOI: https://doi.org/10.5281/zenodo.22045902
+
+          Zenodo concept DOI: https://doi.org/10.5281/zenodo.22045901
+
+          The GitHub release was created only after the repository regression suite, Python bytecode compilation, fresh wheel installation, and `pip check` completed successfully in the publication workflow.
+          EOF
+          git add publication/GITHUB_RELEASE_v0.41.0.md
+          git commit -m "Record published GitHub release v0.41.0"
+          git push
