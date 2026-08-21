@@ -1,6 +1,15 @@
 # json-consistency-repair
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22045902.svg)](https://doi.org/10.5281/zenodo.22045902)
+
 Experimental SC-derived JSON rectification engine. It discovers stable constraints, proposes minimal reversible edits, re-analyzes the **physically updated data after every repair cycle**, preserves newly exposed relations in a cumulative knowledge ledger, and requires repeated stable cycles before closure.
+
+## Citation
+
+Exact v0.41.0 archive: [10.5281/zenodo.22045902](https://doi.org/10.5281/zenodo.22045902)  
+Concept DOI for all versions: [10.5281/zenodo.22045901](https://doi.org/10.5281/zenodo.22045901)
+
+> Bolduc, S. D. (2026). *JSON Consistency Repair v0.41.0 — Conservative Causal JSON Rectification Engine* [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.22045902
 
 ## Install
 
