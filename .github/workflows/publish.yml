@@ -1,0 +1,47 @@
+name: Publish to PyPI
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Verify source tree
+        run: |
+          python -m pip install --upgrade pip pytest twine
+          python -m pytest -q
+          python -m compileall -q src
+
+      - name: Verify and stage PyPI artifact
+        run: |
+          python -m venv /tmp/jcr-pypi-venv
+          /tmp/jcr-pypi-venv/bin/python -m pip install --upgrade pip
+          /tmp/jcr-pypi-venv/bin/python -m pip install dist/json_consistency_repair-0.41.0-py3-none-any.whl
+          /tmp/jcr-pypi-venv/bin/python -m pip check
+          mkdir -p pypi-dist
+          cp dist/json_consistency_repair-0.41.0-py3-none-any.whl pypi-dist/
+          python -m twine check pypi-dist/*.whl
+          test "$(find pypi-dist -maxdepth 1 -type f | wc -l)" -eq 1
+          test -f pypi-dist/json_consistency_repair-0.41.0-py3-none-any.whl
+
+      - name: Publish wheel to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: pypi-dist/
+          skip-existing: true
