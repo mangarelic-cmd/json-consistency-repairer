@@ -1,0 +1,72 @@
+{
+  "comparative_artifacts": {
+    "comparative_zip_sha256": "9685f81c819c934dca11aa86bcf0a39e118f5ab7ac203ca48c2755361ebbb728",
+    "json_artifacts_parse": "PASS",
+    "limits_zip_sha256": "b241630253c0f2a14a0100abf9b8d4402e3f08601078070ffbfa8e2b0bdfae82",
+    "zip_integrity": "PASS"
+  },
+  "contract": "json-consistency-repair.pass041-final-verification.v1",
+  "date": "2026-08-21",
+  "fresh_source": {
+    "compileall": "PASS",
+    "pass040_plus_pass041_tests": "25/25",
+    "pass041_stress": "600/600"
+  },
+  "fresh_wheel": {
+    "cli_bounded_grammar_repair": "PASS",
+    "fast_certification_gate": "FAST_SCAN_ONLY",
+    "fast_mode_exact_repair": "PASS",
+    "fast_scan_scope": "ALL_ANALYZERS",
+    "full_mode_exact_repair": "PASS",
+    "pip_check": "PASS",
+    "version": "0.41.0"
+  },
+  "open_external_gate": "Market-wide comparison against additional independently installed specialized JSON repairers/corpora when available; not an internal correctness defect.",
+  "package": "json-consistency-repair",
+  "recorded_pass041_speed_benchmark": {
+    "ambiguous_duplicate_key_refusal": "1/1",
+    "benchmark_sha256": "ed5db56d146ffda50922524907f98942a6b363f4375e054de1e6bfd29ba0a521",
+    "determinable_syntax_repairs": "13/13",
+    "syntax_contract": "14/14",
+    "v040_to_fast_speedup_x": {
+      "100": 64.40088329297217,
+      "1000": 66.52536398418862,
+      "500": 62.09764776160025
+    },
+    "v040_to_full_speedup_x": {
+      "100": 2.2142389833990332,
+      "1000": 3.696845637561879,
+      "500": 3.0197931479583042
+    }
+  },
+  "release_build": {
+    "package_code_sha256": "3b549b4ec0198b12b4b001e84183b8121f9329797ddd95586dbb0f96800b5932",
+    "reproducible_source": "PASS",
+    "reproducible_wheel": "PASS",
+    "source_sha256": "c4c68f32959e03d18682acbee7f713ec18ebfb6943666dfcf0c29319e79df634",
+    "wheel_sha256": "ed8935405d89f6204f73bedda012e003ac87665fba8889de1b40c49ed1e3ddbb"
+  },
+  "remaining_substantive_passes": 0,
+  "source_tree": {
+    "collected_tests": 462,
+    "execution_note": "All 462 collected tests passed across isolated deterministic batches covering every test file from test_core/test_io_pass002 through test_pass041.",
+    "false_mutations_in_pass041_stress": 0,
+    "pass041_stress": "600/600",
+    "python_compileall": "PASS",
+    "schemas_draft_2020_12": "73/73",
+    "tests_passed": 462
+  },
+  "speed_smoke_100_rows": {
+    "fast_gate": "FAST_SCAN_ONLY",
+    "fast_seconds": 0.030312,
+    "full_gate": "PASS",
+    "full_seconds": 0.773475,
+    "same_exact_terminal": true
+  },
+  "truth_contract": {
+    "fast": "all analyzer families scan; deep correction search only on unique local actionable cones; never claims full certification",
+    "full": "exhaustive analysis + global correction + replay + independent certification",
+    "pass_semantics": "NO_UNRESOLVED_VIOLATION_UNDER_CURRENT_CERTIFIED_RELATIONS; NOT_EXTERNAL_GROUND_TRUTH_PROOF"
+  },
+  "version": "0.41.0"
+}
